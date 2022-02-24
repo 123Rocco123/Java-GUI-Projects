@@ -2,14 +2,12 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-class makeScreen extends JFrame{
 class makeScreen extends JFrame {
   // It's important to note that we have to declare and initialize the instance variables as soon as the class is made.
-     // This is because of the fact that if we don't, then they won't get rendered into the panel when the program runs until we resize the frame. 
      // This is because of the fact that if we don't, then they won't get rendered into the panel when the program runs until we resize the frame.
   JTextField username = new JTextField(30);
-  JTextField password;
   JPasswordField password = new JPasswordField(30);
+  Button submitButton = new Button();
 
   public makeScreen() {
     setTitle("Test");
@@ -17,12 +15,19 @@ class makeScreen extends JFrame {
     // Width * Height
     setSize(400, 400);
 
-    // Action Listeners
+    // Action Listener (Username)
     (this.username).addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         if ((username.getText()).equals("Rocco")) {
           System.out.println("True");
         }
+      }
+    });
+
+    // Action Listener (Password)
+    (this.password).addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        System.out.println("Correct");
       }
     });
 
