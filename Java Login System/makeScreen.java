@@ -7,7 +7,7 @@ class makeScreen extends JFrame {
      // This is because of the fact that if we don't, then they won't get rendered into the panel when the program runs until we resize the frame.
   JTextField username = new JTextField(30);
   JPasswordField password = new JPasswordField(30);
-  Button submitButton = new Button();
+  Button submitButton = new Button("Submit");
 
   public makeScreen() {
     setTitle("Test");
@@ -27,7 +27,17 @@ class makeScreen extends JFrame {
     // Action Listener (Password)
     (this.password).addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        System.out.println("Correct");
+        if ((password.getText()).equals("password")) {
+          System.out.println("Correct Password");
+        }
+      }
+    });
+
+    // Submit Button Action Listener
+    (this.submitButton).addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        System.out.println((username).getText());
+        System.out.println((password).getText());
       }
     });
 
@@ -44,6 +54,7 @@ class makeScreen extends JFrame {
 
     userNamePanel.add(passwordLabel);
     userNamePanel.add(this.password);
+    userNamePanel.add(this.submitButton);
 
     this.add(userPassword);
 
