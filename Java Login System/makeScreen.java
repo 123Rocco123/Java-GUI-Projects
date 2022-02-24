@@ -13,31 +13,14 @@ class makeScreen extends JFrame {
     setTitle("Test");
     setVisible(true);
     // Width * Height
-    setSize(400, 400);
-
-    // Action Listener (Username)
-    (this.username).addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if ((username.getText()).equals("Rocco")) {
-          System.out.println("True");
-        }
-      }
-    });
-
-    // Action Listener (Password)
-    (this.password).addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if ((password.getText()).equals("password")) {
-          System.out.println("Correct Password");
-        }
-      }
-    });
+    setSize(400, 175);
 
     // Submit Button Action Listener
     (this.submitButton).addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        System.out.println((username).getText());
-        System.out.println((password).getText());
+        if ((username.getText()).equals("") || (password.getText()).equals("")) {
+          username.setText("Incorrect User or Password");
+        }
       }
     });
 
