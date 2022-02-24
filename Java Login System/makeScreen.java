@@ -7,6 +7,7 @@ class makeScreen extends JFrame{
      // This is because of the fact that if we don't, then they won't get rendered into the panel when the program runs until we resize the frame. 
   JTextField username = new JTextField(30);
   JTextField password;
+  JPasswordField password = new JPasswordField(30);
 
   public makeScreen() {
     setTitle("Test");
@@ -20,6 +21,15 @@ class makeScreen extends JFrame{
 
     userNamePanel.add(userNameInfo);
     userNamePanel.add(this.username);
+
+    // The panel and code below regards the password
+    Panel userPassword = new Panel();
+    JLabel passwordLabel = new JLabel("Enter password\n");
+
+    userNamePanel.add(passwordLabel);
+    userNamePanel.add(this.password);
+
+    this.add(userPassword);
 
     this.add(userNamePanel);
   }
