@@ -40,7 +40,8 @@ class homeScreen extends JFrame{
     // Create Account Button Action Listener
     (this.createAccount).addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        System.out.println("TBD");
+        createAccount createAccountObject = new createAccount();
+        createAccountObject.screenProperties();
       }
     });
   }
