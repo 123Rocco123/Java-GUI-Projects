@@ -3,6 +3,8 @@ import java.awt.event.*;
 import javax.swing.*;
 
 class createAccount extends JFrame{
+  Button cancelButton = new Button("Cancel");
+
   public createAccount() {
     this.setSize(400, 400);
     this.setVisible(true);
@@ -26,8 +28,9 @@ class createAccount extends JFrame{
     // Panel password add
     createAccountPanel.add(passwordLabel);
     createAccountPanel.add(passwordEnter);
-    // Panel Button add
+    // Panel Submit and Cancel Button
     createAccountPanel.add(submit);
+    createAccountPanel.add(cancelButton);
 
     submit.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
@@ -41,6 +44,15 @@ class createAccount extends JFrame{
         homeScreen homeScreenArea = new homeScreen();
         (homeScreenArea.textArea).append("Account Created");
         homeScreenArea.screenProperties();
+      }
+    });
+
+    (this.cancelButton).addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        dispose();
+
+        homeScreen homeBack = new homeScreen();
+        homeBack.screenProperties();
       }
     });
 
