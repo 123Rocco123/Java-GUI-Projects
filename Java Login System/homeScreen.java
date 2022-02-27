@@ -20,17 +20,27 @@ class homeScreen extends JFrame{
     (this.Buttons).add(this.loginButton);
     (this.Buttons).add(this.createAccount);
 
+    // Adding buttons to the screen
     this.add(this.Buttons);
 
+    // Setting the location where the screne will initially appear.
     this.setLocation(750, 250);
-
+    // Screen basic properties
     this.setSize(400, 400);
     this.setVisible(true);
 
+    // Login Button action Listener
     (this.loginButton).addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         makeScreen newScreen = new makeScreen();
         newScreen.screenProperties();
+      }
+    });
+
+    // Create Account Button Action Listener
+    (this.createAccount).addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        System.out.println("TBD");
       }
     });
   }
