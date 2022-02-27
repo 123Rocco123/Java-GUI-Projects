@@ -15,11 +15,14 @@ class makeScreen extends JFrame {
     // Width * Height
     setSize(400, 175);
 
+    // Set the location of where the screen will be displayed initially.
+    this.setLocation(750, 350);
+
     // Submit Button Action Listener
     (this.submitButton).addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         if ((username.getText()).equals("") || (password.getText()).equals("")) {
-          username.setText("Incorrect User or Password");
+          username.setText("Enter Username and/or Password");
         }
       }
     });
