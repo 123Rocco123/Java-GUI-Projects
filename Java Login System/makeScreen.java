@@ -20,9 +20,14 @@ class makeScreen extends JFrame {
 
     // Submit Button Action Listener
     (this.submitButton).addActionListener(new ActionListener() {
+      Main variables = new Main();
+
       public void actionPerformed(ActionEvent e) {
         if ((username.getText()).equals("") || (password.getText()).equals("")) {
           username.setText("Enter Username and/or Password");
+        } else if (username.getText().equals(variables.userName) && password.getText().equals(variables.password)) {
+          System.out.println("Success");
+          dispose();
         }
       }
     });
