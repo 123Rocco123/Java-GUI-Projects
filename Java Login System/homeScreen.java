@@ -36,6 +36,8 @@ class homeScreen extends JFrame{
     // Login Button action Listener
     (this.loginButton).addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
+        dispose();
+
         makeScreen newScreen = new makeScreen();
         newScreen.screenProperties();
       }
@@ -44,6 +46,8 @@ class homeScreen extends JFrame{
     // Create Account Button Action Listener
     (this.createAccount).addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
+        dispose();
+
         createAccount createAccountObject = new createAccount();
         createAccountObject.screenProperties();
       }

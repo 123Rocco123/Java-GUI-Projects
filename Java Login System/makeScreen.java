@@ -26,8 +26,11 @@ class makeScreen extends JFrame {
         if ((username.getText()).equals("") || (password.getText()).equals("")) {
           username.setText("Enter Username and/or Password");
         } else if (username.getText().equals(variables.userName) && password.getText().equals(variables.password)) {
-          System.out.println("Success");
           dispose();
+
+          homeScreen homeScreenArea = new homeScreen();
+          (homeScreenArea.textArea).append("Account login successful!\nWelcome, " + variables.userName + "!");
+          homeScreenArea.screenProperties();
         }
       }
     });

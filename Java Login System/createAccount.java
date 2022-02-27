@@ -37,6 +37,10 @@ class createAccount extends JFrame{
         testObject.password = passwordEnter.getText();
 
         dispose();
+
+        homeScreen homeScreenArea = new homeScreen();
+        (homeScreenArea.textArea).append("Account Created");
+        homeScreenArea.screenProperties();
       }
     });
 
