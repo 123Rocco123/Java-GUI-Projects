@@ -50,6 +50,7 @@ class homeScreen extends JFrame{
   public void screenProperties() {
     this.addWindowListener (new WindowAdapter() {
       public void windowClosing(WindowEvent e) {
+        Main newObject = new Main();
         dispose();
       }
     });
