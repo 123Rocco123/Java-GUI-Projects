@@ -22,10 +22,20 @@ class homeScreen extends JFrame{
 
     this.add(this.Buttons);
 
+    this.setLocation(750, 250);
+
     this.setSize(400, 400);
     this.setVisible(true);
+
+    (this.loginButton).addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        makeScreen newScreen = new makeScreen();
+        newScreen.screenProperties();
+      }
+    });
   }
 
+  // Close Function
   public void screenProperties() {
     this.addWindowListener (new WindowAdapter() {
       public void windowClosing(WindowEvent e) {
