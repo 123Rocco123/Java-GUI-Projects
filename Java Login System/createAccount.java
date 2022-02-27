@@ -29,13 +29,23 @@ class createAccount extends JFrame{
     // Panel Button add
     createAccountPanel.add(submit);
 
+    submit.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        Main testObject = new Main();
+
+        testObject.userName = userNameEnter.getText();
+        testObject.password = passwordEnter.getText();
+
+        dispose();
+      }
+    });
+
     this.add(createAccountPanel);
   }
 
   public void screenProperties() {
     this.addWindowListener(new WindowAdapter() {
       public void windowClosing(WindowEvent e) {
-        Main testObject = new Main();
         dispose();
       }
     });
