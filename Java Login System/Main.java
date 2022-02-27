@@ -6,5 +6,6 @@ class Main {
     makeScreen newScreen = new makeScreen();
 
     newScreen.screenProperties();
+    home.screenProperties();
   }
 }
