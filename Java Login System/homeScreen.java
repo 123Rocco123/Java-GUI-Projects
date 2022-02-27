@@ -6,6 +6,9 @@ class homeScreen extends JFrame{
   Button loginButton;
   Button createAccount;
 
+  // The parameters are the rows and the columns.
+  JTextArea textArea = new JTextArea(5, 30);
+
   // Panel used to contain the buttons.
   Panel Buttons = new Panel();;
 
@@ -19,6 +22,7 @@ class homeScreen extends JFrame{
     // Adding Buttons to the panels.
     (this.Buttons).add(this.loginButton);
     (this.Buttons).add(this.createAccount);
+    (this.Buttons).add(this.textArea);
 
     // Adding buttons to the screen
     this.add(this.Buttons);

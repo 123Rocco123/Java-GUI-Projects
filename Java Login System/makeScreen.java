@@ -10,7 +10,7 @@ class makeScreen extends JFrame {
   Button submitButton = new Button("Submit");
 
   public makeScreen() {
-    setTitle("Test");
+    setTitle("Login");
     setVisible(true);
     // Width * Height
     setSize(400, 175);
@@ -40,14 +40,11 @@ class makeScreen extends JFrame {
     userNamePanel.add(this.username);
 
     // The panel and code below regards the password
-    Panel userPassword = new Panel();
     JLabel passwordLabel = new JLabel("Enter password\n");
 
     userNamePanel.add(passwordLabel);
     userNamePanel.add(this.password);
     userNamePanel.add(this.submitButton);
-
-    this.add(userPassword);
 
     this.add(userNamePanel);
   }
