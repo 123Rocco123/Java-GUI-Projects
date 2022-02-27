@@ -1,26 +1,36 @@
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 class homeScreen extends JFrame{
   Button loginButton;
   Button createAccount;
 
-  Panel loginPanel;
-  Panel createAccountPanel;
+  // Panel used to contain the buttons.
+  Panel Buttons = new Panel();;
 
   public homeScreen() {
-    this.loginPanel = new Panel();
-    this.createAccountPanel = new Panel();
+    // Set the title of the screen.
+    this.setTitle("Home Screen");
 
     this.loginButton = new Button("Login");
     this.createAccount = new Button("Create Account");
 
-    (this.loginPanel).add(this.loginButton);
-    this.add(this.createAccount);
+    // Adding Buttons to the panels.
+    (this.Buttons).add(this.loginButton);
+    (this.Buttons).add(this.createAccount);
 
-    this.add(this.loginPanel);
+    this.add(this.Buttons);
 
     this.setSize(400, 400);
     this.setVisible(true);
+  }
+
+  public void screenProperties() {
+    this.addWindowListener (new WindowAdapter() {
+      public void windowClosing(WindowEvent e) {
+        dispose();
+      }
+    });
   }
 }
