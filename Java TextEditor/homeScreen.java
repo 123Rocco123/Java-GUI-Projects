@@ -6,7 +6,7 @@ import javax.swing.*;
 class homeScreen extends JFrame {
   Panel textEditorArea = new Panel();
 
-  JButton submitButton = new JButton("Submit");
+  JButton submitButton = new JButton("Save");
   JLabel Information = new JLabel("Write the text below:");
   JTextArea textEditor = new JTextArea(30, 30);
 
@@ -20,6 +20,13 @@ class homeScreen extends JFrame {
     textEditorArea.add(textEditor);
     textEditorArea.add(submitButton);
     this.add(textEditorArea);
+
+    // submitButton Action Listener
+    submitButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        System.out.println("test");
+      }
+    });
 
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }
