@@ -4,6 +4,10 @@ import java.awt.event.*;
 import javax.swing.*;
 
 class homeScreen extends JFrame {
+  // The variable below is used to see what opened the file.
+     // If it was the "newFile" button, or the "openExistingFile" button.
+  String whatOpened;
+
   Panel textEditorArea = new Panel();
 
   JButton submitButton = new JButton("Save");
