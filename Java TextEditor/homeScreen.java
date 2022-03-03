@@ -43,14 +43,15 @@ class homeScreen extends JFrame {
         // The if condition makes it so that when the user clicks the "New File" button, when the "sumbit" button is pressed, it will either create a new file, or save work to the new file.
         if (whatOpened.equals("new")) {
           try {
+            String nameFile = nameOfFile.getText();
             // We first create the file.
-            File newFile = new File("newFile.txt");
+            File newFile = new File(nameFile + ".txt");
 
             if (newFile.createNewFile()) {
               System.out.println("File created: " + newFile.getName());
 
               try {
-                FileWriter newWriter = new FileWriter("newFile.txt");
+                FileWriter newWriter = new FileWriter(nameFile + ".txt");
                 newWriter.write(textEditor.getText());
                 newWriter.close();
               } catch (IOException error) {
@@ -59,7 +60,7 @@ class homeScreen extends JFrame {
               }
             } else {
               try {
-                FileWriter newWriter = new FileWriter("newFile.txt");
+                FileWriter newWriter = new FileWriter(nameFile + ".txt");
                 newWriter.write(textEditor.getText());
                 newWriter.close();
               } catch (IOException error) {
