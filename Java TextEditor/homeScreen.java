@@ -15,25 +15,35 @@ class homeScreen extends JFrame {
   Panel textEditorArea = new Panel();
 
   JButton submitButton = new JButton("Save");
+
+  JLabel nameOfFileLabel = new JLabel("Name of the file:");
   JLabel Information = new JLabel("Write the text below:");
+
+  JTextArea nameOfFile = new JTextArea(1, 30);
   JTextArea textEditor = new JTextArea(30, 30);
 
   public homeScreen() {
-    this.setSize(400,580);
+    this.setSize(400,630);
     this.setLocation(750, 250);
     this.setVisible(true);
     this.setTitle("Rocco's Text Editor");
 
+    textEditorArea.add(nameOfFileLabel);
+    textEditorArea.add(nameOfFile);
+
     textEditorArea.add(Information);
     textEditorArea.add(textEditor);
+
     textEditorArea.add(submitButton);
     this.add(textEditorArea);
 
     // submitButton Action Listener
     submitButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
+        // The if condition makes it so that when the user clicks the "New File" button, when the "sumbit" button is pressed, it will either create a new file, or save work to the new file.
         if (whatOpened.equals("new")) {
           try {
+            // We first create the file.
             File newFile = new File("newFile.txt");
 
             if (newFile.createNewFile()) {
