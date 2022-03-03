@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -28,7 +32,36 @@ class homeScreen extends JFrame {
     // submitButton Action Listener
     submitButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        System.out.println("test");
+        if (whatOpened.equals("new")) {
+          try {
+            File newFile = new File("newFile.txt");
+
+            if (newFile.createNewFile()) {
+              System.out.println("File created: " + newFile.getName());
+
+              try {
+                FileWriter newWriter = new FileWriter("newFile.txt");
+                newWriter.write(textEditor.getText());
+                newWriter.close();
+              } catch (IOException error) {
+                System.out.println("Error occured");
+                error.printStackTrace();
+              }
+            } else {
+              try {
+                FileWriter newWriter = new FileWriter("newFile.txt");
+                newWriter.write(textEditor.getText());
+                newWriter.close();
+              } catch (IOException error) {
+                System.out.println("Error occured");
+                error.printStackTrace();
+              }
+            }
+          } catch (IOException error) {
+            System.out.println("Error occured");
+            error.printStackTrace();
+          }
+        }
       }
     });
 
