@@ -40,8 +40,10 @@ class homeScreen extends JFrame {
     // submitButton Action Listener
     submitButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        // The if condition makes it so that when the user clicks the "New File" button, when the "sumbit" button is pressed, it will either create a new file, or save work to the new file.
-        if (whatOpened.equals("new")) {
+        if (!(nameOfFile.equals(null))) {
+          Error errorScreen = new Error();
+        } // The if condition makes it so that when the user clicks the "New File" button, when the "sumbit" button is pressed, it will either create a new file, or save work to the new file.
+        else if (whatOpened.equals("new")) {
           try {
             String nameFile = nameOfFile.getText();
             // We first create the file.
