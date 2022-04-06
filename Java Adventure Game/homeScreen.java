@@ -8,6 +8,8 @@ class homeScreen extends JFrame {
   JPanel buttonsPanel = new JPanel();
 
   JButton startGameButton = new JButton("Start Game");
+  JButton instructionsButton = new JButton("Game Instructions");
+  JButton quitGame = new JButton("Quit");
 
   public homeScreen() {
     // Aestetics of Screen
@@ -25,10 +27,20 @@ class homeScreen extends JFrame {
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     // Panel Code
-    buttonsPanel.setBounds(150, 200, 150, 200);
+       // X Y Width Height
+    buttonsPanel.setBounds(175, 325, 150, 115);
+    buttonsPanel.setLayout(null);
+    buttonsPanel.setBorder(BorderFactory.createLineBorder(Color.black));
 
     buttonsPanel.add(startGameButton);
-    startGameButton.setBounds(75, 50, 10, 25);
+    startGameButton.setBounds(25, 10, 100, 25);
+
+    buttonsPanel.add(instructionsButton);
+    instructionsButton.setBounds(25, 45, 100, 25);
+
+    buttonsPanel.add(quitGame);
+    quitGame.setBounds(25, 80, 100, 25);
+
 
     this.add(buttonsPanel);
   }
