@@ -8,7 +8,7 @@ class homeScreen extends JFrame {
   JPanel buttonsPanel = new JPanel();
 
   JButton startGameButton = new JButton("Start Game");
-  JButton instructionsButton = new JButton("Game Instructions");
+  JButton instructionsButton = new JButton("Instructions");
   JButton quitGame = new JButton("Quit");
 
   public homeScreen() {
@@ -33,17 +33,17 @@ class homeScreen extends JFrame {
     buttonsPanel.setBorder(BorderFactory.createLineBorder(Color.black));
 
     buttonsPanel.add(startGameButton);
-    startGameButton.setBounds(25, 10, 100, 25);
+    startGameButton.setBounds(22, 10, 105, 25);
 
     buttonsPanel.add(instructionsButton);
-    instructionsButton.setBounds(25, 45, 100, 25);
+    instructionsButton.setBounds(22, 45, 105, 25);
 
     buttonsPanel.add(quitGame);
-    quitGame.setBounds(25, 80, 100, 25);
+    quitGame.setBounds(22, 80, 105, 25);
 
     // Instructions Action Listner
     instructionsButton.addActionListener(new ActionListener() {
-      public static actionPerformed(ActionEvent e) {
+      public void actionPerformed(ActionEvent e) {
         instructions newInstructions = new instructions();
       }
     });
