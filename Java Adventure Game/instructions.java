@@ -19,7 +19,9 @@ class instructions extends JFrame {
     this.add(informationPanel);
     this.setResizable(false);
 
+    information.setEditable(false);
     informationPanel.setLayout(null);
     informationPanel.setBounds(10, 10, 280, 280);
+    informationPanel.setBounds(5, 30, 275, 280);
   }
 }
