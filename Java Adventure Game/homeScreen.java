@@ -41,7 +41,14 @@ class homeScreen extends JFrame {
     buttonsPanel.add(quitGame);
     quitGame.setBounds(25, 80, 100, 25);
 
-    // Close the game when the exit button has been pressed. 
+    // Instructions Action Listner
+    instructionsButton.addActionListener(new ActionListener() {
+      public static actionPerformed(ActionEvent e) {
+        instructions newInstructions = new instructions();
+      }
+    });
+
+    // Close the game when the exit button has been pressed.
     quitGame.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         System.exit(0);
