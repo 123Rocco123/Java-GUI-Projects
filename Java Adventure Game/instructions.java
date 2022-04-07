@@ -1,14 +1,19 @@
 import javax.swing.*;
 
+import java.awt.*;
 import java.awt.event.*;
 
 class instructions extends JFrame {
-  JTextArea information = new JTextArea();
+  JTextArea information = new JTextArea(5, 30);
+
+  JButton disposeButton = new JButton("Exit");
+
+  JLabel instructionsTitle = new JLabel("Instructions");
 
   JPanel informationPanel = new JPanel();
 
   public instructions() {
-    this.setLocation(750, 200);
+    this.setLocation(850, 300);
     this.setSize(300, 300);
     this.setLayout(false);
 
