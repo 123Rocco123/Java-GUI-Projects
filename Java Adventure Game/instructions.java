@@ -23,5 +23,25 @@ class instructions extends JFrame {
     informationPanel.setLayout(null);
     informationPanel.setBounds(10, 10, 280, 280);
     informationPanel.setBounds(5, 30, 275, 280);
+
+    information.append("The game is insipired off of 1980s text based\n adventure games.");
+    information.append("The way that the game works is\n that you, the player, are prompted with a decision\n from the screen, and then you can write an action.");
+
+    informationPanel.add(information);
+    information.setBounds(0, 0, 275, 180);
+
+    informationPanel.add(disposeButton);
+    disposeButton.setBounds(85, 190, 100, 25);
+
+    this.add(instructionsTitle);
+    instructionsTitle.setBounds(110, 2, 100, 25);
+
+    disposeButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        dispose();
+      }
+    });
+
+    this.setVisible(true);
   }
 }
