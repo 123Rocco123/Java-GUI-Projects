@@ -21,7 +21,6 @@ class instructions extends JFrame {
 
     information.setEditable(false);
     informationPanel.setLayout(null);
-    informationPanel.setBounds(10, 10, 280, 280);
     informationPanel.setBounds(5, 30, 275, 280);
 
     information.append("The game is insipired off of 1980s text based\n adventure games.");
