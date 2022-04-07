@@ -15,7 +15,9 @@ class instructions extends JFrame {
   public instructions() {
     this.setLocation(850, 300);
     this.setSize(300, 300);
-    this.setLayout(false);
+    this.setLayout(null);
+    this.add(informationPanel);
+    this.setResizable(false);
 
     informationPanel.setLayout(null);
     informationPanel.setBounds(10, 10, 280, 280);
