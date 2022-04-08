@@ -7,6 +7,7 @@ import java.awt.event.*;
 class game extends JFrame implements KeyListener {
   public game() {
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     // This makes it so that this JFrame will be able to listen to the keys on the keyboard.
     this.addKeyListener(this);
 
@@ -22,10 +23,23 @@ class game extends JFrame implements KeyListener {
   public void keyTyped(KeyEvent e) {}
 
   @Override
-  public void keyPressed(KeyEvent e) {}
+  public void keyPressed(KeyEvent e) {
+    switch(e.getKeyCode()) {
+      case 27:
+        optionsScreen optionsOpen = new optionsScreen();
+
+        optionsOpen.addWindowListener(new WindowAdapter() {
+        @Override
+          public void windowClosing (WindowEvent e) {
+            System.out.println("test");
+          }
+        });
+
+        //this.setVisible(false);
+        break;
+    }
+  }
 
   @Override
-  public void keyReleased(KeyEvent e) {
-    
-  }
+  public void keyReleased(KeyEvent e) {}
 }
