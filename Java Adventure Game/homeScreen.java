@@ -41,6 +41,14 @@ class homeScreen extends JFrame {
     buttonsPanel.add(quitGame);
     quitGame.setBounds(22, 80, 105, 25);
 
+    // Start Game Action Listener
+    startGameButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        dispose();
+        game newGameStart = new game();
+      }
+    });
+
     // Instructions Action Listner
     instructionsButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
