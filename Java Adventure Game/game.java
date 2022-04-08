@@ -31,12 +31,11 @@ class game implements KeyListener {
         optionsScreen optionsOpen = new optionsScreen();
 
         optionsOpen.addWindowListener(new WindowAdapter() {
-        @Override
+          @Override
           public void windowClosing (WindowEvent e) {
-            System.out.println("test");
+            System.out.println(optionsOpen.resolution123);
           }
         });
-
         //this.setVisible(false);
         break;
     }
