@@ -2,10 +2,13 @@
 
 import javax.swing.*;
 
+import java.awt.*;
 import java.awt.event.*;
 
 class game implements KeyListener {
-  JFrame frame = new JFrame("test");
+  JFrame frame = new JFrame("Indiana Jones and Golden Fleece");
+
+  Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
   public game() {
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,10 +36,23 @@ class game implements KeyListener {
         optionsOpen.addWindowListener(new WindowAdapter() {
           @Override
           public void windowClosing (WindowEvent e) {
-            System.out.println(optionsOpen.resolution123);
+            switch(optionsOpen.resolution123) {
+              case ("Fullscreen"):
+                frame.setSize(screenSize.width, screenSize.height);
+                frame.setLocation(0,0);
+                break;
+              case ("Programmers Choice"):
+                frame.setSize(500, 500);
+                frame.setLocation(750, screenSize.height / 4);
+                break;
+              default:
+                break;
+            }
+            frame.setVisible(true);
           }
         });
-        //this.setVisible(false);
+
+        frame.setVisible(false);
         break;
     }
   }
