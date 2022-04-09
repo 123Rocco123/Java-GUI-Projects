@@ -14,7 +14,7 @@ class optionsScreen extends JFrame {
 
   public optionsScreen() {
     this.setSize(300, 300);
-    this.setLocation(750, 200);
+    this.setLocation(850, 300);
     this.setLayout(null);
     this.add(optionsPanel);
     this.setTitle("Game Options");
