@@ -8,6 +8,7 @@ import java.awt.event.*;
 class game implements KeyListener {
   JFrame frame = new JFrame("Indiana Jones and Golden Fleece");
 
+  JPanel gameScreen = new JPanel();
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
   public game() {
@@ -22,14 +23,20 @@ class game implements KeyListener {
     frame.setLocation(750, 200);
 
     frame.setVisible(true);
+
+    gameScreen.setBounds(40, 10, 400, 300);
+    gameScreen.setBorder(BorderFactory.createLineBorder(Color.black));
+    frame.add(gameScreen);
   }
 
   @Override
   public void keyTyped(KeyEvent e) {}
 
+  // The function below is used to check if the user has pressed the esc key or not.
   @Override
   public void keyPressed(KeyEvent e) {
     switch(e.getKeyCode()) {
+      // esc key condition
       case 27:
         optionsScreen optionsOpen = new optionsScreen();
 
