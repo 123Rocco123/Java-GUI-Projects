@@ -10,6 +10,10 @@ class game implements KeyListener {
 
   JPanel gameScreen = new JPanel();
   JPanel playerFace = new JPanel();
+  JPanel playerInput = new JPanel();
+
+  JTextArea textPlayerInput = new JTextArea();
+
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
   public game() {
@@ -32,6 +36,15 @@ class game implements KeyListener {
     playerFace.setBounds(40, 320, 100, 100);
     playerFace.setBorder(BorderFactory.createLineBorder(Color.black));
     frame.add(playerFace);
+
+    playerInput.setBounds(150, 320, 290, 100);
+    playerInput.setBorder(BorderFactory.createLineBorder(Color.black));
+
+    playerInput.setLayout(null);
+    textPlayerInput.setBounds(1, 1, 288, 98);
+    playerInput.add(textPlayerInput);
+
+    frame.add(playerInput);
   }
 
   @Override
