@@ -9,6 +9,7 @@ class game implements KeyListener {
   JFrame frame = new JFrame("Indiana Jones and Golden Fleece");
 
   JPanel gameScreen = new JPanel();
+  JPanel playerFace = new JPanel();
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
   public game() {
@@ -27,6 +28,10 @@ class game implements KeyListener {
     gameScreen.setBounds(40, 10, 400, 300);
     gameScreen.setBorder(BorderFactory.createLineBorder(Color.black));
     frame.add(gameScreen);
+
+    playerFace.setBounds(40, 320, 100, 100);
+    playerFace.setBorder(BorderFactory.createLineBorder(Color.black));
+    frame.add(playerFace);
   }
 
   @Override
