@@ -5,12 +5,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-class game implements KeyListener {
+class game {
   JFrame frame = new JFrame("Indiana Jones and Golden Fleece");
 
   JPanel gameScreen = new JPanel();
   JPanel playerFace = new JPanel();
   JPanel playerInput = new JPanel();
+
+  JButton optionsButton = new JButton("Options");
 
   JTextArea textPlayerInput = new JTextArea();
 
@@ -18,9 +20,6 @@ class game implements KeyListener {
 
   public game() {
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-    // This makes it so that this JFrame will be able to listen to the keys on the keyboard.
-    frame.addKeyListener(this);
 
     frame.setSize(500, 500);
     frame.setResizable(false);
@@ -45,43 +44,37 @@ class game implements KeyListener {
     playerInput.add(textPlayerInput);
 
     frame.add(playerInput);
-  }
 
-  @Override
-  public void keyTyped(KeyEvent e) {}
+    optionsButton.setBounds(200, 425, 100, 25);
+    frame.add(optionsButton);
 
-  // The function below is used to check if the user has pressed the esc key or not.
-  @Override
-  public void keyPressed(KeyEvent e) {
-    switch(e.getKeyCode()) {
-      // esc key condition
-      case 27:
-        optionsScreen optionsOpen = new optionsScreen();
+    // The function below is used to check if the user has pressed the esc key or not.
+    optionsButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+          optionsScreen optionsOpen = new optionsScreen();
 
-        optionsOpen.addWindowListener(new WindowAdapter() {
-          @Override
-          public void windowClosing (WindowEvent e) {
-            switch(optionsOpen.resolution123) {
-              case ("Fullscreen"):
-                frame.setSize(screenSize.width, screenSize.height);
-                frame.setLocation(0,0);
-                break;
-              case ("Programmers Choice"):
-                frame.setSize(500, 500);
-                frame.setLocation(750, screenSize.height / 4);
-                break;
-              default:
-                break;
+          optionsOpen.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+              frame.setVisible(true);
             }
-            frame.setVisible(true);
-          }
-        });
 
-        frame.setVisible(false);
-        break;
-    }
+            public void windowClosed(WindowEvent e) {
+              switch(optionsOpen.resolution123) {
+                case ("Fullscreen"):
+                  frame.setSize(screenSize.width, screenSize.height);
+                  frame.setLocation(0,0);
+                  break;
+                case ("Programmers Choice"):
+                  frame.setSize(500, 500);
+                  frame.setLocation(750, screenSize.height / 4);
+                  break;
+              }
+              frame.setVisible(true);
+            }
+          });
+
+          frame.setVisible(false);
+      }
+    });
   }
-
-  @Override
-  public void keyReleased(KeyEvent e) {}
 }
