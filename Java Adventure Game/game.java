@@ -14,7 +14,10 @@ class game {
 
   JButton optionsButton = new JButton("Options");
 
-  JTextArea textPlayerInput = new JTextArea();
+  // These buttons are used to give players options
+  JButton actionOne = new JButton();
+  JButton actionTwo = new JButton();
+  JButton actionThree = new JButton();
 
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
@@ -40,8 +43,14 @@ class game {
     playerInput.setBorder(BorderFactory.createLineBorder(Color.black));
 
     playerInput.setLayout(null);
-    textPlayerInput.setBounds(1, 1, 288, 98);
-    playerInput.add(textPlayerInput);
+
+    actionOne.setBounds(5, 7, 280, 25);
+    actionTwo.setBounds(5, 37, 280, 25);
+    actionThree.setBounds(5, 67, 280, 25);
+
+    playerInput.add(actionOne);
+    playerInput.add(actionTwo);
+    playerInput.add(actionThree);
 
     frame.add(playerInput);
 
