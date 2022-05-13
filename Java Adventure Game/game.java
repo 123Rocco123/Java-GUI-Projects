@@ -16,6 +16,8 @@ class game {
      // JLabel can store both strings and images.
   JLabel imagelabel = new JLabel();
 
+  JTextArea storyOutputScreen = new JTextArea();
+
   JButton optionsButton = new JButton("Options");
 
   // These buttons are used to give players options
@@ -39,6 +41,11 @@ class game {
     gameScreen.setBorder(BorderFactory.createLineBorder(Color.black));
     gameScreen.setBackground(Color.black);
     gameScreen.setLayout(null);
+
+    storyOutputScreen.setBounds(6,6, 388, 288);
+    storyOutputScreen.setBackground(Color.WHITE);
+    storyOutputScreen.setEditable(false);
+
     gameScreen.add(storyOutputScreen);
     frame.add(gameScreen);
 
@@ -47,7 +54,6 @@ class game {
     playerFace.setBackground(Color.green);
 
     // Set the imageLabel to the image of the player.
-    imagelabel.setIcon(new ImageIcon("C:\\Users\\dodob\\OneDrive\\Desktop\\GitHubFiles\\Java-GUI-Projects\\Java Adventure Game\\viego.jpg"));
     imagelabel.setIcon(new ImageIcon("C:\\Users\\dodob\\OneDrive\\Desktop\\GitHubFiles\\Java-GUI-Projects\\Java Adventure Game\\viego.png"));
     playerFace.add(imagelabel);
 
