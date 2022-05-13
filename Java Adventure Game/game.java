@@ -20,6 +20,8 @@ class game {
 
   JButton optionsButton = new JButton("Options");
 
+  JButton exitGame = new JButton("Exit Game");
+
   // These buttons are used to give players options
   JButton actionOne = new JButton();
   JButton actionTwo = new JButton();
@@ -76,6 +78,15 @@ class game {
 
     optionsButton.setBounds(200, 425, 100, 25);
     frame.add(optionsButton);
+
+    exitGame.setBounds(310, 425, 100, 25);
+    frame.add(exitGame);
+
+    exitGame.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        System.exit(0);
+      }
+    });
 
     // The function below is used to check if the user has pressed the esc key or not.
     optionsButton.addActionListener(new ActionListener() {
