@@ -41,6 +41,7 @@ class game {
 
     playerFace.setBounds(40, 320, 100, 100);
     playerFace.setBorder(BorderFactory.createLineBorder(Color.black));
+    playerFace.setBackground(Color.green);
 
     // Set the imageLabel to the image of the player.
     imagelabel.setIcon(new ImageIcon("C:\\Users\\dodob\\OneDrive\\Desktop\\GitHubFiles\\Java-GUI-Projects\\Java Adventure Game\\viego.jpg"));
