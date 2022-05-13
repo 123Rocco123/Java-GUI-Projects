@@ -37,6 +37,9 @@ class game {
 
     gameScreen.setBounds(40, 10, 400, 300);
     gameScreen.setBorder(BorderFactory.createLineBorder(Color.black));
+    gameScreen.setBackground(Color.black);
+    gameScreen.setLayout(null);
+    gameScreen.add(storyOutputScreen);
     frame.add(gameScreen);
 
     playerFace.setBounds(40, 320, 100, 100);
