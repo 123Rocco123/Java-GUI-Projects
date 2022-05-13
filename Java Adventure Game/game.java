@@ -44,6 +44,7 @@ class game {
 
     // Set the imageLabel to the image of the player.
     imagelabel.setIcon(new ImageIcon("C:\\Users\\dodob\\OneDrive\\Desktop\\GitHubFiles\\Java-GUI-Projects\\Java Adventure Game\\viego.jpg"));
+    imagelabel.setIcon(new ImageIcon("C:\\Users\\dodob\\OneDrive\\Desktop\\GitHubFiles\\Java-GUI-Projects\\Java Adventure Game\\viego.png"));
     playerFace.add(imagelabel);
 
     frame.add(playerFace);
