@@ -47,16 +47,17 @@ class homeScreen extends JFrame {
     textEditorArea.add(submitButton);
     this.add(textEditorArea);
 
+    // If condition used to see if the user wants to open an existing file or not.
     if (whatOpened.equals("existing")) {
-    try {
-      Scanner fileReader = new Scanner(savedFile);
+      try {
+        Scanner fileReader = new Scanner(savedFile);
 
-      while(fileReader.hasNextLine()) {
-        textEditor.append(fileReader.nextLine() + "\n");
+        while(fileReader.hasNextLine()) {
+          textEditor.append(fileReader.nextLine() + "\n");
+        }
+      } catch (FileNotFoundException e) {
+        System.out.println(e);
       }
-    } catch (FileNotFoundException e) {
-      System.out.println(e);
-    }
    }
 
     // submitButton Action Listener
