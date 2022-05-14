@@ -20,6 +20,7 @@ class Login extends JFrame {
     this.setLocation(750, 250);
     this.setVisible(true);
     this.setTitle("Home Screen");
+    this.setResizable(false);
 
     information.setEditable(false);
 

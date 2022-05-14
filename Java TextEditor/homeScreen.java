@@ -31,6 +31,7 @@ class homeScreen extends JFrame {
     this.setSize(400,630);
     this.setLocation(750, 250);
     this.setVisible(true);
+    this.setResizable(false);
     this.setTitle("Rocco's Text Editor");
     this.whatOpened = newOrOld;
     this.savedFile = fileToOpen;
