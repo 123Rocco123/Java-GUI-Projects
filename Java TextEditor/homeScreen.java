@@ -28,6 +28,9 @@ class homeScreen extends JFrame {
     this.setVisible(true);
     this.setTitle("Rocco's Text Editor");
 
+    // Used so that the line automatically uses a "\n" when it gets to the edge of the textarea.
+    textEditor.setLineWrap(true);
+
     textEditorArea.add(nameOfFileLabel);
     textEditorArea.add(nameOfFile);
 
