@@ -1,7 +1,10 @@
+import java.io.File;
+
 import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
 
 class Login extends JFrame {
   JPanel ButtonsPanel = new JPanel();
@@ -24,8 +27,25 @@ class Login extends JFrame {
     openExistingFile.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         dispose();
-        homeScreen mainScreen = new homeScreen();
-        mainScreen.whatOpened = "existing";
+        // Used to create an object of the fileChooser Java Class.
+        JFileChooser fileChooser = new JFileChooser();
+
+        // The reason that we add "." is because of the fact that it will make it so that the current directory is where the project is store is opened.
+        fileChooser.setCurrentDirectory(new File("."));
+
+        // Used to open a window selecting a file to open.
+           // The reason that we store it is to see if the user has selected a file or not.
+           // If a file has been selected, then the value of the response variable will be "1" or else it will be "0".
+        int response = fileChooser.showOpenDialog(null);
+
+        // The "APPROVE_OPTION" is used instead of having to
+        if (response == JFileChooser.APPROVE_OPTION) {
+          File fileToOpen = new File(fileChooser.getSelectedFile().getAbsolutePath());
+
+          homeScreen mainScreen = new homeScreen("existing", fileToOpen);
+
+          mainScreen.savedFile = fileToOpen;
+        }
       }
     });
 
@@ -33,7 +53,7 @@ class Login extends JFrame {
     newFile.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         dispose();
-        homeScreen mainScreen = new homeScreen();
+        homeScreen mainScreen = new homeScreen("new", null);
         mainScreen.whatOpened = "new";
       }
     });
