@@ -8,8 +8,11 @@ import javax.swing.filechooser.FileSystemView;
 
 class Login extends JFrame {
   JPanel ButtonsPanel = new JPanel();
+
   JButton newFile = new JButton("New File");
   JButton openExistingFile = new JButton("Open File");
+  JButton quitProgram = new JButton("Close");
+
   JTextArea information = new JTextArea("Hello,\n\nMy name is Rocco Petruccio, and this is the first \"app\" \nwhich I've created.\n\nI hope that you enjoy it.", 10, 30);
 
   public Login() {
@@ -18,9 +21,12 @@ class Login extends JFrame {
     this.setVisible(true);
     this.setTitle("Home Screen");
 
+    information.setEditable(false);
+
     ButtonsPanel.add(information);
     ButtonsPanel.add(newFile);
     ButtonsPanel.add(openExistingFile);
+    ButtonsPanel.add(quitProgram);
     this.add(ButtonsPanel);
 
     // The code below is used to dipose of the current window, when the "Open File" button is pressed.
@@ -55,6 +61,12 @@ class Login extends JFrame {
         dispose();
         homeScreen mainScreen = new homeScreen("new", null);
         mainScreen.whatOpened = "new";
+      }
+    });
+
+    quitProgram.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        System.exit(0);
       }
     });
 
