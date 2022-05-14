@@ -1,11 +1,14 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.FileNotFoundException;
 
 import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
+
+import java.util.Scanner;
 
 class homeScreen extends JFrame {
   // The variable below is used to see what opened the file.
@@ -22,8 +25,8 @@ class homeScreen extends JFrame {
   JTextArea nameOfFile = new JTextArea(1, 30);
   JTextArea textEditor = new JTextArea(30, 30);
 
-  public homeScreen() {
   File savedFile;
+
   public homeScreen(String newOrOld, File fileToOpen) {
     this.setSize(400,630);
     this.setLocation(750, 250);
@@ -43,6 +46,18 @@ class homeScreen extends JFrame {
 
     textEditorArea.add(submitButton);
     this.add(textEditorArea);
+
+    if (whatOpened.equals("existing")) {
+    try {
+      Scanner fileReader = new Scanner(savedFile);
+
+      while(fileReader.hasNextLine()) {
+        textEditor.append(fileReader.nextLine() + "\n");
+      }
+    } catch (FileNotFoundException e) {
+      System.out.println(e);
+    }
+   }
 
     // submitButton Action Listener
     submitButton.addActionListener(new ActionListener() {
