@@ -23,10 +23,14 @@ class homeScreen extends JFrame {
   JTextArea textEditor = new JTextArea(30, 30);
 
   public homeScreen() {
+  File savedFile;
+  public homeScreen(String newOrOld, File fileToOpen) {
     this.setSize(400,630);
     this.setLocation(750, 250);
     this.setVisible(true);
     this.setTitle("Rocco's Text Editor");
+    this.whatOpened = newOrOld;
+    this.savedFile = fileToOpen;
 
     // Used so that the line automatically uses a "\n" when it gets to the edge of the textarea.
     textEditor.setLineWrap(true);
