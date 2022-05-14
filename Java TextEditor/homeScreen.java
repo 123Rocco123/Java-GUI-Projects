@@ -18,6 +18,7 @@ class homeScreen extends JFrame {
   Panel textEditorArea = new Panel();
 
   JButton submitButton = new JButton("Save");
+  JButton newSubmitButton = new JButton("Save As");
 
   JLabel nameOfFileLabel = new JLabel("Name of the file:");
   JLabel Information = new JLabel("Write the text below:");
@@ -46,10 +47,17 @@ class homeScreen extends JFrame {
     textEditorArea.add(textEditor);
 
     textEditorArea.add(submitButton);
+    textEditorArea.add(newSubmitButton);
+
     this.add(textEditorArea);
 
     // If condition used to see if the user wants to open an existing file or not.
     if (whatOpened.equals("existing")) {
+      textEditorArea.remove(nameOfFileLabel);
+      textEditorArea.remove(nameOfFile);
+
+      this.repaint();
+
       try {
         Scanner fileReader = new Scanner(savedFile);
 
