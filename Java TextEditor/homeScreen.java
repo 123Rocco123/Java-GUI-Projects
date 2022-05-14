@@ -62,40 +62,49 @@ class homeScreen extends JFrame {
     // submitButton Action Listener
     submitButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        if ((nameOfFile.getText()).equals("") || (nameOfFile.getText()).length() > 20) {
-          Error errorScreen = new Error();
-        } // The if condition makes it so that when the user clicks the "New File" button, when the "sumbit" button is pressed, it will either create a new file, or save work to the new file.
-        else if (whatOpened.equals("new")) {
-          try {
-            String nameFile = nameOfFile.getText();
-            // We first create the file.
-            File newFile = new File(nameFile + ".txt");
+        if (whatOpened.equals("new")) {
+          if ((nameOfFile.getText()).equals("") || (nameOfFile.getText()).length() > 20) {
+            Error errorScreen = new Error();
+          } // The if condition makes it so that when the user clicks the "New File" button, when the "sumbit" button is pressed, it will either create a new file, or save work to the new file.
+            try {
+              String nameFile = nameOfFile.getText();
+              // We first create the file.
+              File newFile = new File(nameFile + ".txt");
 
-            if (newFile.createNewFile()) {
-              System.out.println("File created: " + newFile.getName());
+              if (newFile.createNewFile()) {
+                System.out.println("File created: " + newFile.getName());
 
-              try {
-                FileWriter newWriter = new FileWriter(nameFile + ".txt");
-                newWriter.write(textEditor.getText());
-                newWriter.close();
-              } catch (IOException error) {
-                System.out.println("Error occured");
-                error.printStackTrace();
+                try {
+                  FileWriter newWriter = new FileWriter(nameFile + ".txt");
+                  newWriter.write(textEditor.getText());
+                  newWriter.close();
+                } catch (IOException error) {
+                  System.out.println("Error occured");
+                  error.printStackTrace();
+                }
+              } else {
+                try {
+                  FileWriter newWriter = new FileWriter(nameFile + ".txt");
+                  newWriter.write(textEditor.getText());
+                  newWriter.close();
+                } catch (IOException error) {
+                  System.out.println("Error occured");
+                  error.printStackTrace();
+                }
               }
-            } else {
-              try {
-                FileWriter newWriter = new FileWriter(nameFile + ".txt");
-                newWriter.write(textEditor.getText());
-                newWriter.close();
-              } catch (IOException error) {
-                System.out.println("Error occured");
-                error.printStackTrace();
-              }
+            } catch (IOException error) {
+              System.out.println("Error occured");
+              error.printStackTrace();
             }
-          } catch (IOException error) {
-            System.out.println("Error occured");
-            error.printStackTrace();
-          }
+        } else if (whatOpened.equals("existing")) {
+            try {
+              FileWriter newWriter = new FileWriter(savedFile);
+
+              newWriter.write(textEditor.getText());
+              newWriter.close();
+            } catch (IOException error) {
+              System.out.println("Error occured");
+            }
         }
       }
     });
