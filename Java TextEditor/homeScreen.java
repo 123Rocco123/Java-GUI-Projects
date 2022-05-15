@@ -29,7 +29,11 @@ class homeScreen extends JFrame {
 
   File savedFile;
 
-  Boolean newDirectorySave = false;
+  // Add a function so that you can change the default save function to the current directory that the user selected.
+  Boolean nonDefaultFileLocation = false;
+
+  String newDirectory;
+  String fileName;
 
   public homeScreen(String newOrOld, File fileToOpen) {
     this.setSize(400,630);
@@ -56,6 +60,8 @@ class homeScreen extends JFrame {
 
     // If condition used to see if the user wants to open an existing file or not.
     if (whatOpened.equals("existing")) {
+      nonDefaultFileLocation = true;
+
       textEditorArea.remove(nameOfFileLabel);
       textEditorArea.remove(nameOfFile);
 
@@ -87,10 +93,9 @@ class homeScreen extends JFrame {
             // We save the directory and user file name, and thnen remove the file name from the directory.
                // This is so that we can then write the new file to the the place that the user specified with the name that they specified with the FileWriter.
             String saveDirectory = fileChooser.getSelectedFile().getAbsolutePath();
-            String fileName = fileChooser.getSelectedFile().getName();
+            fileName = fileChooser.getSelectedFile().getName();
 
-            String newDirectory = saveDirectory.replace(fileName, "");
-            System.out.println(saveDirectory);
+            newDirectory = saveDirectory.replace(fileName, "");
 
             try {
               FileWriter fw = new FileWriter(new File(newDirectory, (fileName + ".txt")));
