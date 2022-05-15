@@ -29,7 +29,6 @@ class homeScreen extends JFrame {
 
   File savedFile;
 
-  // Add a function so that you can change the default save function to the current directory that the user selected.
   Boolean nonDefaultFileLocation = false;
 
   String newDirectory;
@@ -147,14 +146,18 @@ class homeScreen extends JFrame {
               error.printStackTrace();
             }
         } else if (whatOpened.equals("existing")) {
-            try {
-              FileWriter newWriter = new FileWriter(savedFile);
+            // This is in case the file is located inside of the project directory.
+            if (nonDefaultFileLocation == false) {
+              try {
+                FileWriter newWriter = new FileWriter(savedFile);
 
-              newWriter.write(textEditor.getText());
-              newWriter.close();
-            } catch (IOException error) {
-              System.out.println("Error occured");
-            }
+                newWriter.write(textEditor.getText());
+                newWriter.close();
+              } catch (IOException error) {
+                System.out.println("Error occured");
+              }
+          } else {
+              try {
         }
       }
     });
