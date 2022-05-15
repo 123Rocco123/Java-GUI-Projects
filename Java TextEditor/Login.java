@@ -36,6 +36,7 @@ class Login extends JFrame {
         dispose();
         // Used to create an object of the fileChooser Java Class.
         JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Choose File");
 
         // The reason that we add "." is because of the fact that it will make it so that the current directory is where the project is store is opened.
         fileChooser.setCurrentDirectory(new File("."));
