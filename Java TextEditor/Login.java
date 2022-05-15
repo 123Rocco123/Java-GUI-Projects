@@ -50,8 +50,6 @@ class Login extends JFrame {
           File fileToOpen = new File(fileChooser.getSelectedFile().getAbsolutePath());
 
           homeScreen mainScreen = new homeScreen("existing", fileToOpen);
-
-          mainScreen.savedFile = fileToOpen;
         }
       }
     });
