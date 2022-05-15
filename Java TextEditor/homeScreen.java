@@ -61,8 +61,6 @@ class homeScreen extends JFrame {
 
     // If condition used to see if the user wants to open an existing file or not.
     if (whatOpened.equals("existing")) {
-      nonDefaultFileLocation = true;
-
       textEditorArea.remove(nameOfFileLabel);
       textEditorArea.remove(nameOfFile);
 
@@ -82,6 +80,7 @@ class homeScreen extends JFrame {
    // Used for the Save As button
    newSubmitButton.addActionListener(new ActionListener() {
      public void actionPerformed(ActionEvent e) {
+        nonDefaultFileLocation = true;
         // The File Chooser is used to choose the location and place where to save the file.
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Save File");
