@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
+import javax.swing.filechooser.*;
 
 import java.util.Scanner;
 
@@ -27,6 +28,8 @@ class homeScreen extends JFrame {
   JTextArea textEditor = new JTextArea(30, 30);
 
   File savedFile;
+
+  Boolean newDirectorySave = false;
 
   public homeScreen(String newOrOld, File fileToOpen) {
     this.setSize(400,630);
@@ -68,6 +71,38 @@ class homeScreen extends JFrame {
         System.out.println(e);
       }
    }
+
+   // Used for the Save As button
+   newSubmitButton.addActionListener(new ActionListener() {
+     public void actionPerformed(ActionEvent e) {
+        // The File Chooser is used to choose the location and place where to save the file.
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Save File");
+
+        int userSelection = fileChooser.showSaveDialog(null);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            File fileToSave = fileChooser.getSelectedFile();
+
+            // We save the directory and user file name, and thnen remove the file name from the directory.
+               // This is so that we can then write the new file to the the place that the user specified with the name that they specified with the FileWriter.
+            String saveDirectory = fileChooser.getSelectedFile().getAbsolutePath();
+            String fileName = fileChooser.getSelectedFile().getName();
+
+            String newDirectory = saveDirectory.replace(fileName, "");
+            System.out.println(saveDirectory);
+
+            try {
+              FileWriter fw = new FileWriter(new File(newDirectory, (fileName + ".txt")));
+
+              fw.write(textEditor.getText());
+              fw.close();
+            } catch (IOException ex) {
+              System.out.println(ex);
+            }
+        }
+     }
+   });
 
     // submitButton Action Listener
     submitButton.addActionListener(new ActionListener() {
