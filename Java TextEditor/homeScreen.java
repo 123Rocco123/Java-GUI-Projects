@@ -27,6 +27,8 @@ class homeScreen extends JFrame {
   JTextArea nameOfFile = new JTextArea(1, 30);
   JTextArea textEditor = new JTextArea(30, 30);
 
+  JScrollPane textEditorScrollable = new JScrollPane(textEditor);
+
   File savedFile;
 
   Boolean nonDefaultFileLocation = false;
@@ -50,7 +52,7 @@ class homeScreen extends JFrame {
     textEditorArea.add(nameOfFile);
 
     textEditorArea.add(Information);
-    textEditorArea.add(textEditor);
+    textEditorArea.add(textEditorScrollable);
 
     textEditorArea.add(submitButton);
     textEditorArea.add(newSubmitButton);
