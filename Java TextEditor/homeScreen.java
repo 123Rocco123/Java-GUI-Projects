@@ -158,6 +158,14 @@ class homeScreen extends JFrame {
               }
           } else {
               try {
+                FileWriter fw = new FileWriter(new File(newDirectory, (fileName + ".txt")));
+
+                fw.write(textEditor.getText());
+                fw.close();
+              } catch (IOException error) {
+                System.out.println("Error occured");
+              }
+          }
         }
       }
     });
