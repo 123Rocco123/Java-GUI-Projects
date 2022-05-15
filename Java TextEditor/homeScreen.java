@@ -15,6 +15,10 @@ class homeScreen extends JFrame {
   // The variable below is used to see what opened the file.
      // If it was the "newFile" button, or the "openExistingFile" button.
   String whatOpened;
+  // "newDirectory" contains the directory that the user specified.
+  String newDirectory;
+  // "fileName" contains the name that the textfile will have.
+  String fileName;
 
   Panel textEditorArea = new Panel();
 
@@ -27,14 +31,12 @@ class homeScreen extends JFrame {
   JTextArea nameOfFile = new JTextArea(1, 30);
   JTextArea textEditor = new JTextArea(30, 30);
 
+  // Used to make the textEditor scrollable so that the users can write as much text as they want.
   JScrollPane textEditorScrollable = new JScrollPane(textEditor);
 
   File savedFile;
 
   Boolean nonDefaultFileLocation = false;
-
-  String newDirectory;
-  String fileName;
 
   public homeScreen(String newOrOld, File fileToOpen) {
     this.setSize(400,630);
@@ -60,6 +62,7 @@ class homeScreen extends JFrame {
     this.add(textEditorArea);
 
     // If condition used to see if the user wants to open an existing file or not.
+       // Used to format the text editor, and output the text to it. 
     if (whatOpened.equals("existing")) {
       textEditorArea.remove(nameOfFileLabel);
       textEditorArea.remove(nameOfFile);
