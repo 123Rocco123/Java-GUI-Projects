@@ -66,7 +66,7 @@ class game {
     playerFace.setBackground(Color.green);
 
     // Set the imageLabel to the image of the player.
-    imagelabel.setIcon(new ImageIcon("C:\\Users\\dodob\\OneDrive\\Desktop\\GitHubFiles\\Java-GUI-Projects\\Java Adventure Game\\viego.png"));
+    imagelabel.setIcon(new ImageIcon(".\\Player Pictures\\healthy.png"));
     playerFace.add(imagelabel);
 
     frame.add(playerFace);
@@ -127,7 +127,6 @@ class game {
       }
     });
 
-
     try {
       // Main Algorithm which plays the story out to the text field
       Scanner fileReader = new Scanner(defaultFile);
@@ -135,8 +134,7 @@ class game {
       while(fileReader.hasNextLine()) {
         storyOutputScreen.append(fileReader.nextLine() + "\n");
       }
-    } catch (FileNotFoundException e) {
-      System.out.println(e);
-    }
+      storyOutputScreen.append("____________________________________________________");
+    } catch (FileNotFoundException e) {}
   }
 }
