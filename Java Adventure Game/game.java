@@ -53,11 +53,12 @@ class game {
     gameScreen.setBackground(Color.black);
     gameScreen.setLayout(null);
 
-    storyOutputScreen.setBounds(6,6, 388, 288);
-    storyOutputScreen.setBackground(Color.WHITE);
+    scrollablePane.setBounds(6,6, 388, 288);
+    scrollablePane.setBackground(Color.WHITE);
     storyOutputScreen.setEditable(false);
+    storyOutputScreen.setLineWrap(true);
 
-    gameScreen.add(storyOutputScreen);
+    gameScreen.add(scrollablePane);
     frame.add(gameScreen);
 
     playerFace.setBounds(40, 320, 100, 100);
