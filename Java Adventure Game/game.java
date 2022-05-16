@@ -13,11 +13,11 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 class game {
-  JFrame frame = new JFrame("Indiana Jones and Golden Fleece");
+  Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-  JPanel gameScreen = new JPanel();
-  JPanel playerFace = new JPanel();
-  JPanel playerInput = new JPanel();
+  File defaultFile = new File(".\\Story\\GameFileScript.txt");
+
+  JFrame frame = new JFrame("Indiana Jones and Golden Fleece");
 
   // Used to contain the background image depicting the player.
      // JLabel can store both strings and images.
@@ -25,16 +25,18 @@ class game {
 
   JTextArea storyOutputScreen = new JTextArea();
 
+  JScrollPane scrollablePane = new JScrollPane(storyOutputScreen);
+
+  JPanel gameScreen = new JPanel();
+  JPanel playerFace = new JPanel();
+  JPanel playerInput = new JPanel();
+
   JButton optionsButton = new JButton("Options");
-
   JButton exitGame = new JButton("Exit Game");
-
   // These buttons are used to give players options
   JButton actionOne = new JButton();
   JButton actionTwo = new JButton();
   JButton actionThree = new JButton();
-
-  Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
   public game() {
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
