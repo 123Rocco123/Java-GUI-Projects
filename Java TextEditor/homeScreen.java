@@ -24,6 +24,7 @@ class homeScreen extends JFrame {
 
   JButton submitButton = new JButton("Save");
   JButton newSubmitButton = new JButton("Save As");
+  JButton saveAndExit = new JButton("Save and Exit");
 
   JLabel nameOfFileLabel = new JLabel("Name of the file:");
   JLabel Information = new JLabel("Write the text below:");
@@ -58,6 +59,7 @@ class homeScreen extends JFrame {
 
     textEditorArea.add(submitButton);
     textEditorArea.add(newSubmitButton);
+    textEditorArea.add(saveAndExit);
 
     this.add(textEditorArea);
 
@@ -166,6 +168,76 @@ class homeScreen extends JFrame {
 
                 fw.write(textEditor.getText());
                 fw.close();
+              } catch (IOException error) {
+                System.out.println("Error occured");
+              }
+          }
+        }
+      }
+    });
+
+    // Save and Exit Button
+    saveAndExit.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        if (whatOpened.equals("new")) {
+          if ((nameOfFile.getText()).equals("") || (nameOfFile.getText()).length() > 20) {
+            Error errorScreen = new Error();
+          } // The if condition makes it so that when the user clicks the "New File" button, when the "sumbit" button is pressed, it will either create a new file, or save work to the new file.
+            try {
+              String nameFile = nameOfFile.getText();
+              // We first create the file.
+              File newFile = new File(".\\Default Directory", nameFile + ".txt");
+
+              if (newFile.createNewFile()) {
+                try {
+                  FileWriter newWriter = new FileWriter(newFile);
+
+                  newWriter.write(textEditor.getText());
+                  newWriter.close();
+
+                  System.exit(0);
+                } catch (IOException error) {
+                  System.out.println("Error occured");
+                  error.printStackTrace();
+                }
+              } else {
+                  try {
+                    FileWriter newWriter = new FileWriter(newFile);
+
+                    newWriter.write(textEditor.getText());
+                    newWriter.close();
+
+                    System.exit(0);
+                  } catch (IOException error) {
+                    System.out.println("Error occured");
+                    error.printStackTrace();
+                  }
+              }
+            } catch (IOException error) {
+              System.out.println("Error occured");
+              error.printStackTrace();
+            }
+        } else if (whatOpened.equals("existing")) {
+            // This is in case the file is located inside of the project directory.
+            if (nonDefaultFileLocation == false) {
+              try {
+                FileWriter newWriter = new FileWriter(savedFile);
+
+                newWriter.write(textEditor.getText());
+                newWriter.close();
+
+                System.exit(0);
+              } catch (IOException error) {
+                System.out.println("Error occured");
+              }
+          } else {
+              try {
+                FileWriter fw = new FileWriter(new File(newDirectory, (fileName + ".txt")));
+
+                fw.write(textEditor.getText());
+                fw.close();
+
+                System.exit(0);
               } catch (IOException error) {
                 System.out.println("Error occured");
               }
