@@ -5,6 +5,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+
+import java.util.Scanner;
+
 class game {
   JFrame frame = new JFrame("Indiana Jones and Golden Fleece");
 
