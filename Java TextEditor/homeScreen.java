@@ -62,7 +62,7 @@ class homeScreen extends JFrame {
     this.add(textEditorArea);
 
     // If condition used to see if the user wants to open an existing file or not.
-       // Used to format the text editor, and output the text to it. 
+       // Used to format the text editor, and output the text to it.
     if (whatOpened.equals("existing")) {
       textEditorArea.remove(nameOfFileLabel);
       textEditorArea.remove(nameOfFile);
@@ -122,13 +122,12 @@ class homeScreen extends JFrame {
             try {
               String nameFile = nameOfFile.getText();
               // We first create the file.
-              File newFile = new File(nameFile + ".txt");
+              File newFile = new File(".\\Default Directory", nameFile + ".txt");
 
               if (newFile.createNewFile()) {
-                System.out.println("File created: " + newFile.getName());
-
                 try {
-                  FileWriter newWriter = new FileWriter(nameFile + ".txt");
+                  FileWriter newWriter = new FileWriter(newFile);
+
                   newWriter.write(textEditor.getText());
                   newWriter.close();
                 } catch (IOException error) {
@@ -137,7 +136,8 @@ class homeScreen extends JFrame {
                 }
               } else {
                   try {
-                    FileWriter newWriter = new FileWriter(nameFile + ".txt");
+                    FileWriter newWriter = new FileWriter(newFile);
+
                     newWriter.write(textEditor.getText());
                     newWriter.close();
                   } catch (IOException error) {
