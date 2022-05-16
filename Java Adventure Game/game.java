@@ -126,5 +126,17 @@ class game {
           frame.setVisible(false);
       }
     });
+
+
+    try {
+      // Main Algorithm which plays the story out to the text field
+      Scanner fileReader = new Scanner(defaultFile);
+
+      while(fileReader.hasNextLine()) {
+        storyOutputScreen.append(fileReader.nextLine() + "\n");
+      }
+    } catch (FileNotFoundException e) {
+      System.out.println(e);
+    }
   }
 }
