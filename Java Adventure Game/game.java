@@ -131,9 +131,18 @@ class game {
       // Main Algorithm which plays the story out to the text field
       Scanner fileReader = new Scanner(defaultFile);
 
+      String line;
       while(fileReader.hasNextLine()) {
-        storyOutputScreen.append(fileReader.nextLine() + "\n");
+        line = fileReader.nextLine();
+
+        if (line.equals("Options:")) {
+          System.out.println("test");
+          break;
+        } else {
+          storyOutputScreen.append(line + "\n");
+        }
       }
+      // Used to break the story and the user choices.
       storyOutputScreen.append("____________________________________________________");
     } catch (FileNotFoundException e) {}
   }
