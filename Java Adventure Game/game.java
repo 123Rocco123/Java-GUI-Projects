@@ -132,16 +132,32 @@ class game {
       Scanner fileReader = new Scanner(defaultFile);
 
       String line;
+
+      String optionA = "";
+      String optionB = "";
+      String optionC = "";
+
       while(fileReader.hasNextLine()) {
         line = fileReader.nextLine();
 
-        if (line.equals("Options:")) {
-          System.out.println("test");
+        if (line.contains("Options:")) {
+          continue;
+        } else if (line.contains("A:")) {
+          optionA = line;
+        } else if (line.contains("B:")) {
+          optionB = line;
+        } else if (line.contains("C:")) {
+          optionC = line;
           break;
         } else {
           storyOutputScreen.append(line + "\n");
         }
       }
+
+      actionOne.setText(optionA);
+      actionTwo.setText(optionB);
+      actionThree.setText(optionC);
+
       // Used to break the story and the user choices.
       storyOutputScreen.append("____________________________________________________");
     } catch (FileNotFoundException e) {}
