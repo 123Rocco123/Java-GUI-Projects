@@ -15,3 +15,8 @@ Soon, Alexander heard heavy footsteps approaching him, when suddenly Hephaestion
 The two men then went down a flight of stairs and eventually arrived to a dark room which smelled of smoke, and who's stone walls had been charred. At the end of this room on a pedestal, Alexander spotted a fleece that somehow seemed to emit a glow of its own, at once he knew what it was.
 
 Hephaestion turned to Alexander and said: "We interrogated every living soldier that was guarding the palace, and only one of them knew something about this room. Apparently, as we were nearing the palace Darius ordered his royal guard to burn this room to the ground, and destroy the part of the palace which contained it. Fortunately, as they were about to tear the building apart, our legions arrived at the palace.
+
+Options:
+A: Do Something
+B: Say Something
+C: Pass
