@@ -13,6 +13,12 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 class game {
+  int number = 1;
+
+  String optionA = "";
+  String optionB = "";
+  String optionC = "";
+
   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
   File defaultFile = new File(".\\Story\\GameFileScript.txt");
@@ -133,14 +139,11 @@ class game {
 
       String line;
 
-      String optionA = "";
-      String optionB = "";
-      String optionC = "";
-
       while(fileReader.hasNextLine()) {
         line = fileReader.nextLine();
 
-        if (line.contains("Options:")) {
+        if (line.contains("Options " + Integer.toString(number) + ":")) {
+          number += 1;
           continue;
         } else if (line.contains("A:")) {
           optionA = line;
