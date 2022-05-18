@@ -166,6 +166,14 @@ class game {
 
       actionOne.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
+          actionOne.setEnabled(false);
+          actionTwo.setEnabled(false);
+          actionThree.setEnabled(false);
+
+          actionOne.setText("");
+          actionTwo.setText("");
+          actionThree.setText("");
+
           storyOutputScreen.setText("");
 
           while(fileReader.hasNextLine()) {
@@ -204,6 +212,14 @@ class game {
 
       actionTwo.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
+          actionOne.setEnabled(false);
+          actionTwo.setEnabled(false);
+          actionThree.setEnabled(false);
+
+          actionOne.setText("");
+          actionTwo.setText("");
+          actionThree.setText("");
+
           storyOutputScreen.setText("");
 
           while(fileReader.hasNextLine()) {
@@ -241,6 +257,14 @@ class game {
 
       actionThree.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
+          actionOne.setEnabled(false);
+          actionTwo.setEnabled(false);
+          actionThree.setEnabled(false);
+
+          actionOne.setText("");
+          actionTwo.setText("");
+          actionThree.setText("");
+
           storyOutputScreen.setText("");
 
           while(fileReader.hasNextLine()) {
