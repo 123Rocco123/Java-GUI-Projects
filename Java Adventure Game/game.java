@@ -163,6 +163,119 @@ class game {
 
       // Used to break the story and the user choices.
       storyOutputScreen.append("____________________________________________________");
+
+      actionOne.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+          storyOutputScreen.setText("");
+
+          while(fileReader.hasNextLine()) {
+            String line = fileReader.nextLine();
+
+            // Used to check if the action that the user has chosen is the same as the story here.
+            if (line.contains("(A" + (number - 1) + ")")) {
+              while(fileReader.hasNextLine()) {
+                // Line Update to accomodate the condition stated above.
+                line = fileReader.nextLine();
+
+                // Options Condition
+                if (line.contains("Options " + Integer.toString(number) + ":")) {
+                  number += 1;
+                  continue;
+                } // Other Actions Condition
+                else if (line.contains("A:")) {
+                 optionA = line;
+               } else if (line.contains("B:")) {
+                 optionB = line;
+               } else if (line.contains("C:")) {
+                 optionC = line;
+                 break;
+               } // End Game Condition
+                else if (line.contains("End")) {
+                  break;
+                } // Output Condition
+                else {
+                  storyOutputScreen.append(line + "\n");
+                }
+              }
+            }
+          }
+        }
+      });
+
+      actionTwo.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+          storyOutputScreen.setText("");
+
+          while(fileReader.hasNextLine()) {
+            String line = fileReader.nextLine();
+
+            // Used to check if the action that the user has chosen is the same as the story here.
+            if (line.contains("(B" + (number - 1) + ")")) {
+              while(fileReader.hasNextLine()) {
+                // Line Update to accomodate the condition stated above.
+                line = fileReader.nextLine();
+
+                // Options Condition
+                if (line.contains("Options " + Integer.toString(number) + ":")) {
+                  number += 1;
+                  continue;
+                } else if (line.contains("A:")) {
+                  optionA = line;
+                } else if (line.contains("B:")) {
+                  optionB = line;
+                } else if (line.contains("C:")) {
+                  optionC = line;
+                  break;
+                } // End Game Condition
+                else if (line.contains("End")) {
+                  break;
+                } // Output Condition
+                else {
+                  storyOutputScreen.append(line + "\n");
+                }
+              }
+            }
+          }
+        }
+      });
+
+      actionThree.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+          storyOutputScreen.setText("");
+
+          while(fileReader.hasNextLine()) {
+            String line = fileReader.nextLine();
+
+            // Used to check if the action that the user has chosen is the same as the story here.
+            if (line.contains("(C" + (number - 1) + ")")) {
+              while(fileReader.hasNextLine()) {
+                // Line Update to accomodate the condition stated above.
+                line = fileReader.nextLine();
+
+                // Options Condition
+                if (line.contains("Options " + Integer.toString(number) + ":")) {
+                  number += 1;
+                  continue;
+                } else if (line.contains("A:")) {
+                  optionA = line;
+                } else if (line.contains("B:")) {
+                  optionB = line;
+                } else if (line.contains("C:")) {
+                  optionC = line;
+                  break;
+                } // End Game Condition
+                else if (line.contains("End")) {
+                  break;
+                } // Output Condition
+                else {
+                  storyOutputScreen.append(line + "\n");
+                }
+              }
+            }
+          }
+        }
+      });
+
     } catch (FileNotFoundException e) {}
   }
 }
