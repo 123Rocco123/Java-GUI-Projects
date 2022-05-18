@@ -16,7 +16,25 @@ The two men then went down a flight of stairs and eventually arrived to a dark r
 
 Hephaestion turned to Alexander and said: "We interrogated every living soldier that was guarding the palace, and only one of them knew something about this room. Apparently, as we were nearing the palace Darius ordered his royal guard to burn this room to the ground, and destroy the part of the palace which contained it. Fortunately, as they were about to tear the building apart, our legions arrived at the palace.
 
-Options:
+Options 1:
 A: Do Something
 B: Say Something
 C: Pass
+
+Action (A1): Do Something
+
+This is option A
+
+End
+
+Action (B1): Say Something
+
+This is option B
+
+End
+
+Action (C1): Pass
+
+This is option C
+
+End
