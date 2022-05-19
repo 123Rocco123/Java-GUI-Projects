@@ -154,6 +154,11 @@ class game {
           break;
         } else {
           storyOutputScreen.append(line + "\n");
+  // Used to reset the values of the buttons
+  public void reset() {
+    actionOne.setEnabled(false);
+    actionTwo.setEnabled(false);
+    actionThree.setEnabled(false);
         }
       }
 
