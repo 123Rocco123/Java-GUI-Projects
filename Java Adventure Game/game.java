@@ -159,6 +159,13 @@ class game {
     actionOne.setEnabled(false);
     actionTwo.setEnabled(false);
     actionThree.setEnabled(false);
+
+    actionOne.setText("");
+    actionTwo.setText("");
+    actionThree.setText("");
+
+    storyOutputScreen.setText("");
+  }
         }
       }
 
