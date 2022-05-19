@@ -13,10 +13,13 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 class game {
+  // Checkpoints in the story
   int number = 1;
 
+  // Checks if the game has ended or not
   boolean end = false;
 
+  // Buttons Text
   String optionA = "";
   String optionB = "";
   String optionC = "";
@@ -41,6 +44,7 @@ class game {
 
   JButton optionsButton = new JButton("Options");
   JButton exitGame = new JButton("Exit Game");
+
   // These buttons are used to give players options
   JButton actionOne = new JButton();
   JButton actionTwo = new JButton();
@@ -189,18 +193,18 @@ class game {
       }
   }
 
+  // Function containing the action listeners for the 3 actions that the user can do.
   public void actionFunc() {
     try {
         // Main Algorithm which plays the story out to the text field
         Scanner fileReader = new Scanner(defaultFile);
 
+        // Contains the string in the story.
         String line = "";
 
         whileLoop(fileReader, line);
 
-        actionOne.setText(optionA);
-        actionTwo.setText(optionB);
-        actionThree.setText(optionC);
+        reEnable(optionA, optionB, optionC);
 
         // Used to break the story and the user choices.
         storyOutputScreen.append("____________________________________________________");
@@ -209,6 +213,7 @@ class game {
         public void actionPerformed(ActionEvent e) {
           reset();
 
+          // Main Game Algorithm
           while(fileReader.hasNextLine()) {
             String line = fileReader.nextLine();
 
