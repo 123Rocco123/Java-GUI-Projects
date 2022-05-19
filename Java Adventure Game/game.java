@@ -136,27 +136,6 @@ class game {
     });
   }
 
-    try {
-      // Main Algorithm which plays the story out to the text field
-      Scanner fileReader = new Scanner(defaultFile);
-
-      String line;
-
-      while(fileReader.hasNextLine()) {
-        line = fileReader.nextLine();
-
-        if (line.contains("Options " + Integer.toString(number) + ":")) {
-          number += 1;
-          continue;
-        } else if (line.contains("A:")) {
-          optionA = line;
-        } else if (line.contains("B:")) {
-          optionB = line;
-        } else if (line.contains("C:")) {
-          optionC = line;
-          break;
-        } else {
-          storyOutputScreen.append(line + "\n");
   // Used to reset the values of the buttons
   public void reset() {
     actionOne.setEnabled(false);
@@ -210,33 +189,19 @@ class game {
       }
   }
 
-      actionOne.setText(optionA);
-      actionTwo.setText(optionB);
-      actionThree.setText(optionC);
   public void actionFunc() {
     try {
         // Main Algorithm which plays the story out to the text field
         Scanner fileReader = new Scanner(defaultFile);
 
-      // Used to break the story and the user choices.
-      storyOutputScreen.append("____________________________________________________");
         String line = "";
 
-      actionOne.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent e) {
-          actionOne.setEnabled(false);
-          actionTwo.setEnabled(false);
-          actionThree.setEnabled(false);
         whileLoop(fileReader, line);
 
-          actionOne.setText("");
-          actionTwo.setText("");
-          actionThree.setText("");
         actionOne.setText(optionA);
         actionTwo.setText(optionB);
         actionThree.setText(optionC);
 
-          storyOutputScreen.setText("");
         // Used to break the story and the user choices.
         storyOutputScreen.append("____________________________________________________");
 
@@ -249,85 +214,23 @@ class game {
 
             // Used to check if the action that the user has chosen is the same as the story here.
             if (line.contains("(A" + (number - 1) + ")")) {
-              while(fileReader.hasNextLine()) {
-                // Line Update to accomodate the condition stated above.
-                line = fileReader.nextLine();
-
-                // Options Condition
-                if (line.contains("Options " + Integer.toString(number) + ":")) {
-                  number += 1;
-                  continue;
-                } // Other Actions Condition
-                else if (line.contains("A:")) {
-                 optionA = line;
-               } else if (line.contains("B:")) {
-                 optionB = line;
-               } else if (line.contains("C:")) {
-                 optionC = line;
-                 break;
-               } // End Game Condition
-                else if (line.contains("End")) {
-                  break;
-                } // Output Condition
-                else {
-                  storyOutputScreen.append(line + "\n");
-                }
               whileLoop(fileReader, line);
               }
             }
-          }
-        }
-      });
 
-      actionTwo.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent e) {
-          actionOne.setEnabled(false);
-          actionTwo.setEnabled(false);
-          actionThree.setEnabled(false);
-
-          actionOne.setText("");
-          actionTwo.setText("");
-          actionThree.setText("");
             if (end == false) {
               reEnable(optionA, optionB, optionC);
             }
           }
         });
 
-          storyOutputScreen.setText("");
         actionTwo.addActionListener(new ActionListener() {
           public void actionPerformed(ActionEvent e) {
             reset();
 
-          while(fileReader.hasNextLine()) {
-            String line = fileReader.nextLine();
             while(fileReader.hasNextLine()) {
               String line = fileReader.nextLine();
 
-            // Used to check if the action that the user has chosen is the same as the story here.
-            if (line.contains("(B" + (number - 1) + ")")) {
-              while(fileReader.hasNextLine()) {
-                // Line Update to accomodate the condition stated above.
-                line = fileReader.nextLine();
-
-                // Options Condition
-                if (line.contains("Options " + Integer.toString(number) + ":")) {
-                  number += 1;
-                  continue;
-                } else if (line.contains("A:")) {
-                  optionA = line;
-                } else if (line.contains("B:")) {
-                  optionB = line;
-                } else if (line.contains("C:")) {
-                  optionC = line;
-                  break;
-                } // End Game Condition
-                else if (line.contains("End")) {
-                  break;
-                } // Output Condition
-                else {
-                  storyOutputScreen.append(line + "\n");
-                }
               // Used to check if the action that the user has chosen is the same as the story here.
               if (line.contains("(B" + (number - 1) + ")")) {
                 whileLoop(fileReader, line);
@@ -337,62 +240,20 @@ class game {
               reEnable(optionA, optionB, optionC);
             }
           }
-        }
-      });
-
-      actionThree.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent e) {
-          actionOne.setEnabled(false);
-          actionTwo.setEnabled(false);
-          actionThree.setEnabled(false);
-
-          actionOne.setText("");
-          actionTwo.setText("");
-          actionThree.setText("");
         });
 
-          storyOutputScreen.setText("");
         actionThree.addActionListener(new ActionListener() {
           public void actionPerformed(ActionEvent e) {
             reset();
 
-          while(fileReader.hasNextLine()) {
-            String line = fileReader.nextLine();
             while(fileReader.hasNextLine()) {
               String line = fileReader.nextLine();
 
-            // Used to check if the action that the user has chosen is the same as the story here.
-            if (line.contains("(C" + (number - 1) + ")")) {
-              while(fileReader.hasNextLine()) {
-                // Line Update to accomodate the condition stated above.
-                line = fileReader.nextLine();
-
-                // Options Condition
-                if (line.contains("Options " + Integer.toString(number) + ":")) {
-                  number += 1;
-                  continue;
-                } else if (line.contains("A:")) {
-                  optionA = line;
-                } else if (line.contains("B:")) {
-                  optionB = line;
-                } else if (line.contains("C:")) {
-                  optionC = line;
-                  break;
-                } // End Game Condition
-                else if (line.contains("End")) {
-                  break;
-                } // Output Condition
-                else {
-                  storyOutputScreen.append(line + "\n");
-                }
               // Used to check if the action that the user has chosen is the same as the story here.
               if (line.contains("(C" + (number - 1) + ")")) {
                 whileLoop(fileReader, line);
               }
             }
-          }
-        }
-      });
 
             if (end == false) {
               reEnable(optionA, optionB, optionC);
