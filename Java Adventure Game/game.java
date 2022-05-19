@@ -15,6 +15,8 @@ import java.util.Scanner;
 class game {
   int number = 1;
 
+  boolean end = false;
+
   String optionA = "";
   String optionB = "";
   String optionC = "";
@@ -132,6 +134,7 @@ class game {
           frame.setVisible(false);
       }
     });
+  }
 
     try {
       // Main Algorithm which plays the story out to the text field
@@ -205,25 +208,41 @@ class game {
         storyOutputScreen.append(line + "\n");
         }
       }
+  }
 
       actionOne.setText(optionA);
       actionTwo.setText(optionB);
       actionThree.setText(optionC);
+  public void actionFunc() {
+    try {
+        // Main Algorithm which plays the story out to the text field
+        Scanner fileReader = new Scanner(defaultFile);
 
       // Used to break the story and the user choices.
       storyOutputScreen.append("____________________________________________________");
+        String line = "";
 
       actionOne.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
           actionOne.setEnabled(false);
           actionTwo.setEnabled(false);
           actionThree.setEnabled(false);
+        whileLoop(fileReader, line);
 
           actionOne.setText("");
           actionTwo.setText("");
           actionThree.setText("");
+        actionOne.setText(optionA);
+        actionTwo.setText(optionB);
+        actionThree.setText(optionC);
 
           storyOutputScreen.setText("");
+        // Used to break the story and the user choices.
+        storyOutputScreen.append("____________________________________________________");
+
+      actionOne.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+          reset();
 
           while(fileReader.hasNextLine()) {
             String line = fileReader.nextLine();
@@ -253,6 +272,7 @@ class game {
                 else {
                   storyOutputScreen.append(line + "\n");
                 }
+              whileLoop(fileReader, line);
               }
             }
           }
@@ -268,11 +288,21 @@ class game {
           actionOne.setText("");
           actionTwo.setText("");
           actionThree.setText("");
+            if (end == false) {
+              reEnable(optionA, optionB, optionC);
+            }
+          }
+        });
 
           storyOutputScreen.setText("");
+        actionTwo.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            reset();
 
           while(fileReader.hasNextLine()) {
             String line = fileReader.nextLine();
+            while(fileReader.hasNextLine()) {
+              String line = fileReader.nextLine();
 
             // Used to check if the action that the user has chosen is the same as the story here.
             if (line.contains("(B" + (number - 1) + ")")) {
@@ -298,7 +328,13 @@ class game {
                 else {
                   storyOutputScreen.append(line + "\n");
                 }
+              // Used to check if the action that the user has chosen is the same as the story here.
+              if (line.contains("(B" + (number - 1) + ")")) {
+                whileLoop(fileReader, line);
               }
+            }
+            if (end == false) {
+              reEnable(optionA, optionB, optionC);
             }
           }
         }
@@ -313,11 +349,17 @@ class game {
           actionOne.setText("");
           actionTwo.setText("");
           actionThree.setText("");
+        });
 
           storyOutputScreen.setText("");
+        actionThree.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            reset();
 
           while(fileReader.hasNextLine()) {
             String line = fileReader.nextLine();
+            while(fileReader.hasNextLine()) {
+              String line = fileReader.nextLine();
 
             // Used to check if the action that the user has chosen is the same as the story here.
             if (line.contains("(C" + (number - 1) + ")")) {
@@ -343,12 +385,20 @@ class game {
                 else {
                   storyOutputScreen.append(line + "\n");
                 }
+              // Used to check if the action that the user has chosen is the same as the story here.
+              if (line.contains("(C" + (number - 1) + ")")) {
+                whileLoop(fileReader, line);
               }
             }
           }
         }
       });
 
+            if (end == false) {
+              reEnable(optionA, optionB, optionC);
+            }
+          }
+        });
     } catch (FileNotFoundException e) {}
   }
 }
