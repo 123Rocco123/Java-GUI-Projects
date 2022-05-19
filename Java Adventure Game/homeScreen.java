@@ -46,6 +46,9 @@ class homeScreen extends JFrame {
       public void actionPerformed(ActionEvent e) {
         dispose();
         game newGameStart = new game();
+
+        // This will start the game, as well as 
+        newGameStart.actionFunc();
       }
     });
 
