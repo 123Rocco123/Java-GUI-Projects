@@ -166,6 +166,17 @@ class game {
 
     storyOutputScreen.setText("");
   }
+
+  // Re-enable and Re-set values of the buttons for the second choice that the user can make.
+  public void reEnable(String optionA, String optionB, String optionC) {
+    actionOne.setEnabled(true);
+    actionTwo.setEnabled(true);
+    actionThree.setEnabled(true);
+
+    actionOne.setText(optionA);
+    actionTwo.setText(optionB);
+    actionThree.setText(optionC);
+  }
         }
       }
 
