@@ -177,6 +177,32 @@ class game {
     actionTwo.setText(optionB);
     actionThree.setText(optionC);
   }
+
+  // Used to give the user the actions that they can accomplish.
+  public void whileLoop(Scanner fileReader, String line) {
+    while(fileReader.hasNextLine()) {
+      // Line Update to accomodate the condition stated above.
+      line = fileReader.nextLine();
+
+      // Options Condition
+      if (line.contains("Options " + Integer.toString(number) + ":")) {
+        number += 1;
+        continue;
+      } // Other Actions Condition
+      else if (line.contains("A:")) {
+       optionA = line;
+     } else if (line.contains("B:")) {
+       optionB = line;
+     } else if (line.contains("C:")) {
+       optionC = line;
+       break;
+     } // End Game Condition
+      else if (line.contains("End")) {
+        end = true;
+        break;
+      } // Output Condition
+        else {
+        storyOutputScreen.append(line + "\n");
         }
       }
 
