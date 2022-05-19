@@ -25,6 +25,11 @@ Action (A1): Do Something
 
 This is option A
 
+Options 2:
+A: Do Something 1
+B: Say Something 1
+C: Pass 1
+
 End
 
 Action (B1): Say Something
