@@ -87,7 +87,7 @@ class gamePanel extends JPanel implements ActionListener {
 
   }
 
-  public class keyAdapter extends keyAdapter {
+  class newKeyAdapter extends KeyAdapter {
     @Override
     public void keyPressed(KeyEvent e) {
 
