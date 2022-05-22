@@ -30,6 +30,37 @@ class gamePanel extends JPanel implements ActionListener {
   Timer time;
   Random random;
 
+  public gamePanel() {
+  }
+
+  public void startGame() {
+
+  }
+
+  public void paintComponent(Graphics g) {
+
+  }
+
+  public void draw(Graphics g) {
+
+  }
+
+  public void move() {
+
+  }
+
+  public void checkFood() {
+
+  }
+
+  public void checkCollision() {
+
+  }
+
+  public void gameOver(Graphics g) {
+
+  }
+
   @Override
   public void actionPerformed(ActionEvent e) {
 
