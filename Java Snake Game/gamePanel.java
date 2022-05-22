@@ -24,13 +24,23 @@ class gamePanel extends JPanel implements ActionListener {
   int foodX;
   int foodY;
 
-  char direction = "R";
+  char direction = 'R';
   boolean running = false;
 
   Timer time;
   Random random;
 
   public gamePanel() {
+    random = new Random();
+
+    this.setPreferredSize(new Dimension(screenWidth, screenHeight));
+    this.setBackground(Color.black);
+
+    // Used to incidate that the gamePanel is the component to recieve user input, and nothing else.
+    this.setFocusable(true);
+    this.addKeyListener(new newKeyAdapter());
+
+    startGame();
   }
 
   public void startGame() {
