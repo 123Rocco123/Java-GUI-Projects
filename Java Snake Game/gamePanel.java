@@ -26,6 +26,10 @@ class gamePanel extends JPanel implements ActionListener {
 
   char direction = "R";
   boolean running = false;
+
+  Timer time;
+  Random random;
+
   @Override
   public void actionPerformed(ActionEvent e) {
 
