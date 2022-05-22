@@ -44,7 +44,14 @@ class gamePanel extends JPanel implements ActionListener {
   }
 
   public void startGame() {
+    // Add the fruit to the screen for the snake.
+    newFood();
 
+    // This makes it so that the snake starts moving.
+    running = true;
+
+    time = new Timer(delay, this);
+    time.start();
   }
 
   public void paintComponent(Graphics g) {
@@ -52,6 +59,10 @@ class gamePanel extends JPanel implements ActionListener {
   }
 
   public void draw(Graphics g) {
+
+  }
+
+  public void newFood() {
 
   }
 
