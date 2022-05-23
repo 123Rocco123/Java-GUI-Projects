@@ -154,7 +154,12 @@ class gamePanel extends JPanel implements ActionListener {
 
   @Override
   public void actionPerformed(ActionEvent e) {
-
+    if (running) {
+      move();
+      checkFood();
+      checkCollision();
+    }
+    repaint();
   }
 
   class newKeyAdapter extends KeyAdapter {
