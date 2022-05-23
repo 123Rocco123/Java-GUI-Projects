@@ -73,7 +73,25 @@ class gamePanel extends JPanel implements ActionListener {
   }
 
   public void move() {
+    for (int i = bodyParts; i > 0; i--) {
+      snakeArrayX[i] = snakeArrayX[i - 1];
+      snakeArrayY[i] = snakeArrayY[i - 1];
+    }
 
+    switch(direction) {
+      case 'U':
+        snakeArrayY[0] = snakeArrayY[0] - unitSize;
+        break;
+      case 'D':
+        snakeArrayY[0] = snakeArrayY[0] + unitSize;
+        break;
+      case 'L':
+        snakeArrayX[0] = snakeArrayX[0] - unitSize;
+        break;
+      case 'R':
+        snakeArrayX[0] = snakeArrayX[0] + unitSize;
+        break;
+    }
   }
 
   public void checkFood() {
