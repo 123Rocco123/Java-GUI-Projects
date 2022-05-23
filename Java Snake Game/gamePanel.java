@@ -162,7 +162,10 @@ class gamePanel extends JPanel implements ActionListener {
   }
 
   public void gameOver(Graphics g) {
-
+    g.setColor(Color.red);
+    g.setFont(new Font("Ink Free", Font.BOLD, 40));
+    FontMetrics metrics = getFontMetrics(g.getFont());
+    g.drawString("Game Over", (screenWidth - metrics.stringWidth("Game Over")) / 2, screenHeight / 2);
   }
 
   @Override
@@ -178,7 +181,7 @@ class gamePanel extends JPanel implements ActionListener {
   class newKeyAdapter extends KeyAdapter {
     @Override
     public void keyPressed(KeyEvent e) {
-      // The reason that we have an if statement in the cases is because of the fact that we don't want to allow the user to go into themselves in a straight line. 
+      // The reason that we have an if statement in the cases is because of the fact that we don't want to allow the user to go into themselves in a straight line.
       switch(e.getKeyCode()) {
         case KeyEvent.VK_LEFT:
           if (direction != 'R') {
