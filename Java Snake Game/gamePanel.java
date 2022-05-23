@@ -136,19 +136,28 @@ class gamePanel extends JPanel implements ActionListener {
   }
 
   public void draw(Graphics g) {
-    g.setColor(Color.red);
+    if (running) {
+      g.setColor(Color.red);
 
-    // Coordinates, x and y, followed by size of object
-    g.fillOval(foodX, foodY, unitSize, unitSize);
+      // Coordinates, x and y, followed by size of object
+      g.fillOval(foodX, foodY, unitSize, unitSize);
 
-    for (int i = 0; i < bodyParts; i++) {
-      if (i == 0) {
-        g.setColor(Color.green);
-        g.fillRect(snakeArrayX[i], snakeArrayY[i], unitSize, unitSize);
-      } else {
-        g.setColor(new Color(45, 180, 0));
-        g.fillRect(snakeArrayX[i], snakeArrayY[i], unitSize, unitSize);
+      for (int i = 0; i < bodyParts; i++) {
+        if (i == 0) {
+          g.setColor(Color.green);
+          g.fillRect(snakeArrayX[i], snakeArrayY[i], unitSize, unitSize);
+        } else {
+          g.setColor(new Color(45, 180, 0));
+          g.fillRect(snakeArrayX[i], snakeArrayY[i], unitSize, unitSize);
+        }
       }
+
+      g.setColor(Color.red);
+      g.setFont(new Font("Ink Free", Font.BOLD, 40));
+      FontMetrics metrics = getFontMetrics(g.getFont());
+      g.drawString("Score: " + foodEaten, (screenWidth - metrics.stringWidth("Score: " + foodEaten)) / 2, g.getFont().getSize());
+    } else {
+        gameOver(g);
     }
   }
 
