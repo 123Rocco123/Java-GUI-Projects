@@ -99,7 +99,53 @@ class gamePanel extends JPanel implements ActionListener {
   }
 
   public void checkCollision() {
+    // Head colliding with the body
+    for (int i = bodyParts; i > 0; i--) {
+      if ((snakeArrayX[0] == snakeArrayX[i]) && (snakeArrayY[0] == snakeArrayY[i])) {
+        running = false;
+      }
+    }
 
+    // Head touches Left Border
+    if (snakeArrayX[0] < 0) {
+      running = false;
+    }
+
+    // Head touches Right Border
+    if (snakeArrayX[0] > screenWidth) {
+      running = false;
+    }
+
+    // Head touches Top Border
+    if (snakeArrayY[0] < 0) {
+      running = false;
+    }
+
+    // Head touches Bottom Border
+    if (snakeArrayY[0] > screenHeight) {
+      running = false;
+    }
+
+    if (running == false) {
+      time.stop();
+    }
+  }
+
+  public void draw(Graphics g) {
+    g.setColor(Color.red);
+
+    // Coordinates, x and y, followed by size of object
+    g.fillOval(foodX, foodY, unitSize, unitSize);
+
+    for (int i = 0; i < bodyParts; i++) {
+      if (i == 0) {
+        g.setColor(Color.green);
+        g.fillRect(snakeArrayX[i], snakeArrayY[i], unitSize, unitSize);
+      } else {
+        g.setColor(new Color(45, 180, 0));
+        g.fillRect(snakeArrayX[i], snakeArrayY[i], unitSize, unitSize);
+      }
+    }
   }
 
   public void gameOver(Graphics g) {
