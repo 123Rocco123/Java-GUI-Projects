@@ -59,8 +59,17 @@ class gamePanel extends JPanel implements ActionListener {
     draw(g);
   }
 
+  // Used to generate a new fruit in game for the player to go to.
   public void newFood() {
-
+    // To find a random spot that we place the food to, we have to use the following variables.
+       // To find the place where we "spawn" the food, we have to set a maximum boundry of screenWidth/unitSize which is the max number of squares on the board.
+       // We then multiply the random number by the unitSize so that we can place it evenly on the board, and not halfway inbetween the squares.
+          // This doesn't cancel out the unitSize at the bottom of the fraction, because the board is 600 pxiels long, not 25.
+          // E.g.
+             // Random number = random(600/25) * 25 => 20 * 25 => 500
+             // We would place the food starting at the 500th pixel ending off at the 525th pixel, meaing that it takes the 20th square (500/25 = 20).
+    foodX = random.nextInt((int)(screenWidth/unitSize)) * unitSize;
+    foodY = random.nextInt((int)(screenHeight/unitSize)) * unitSize;
   }
 
   public void move() {
