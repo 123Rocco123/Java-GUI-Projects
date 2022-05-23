@@ -25,11 +25,26 @@ class gamepanel extends JFrame {
   public void gameAlgorithm(String playerChoice) {
     switch (playerChoice) {
         case "X":
+          computerPiece = "O";
+
+          gameLogic();
           break;
         case "O":
+          computerPiece = "X";
+
+          gameLogic();
           break;
         default:
+          unKnown();
           break;
     }
+  }
+
+  public void gameLogic() {
+
+  }
+
+  public void unKnown() {
+
   }
 }
