@@ -1,10 +1,5 @@
-import java.awt.*;
-import java.awt.event.*;
-
-import javax.swing.*;
-
-class Main extends JFrame{
+class Main {
   public static void main(String[] args) {
-
+    new mainClass();
   }
 }
