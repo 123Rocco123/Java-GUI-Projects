@@ -41,5 +41,14 @@ class mainClass extends JFrame {
     calendarPanel.setBounds(395, 220, 380, 200);
     calendarPanel.setBackground(Color.white);
     this.add(calendarPanel);
+
+    exitButton.setBounds(340, 430, 100, 25);
+    this.add(exitButton);
+
+    exitButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        System.exit(0);
+      }
+    });
   }
 }
