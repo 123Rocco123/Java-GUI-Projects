@@ -13,5 +13,12 @@ class mainClass extends JFrame {
   JButton exitButton = new JButton("Quit");
 
   public mainClass() {
+    // JFrame Code
+    this.setTitle("Rocco's School App");
+    this.setSize(800, 500);
+    this.setLocationRelativeTo(null);
+    this.setVisible(true);
+    this.setLayout(null);
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }
 }
