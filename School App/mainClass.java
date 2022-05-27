@@ -12,6 +12,13 @@ class mainClass extends JFrame {
   JPanel homeWorkPanel = new JPanel();
 
   // Used to display most recent Alert / Homework / ...
+  JPanel innerClassesPanel = new JPanel();
+  JPanel innerCalendarPanel = new JPanel();
+  JPanel innerReminderPanel = new JPanel();
+  JPanel innerAlertsPanel = new JPanel();
+  JPanel innerHomeWorkPanel = new JPanel();
+
+  // Names of the main JPanels
   JLabel classesLabel = new JLabel("Classes");
   JLabel calendarLabel = new JLabel("Calendar");
   JLabel reminderLabel = new JLabel("Reminders");
@@ -38,18 +45,23 @@ class mainClass extends JFrame {
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     panelFunc(classesPanel, 5, 10, 250, 200, classesLabel, newClassButton);
+    classesPanel.add(innerPanelFunc(10, 35, 230, 120, innerClassesPanel));
     this.add(classesPanel);
 
     panelFunc(alertsPanel, 265, 10, 250, 200, alertsLabel, newAlertButton);
+    alertsPanel.add(innerPanelFunc(10, 35, 230, 120, innerAlertsPanel));
     this.add(alertsPanel);
 
     panelFunc(homeWorkPanel, 525, 10, 250, 200, homeworkLabel, newHomeworkButton);
+    homeWorkPanel.add(innerPanelFunc(10, 35, 230, 120, innerHomeWorkPanel));
     this.add(homeWorkPanel);
 
     panelFunc(reminderPanel, 5, 220, 380, 200, reminderLabel, newReminderButton);
+    reminderPanel.add(innerPanelFunc(10, 35, 360, 120, innerReminderPanel));
     this.add(reminderPanel);
 
     panelFunc(calendarPanel, 395, 220, 380, 200, calendarLabel, addCalendarEventButton);
+    calendarPanel.add(innerPanelFunc(10, 35, 360, 120, innerCalendarPanel));
     this.add(calendarPanel);
 
     exitButton.setBounds(340, 430, 100, 25);
@@ -81,5 +93,11 @@ class mainClass extends JFrame {
 
     buttonName.setBounds((width / 2) - 65, (height - 35), 125, 25);
     panelName.add(buttonName);
+  }
+
+  // Used for the inner JPanels in the JPanels.
+  public JPanel innerPanelFunc(int x, int y, int width, int height, JPanel panelName) {
+    panelName.setBounds(x, y, width, height);
+    return panelName;
   }
 }
