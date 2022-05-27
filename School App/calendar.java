@@ -3,11 +3,11 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-class classes extends JFrame {
-  public classes() {
+class calendar extends JFrame {
+  public calendar() {
     this.setSize(500, 500);
     this.setLocationRelativeTo(null);
     this.setVisible(true);
-    this.setTitle("Add New Class");
+    this.setTitle("Add New Calendar Event");
   }
 }
