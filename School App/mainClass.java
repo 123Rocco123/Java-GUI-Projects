@@ -10,6 +10,18 @@ class mainClass extends JFrame {
   JPanel alertsPanel = new JPanel();
   JPanel homeWorkPanel = new JPanel();
 
+  JLabel classesLabel = new JLabel("Classes");
+  JLabel calendarLabel = new JLabel("Calendar");
+  JLabel reminderLabel = new JLabel("Reminders");
+  JLabel alertsLabel = new JLabel("Alerts");
+  JLabel homeworkLabel = new JLabel("Homework");
+
+  JButton newClassButton = new JButton("Add New Class");
+  JButton addCalendarEventButton = new JButton("New Event");
+  JButton newReminderButton = new JButton("New Reminder");
+  JButton newAlertButton = new JButton("Add New Alert");
+  JButton newHomeworkButton = new JButton("Add Homework");
+
   JButton exitButton = new JButton("Quit");
 
   public mainClass() {
