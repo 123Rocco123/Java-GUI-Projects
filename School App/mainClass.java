@@ -63,6 +63,18 @@ class mainClass extends JFrame {
     panelName.setBounds(x, y, width, height);
     panelName.setBackground(Color.white);
     panelName.setLayout(null);
+
+    if (buttonName.equals(addCalendarEventButton)) {
+      name.setBounds((width / 2) - 27, 10, 100, 25);
+    } else if (buttonName.equals(newReminderButton) || buttonName.equals(newHomeworkButton)) {
+      name.setBounds((width / 2) - 30, 10, 100, 25);
+    } else if (buttonName.equals(newAlertButton)) {
+      name.setBounds((width / 2) - 21, 10, 100, 25);
+    } else {
+      name.setBounds((width / 2) - 25, 10, 100, 25);
+    }
+    panelName.add(name);
+    
     buttonName.setBounds((width / 2) - 65, (height - 35), 125, 25);
     panelName.add(buttonName);
   }
