@@ -72,6 +72,36 @@ class mainClass extends JFrame {
         System.exit(0);
       }
     });
+
+    newClassButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        new classes();
+      }
+    });
+
+    addCalendarEventButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        new calendar();
+      }
+    });
+
+    newReminderButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        new reminder();
+      }
+    });
+
+    newAlertButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        new alerts();
+      }
+    });
+
+    newHomeworkButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        new newHomework();
+      }
+    });
   }
 
   // Used for the setup of the panels onto the main JFrame.
