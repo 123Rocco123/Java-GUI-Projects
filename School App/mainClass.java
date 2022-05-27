@@ -4,24 +4,28 @@ import java.awt.event.*;
 import javax.swing.*;
 
 class mainClass extends JFrame {
+  // Used to contain the different functions of the App.
   JPanel classesPanel = new JPanel();
   JPanel calendarPanel = new JPanel();
   JPanel reminderPanel = new JPanel();
   JPanel alertsPanel = new JPanel();
   JPanel homeWorkPanel = new JPanel();
 
+  // Used to display most recent Alert / Homework / ...
   JLabel classesLabel = new JLabel("Classes");
   JLabel calendarLabel = new JLabel("Calendar");
   JLabel reminderLabel = new JLabel("Reminders");
   JLabel alertsLabel = new JLabel("Alerts");
   JLabel homeworkLabel = new JLabel("Homework");
 
+  // JFrame Buttons
   JButton newClassButton = new JButton("Add New Class");
   JButton addCalendarEventButton = new JButton("New Event");
   JButton newReminderButton = new JButton("New Reminder");
   JButton newAlertButton = new JButton("Add New Alert");
   JButton newHomeworkButton = new JButton("Add Homework");
 
+  // Quit Button
   JButton exitButton = new JButton("Quit");
 
   public mainClass() {
@@ -58,7 +62,7 @@ class mainClass extends JFrame {
     });
   }
 
-  // Used for the setup of the panels onto the main JFrame
+  // Used for the setup of the panels onto the main JFrame.
   public void panelFunc(JPanel panelName, int x, int y, int width, int height, JLabel name, JButton buttonName) {
     panelName.setBounds(x, y, width, height);
     panelName.setBackground(Color.white);
@@ -74,7 +78,7 @@ class mainClass extends JFrame {
       name.setBounds((width / 2) - 25, 10, 100, 25);
     }
     panelName.add(name);
-    
+
     buttonName.setBounds((width / 2) - 65, (height - 35), 125, 25);
     panelName.add(buttonName);
   }
