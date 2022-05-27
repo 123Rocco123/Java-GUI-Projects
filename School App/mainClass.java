@@ -21,25 +21,19 @@ class mainClass extends JFrame {
     this.setLayout(null);
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    classesPanel.setBounds(5, 10, 250, 200);
-    classesPanel.setBackground(Color.white);
+    panelFunc(classesPanel, 5, 10, 250, 200, classesLabel, newClassButton);
     this.add(classesPanel);
 
-    alertsPanel.setBounds(265, 10, 250, 200);
-    alertsPanel.setBackground(Color.white);
+    panelFunc(alertsPanel, 265, 10, 250, 200, alertsLabel, newAlertButton);
     this.add(alertsPanel);
 
-    // X Y WIDTH HEIGHT
-    homeWorkPanel.setBounds(525, 10, 250, 200);
-    homeWorkPanel.setBackground(Color.white);
+    panelFunc(homeWorkPanel, 525, 10, 250, 200, homeworkLabel, newHomeworkButton);
     this.add(homeWorkPanel);
 
-    reminderPanel.setBounds(5, 220, 380, 200);
-    reminderPanel.setBackground(Color.white);
+    panelFunc(reminderPanel, 5, 220, 380, 200, reminderLabel, newReminderButton);
     this.add(reminderPanel);
 
-    calendarPanel.setBounds(395, 220, 380, 200);
-    calendarPanel.setBackground(Color.white);
+    panelFunc(calendarPanel, 395, 220, 380, 200, calendarLabel, addCalendarEventButton);
     this.add(calendarPanel);
 
     exitButton.setBounds(340, 430, 100, 25);
@@ -50,5 +44,14 @@ class mainClass extends JFrame {
         System.exit(0);
       }
     });
+  }
+
+  // Used for the setup of the panels onto the main JFrame
+  public void panelFunc(JPanel panelName, int x, int y, int width, int height, JLabel name, JButton buttonName) {
+    panelName.setBounds(x, y, width, height);
+    panelName.setBackground(Color.white);
+    panelName.setLayout(null);
+    buttonName.setBounds((width / 2) - 65, (height - 35), 125, 25);
+    panelName.add(buttonName);
   }
 }
