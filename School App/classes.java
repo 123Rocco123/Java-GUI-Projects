@@ -23,5 +23,31 @@ class classes extends JFrame {
     time.setText("Enter Time of the Class");
     time.setHorizontalAlignment(SwingConstants.CENTER);
     this.add(time);
+
+    // Used to check if the user has selected the new class textfield
+    newClass.addFocusListener(new FocusListener() {
+      @Override
+      public void focusGained(FocusEvent e) {
+        newClass.setText("");
+      }
+
+      @Override
+      public void focusLost(FocusEvent e) {
+        newClass.setText("Enter New Class Name");
+      }
+    });
+
+    // Used to check if the user has selected the time textfield
+    time.addFocusListener(new FocusListener() {
+      @Override
+      public void focusGained(FocusEvent e) {
+        time.setText("");
+      }
+
+      @Override
+      public void focusLost(FocusEvent e) {
+        time.setText("Enter Time of the Class");
+      }
+    });
   }
 }
