@@ -28,7 +28,10 @@ class classes {
     time.setBounds(10, 70, 465, 50);
     time.setText("Enter Time of the Class");
     time.setHorizontalAlignment(SwingConstants.CENTER);
-    this.add(time);
+    testFrame.add(time);
+
+    submitButton.setBounds(175, 130, 150, 25);
+    testFrame.add(submitButton);
 
     // Used to check if the user has selected the new class textfield
     newClass.addFocusListener(new FocusListener() {
