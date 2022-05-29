@@ -56,6 +56,25 @@ class classes {
       @Override
       public void focusLost(FocusEvent e) {
         time.setText("Enter Time of the Class");
+    submitButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        try {
+          String className = newClass.getText();
+
+          if (!(className.equals("Enter New Class Name"))) {
+            File newClassFile = new File("./classes", (className + ".txt"));
+
+            if (newClassFile.createNewFile()) {
+              FileWriter newClassWriter = new FileWriter(newClassFile);
+              testFrame.dispose();
+            }
+            else {
+              JOptionPane.showMessageDialog(testFrame, "Error! Class Already Exists.");
+            }
+          } else {
+            JOptionPane.showMessageDialog(testFrame, "Error! Name For New Class Not Written.");
+          }
+        } catch (IOException ex) {}
       }
     });
   }
