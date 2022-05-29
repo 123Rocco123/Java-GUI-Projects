@@ -67,16 +67,23 @@ class classes {
       }
     });
 
+    // Action Listener For Submit Button
     submitButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         try {
           String className = newClass.getText();
+          String timeClassStarts = time.getText();
 
           if (!(className.equals("Enter New Class Name"))) {
             File newClassFile = new File("./classes", (className + ".txt"));
 
             if (newClassFile.createNewFile()) {
               FileWriter newClassWriter = new FileWriter(newClassFile);
+
+              newClassWriter.write("Class: " + className);
+              newClassWriter.write("\nTime Class Starts: " + timeClassStarts);
+              newClassWriter.close();
+
               testFrame.dispose();
             }
             else {
