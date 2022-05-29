@@ -37,12 +37,16 @@ class classes {
     newClass.addFocusListener(new FocusListener() {
       @Override
       public void focusGained(FocusEvent e) {
-        newClass.setText("");
+        if ((newClass.getText()).equals("Enter New Class Name")) {
+          newClass.setText("");
+        }
       }
 
       @Override
       public void focusLost(FocusEvent e) {
-        newClass.setText("Enter New Class Name");
+        if ((newClass.getText()).equals("")) {
+          newClass.setText("Enter New Class Name");
+        }
       }
     });
 
@@ -50,12 +54,19 @@ class classes {
     time.addFocusListener(new FocusListener() {
       @Override
       public void focusGained(FocusEvent e) {
-        time.setText("");
+        if ((time.getText()).equals("Enter Time of the Class")) {
+          time.setText("");
+        }
       }
 
       @Override
       public void focusLost(FocusEvent e) {
-        time.setText("Enter Time of the Class");
+        if ((time.getText()).equals("")) {
+          time.setText("Enter Time of the Class");
+        }
+      }
+    });
+
     submitButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         try {
