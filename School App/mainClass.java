@@ -18,6 +18,8 @@ class mainClass extends JFrame {
   JPanel innerAlertsPanel = new JPanel();
   JPanel innerHomeWorkPanel = new JPanel();
 
+  JScrollPane scrollClassesPanel = new JScrollPane();
+
   // Names of the main JPanels
   JLabel classesLabel = new JLabel("Classes");
   JLabel calendarLabel = new JLabel("Calendar");
@@ -46,6 +48,8 @@ class mainClass extends JFrame {
 
     panelFunc(classesPanel, 5, 10, 250, 200, classesLabel, newClassButton);
     classesPanel.add(innerPanelFunc(10, 35, 230, 120, innerClassesPanel));
+    innerClassesPanel.add(innerScrollPane(10, 10, 210, 100, scrollClassesPanel));
+
     this.add(classesPanel);
 
     panelFunc(alertsPanel, 265, 10, 250, 200, alertsLabel, newAlertButton);
@@ -128,6 +132,14 @@ class mainClass extends JFrame {
   // Used for the inner JPanels in the JPanels.
   public JPanel innerPanelFunc(int x, int y, int width, int height, JPanel panelName) {
     panelName.setBounds(x, y, width, height);
+    panelName.setLayout(null);
     return panelName;
+  }
+
+  public JScrollPane innerScrollPane(int x, int y, int width, int height, JScrollPane name) {
+    name.setBounds(x, y, width, height);
+    name.setBackground(Color.black);
+
+    return name;
   }
 }
