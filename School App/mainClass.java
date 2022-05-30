@@ -48,7 +48,6 @@ class mainClass {
   JButton exitButton = new JButton("Quit");
 
   public mainClass() {
-    initialCheckerFunc();
     // JFrame Code
     mainFrame.setTitle("Rocco's School App");
     mainFrame.setSize(800, 500);
@@ -156,6 +155,14 @@ class mainClass {
         });
       }
     });
+
+    // Initial Function for the saved alerts and stuff.
+    initialCheckerFunc();
+
+    // Used to re-fresh page.
+    mainFrame.invalidate();
+    mainFrame.validate();
+    mainFrame.repaint();
   }
 
   // Used for the setup of the panels onto the main JFrame.
@@ -202,6 +209,7 @@ class mainClass {
   // The function is used to check if there are any files in the directories.
      // If there are files, then it will add them to the scroll panes.
   public void initialCheckerFunc() {
+    // Used for files in classes directory
     if (new File("./classes").list().length > 0) {
       String className = "";
       String classTime = "";
