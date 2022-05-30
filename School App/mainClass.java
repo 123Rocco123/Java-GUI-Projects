@@ -196,6 +196,13 @@ class mainClass {
           Scanner fileReader = new Scanner(file);
 
           while(fileReader.hasNextLine()) {
+            String test = fileReader.nextLine();
+
+            if (test.contains("Class: ")) {
+              className = test.replace("Class: ", "");
+            } else if (test.contains("Time Class Starts: ")) {
+              classTime = test.replace("Time Class Starts: ", "");
+            }
           }
           // JLabel used to append to the scroll pane for saved classes that the user added in previous sections. 
           JLabel newLabel = new JLabel(className + ": " + classTime);
