@@ -4,10 +4,14 @@ import java.awt.event.*;
 import javax.swing.*;
 
 class newHomework extends JFrame {
+class newHomework {
+  JFrame homeworkFrame = new JFrame();
+
   public newHomework() {
-    this.setSize(500, 500);
-    this.setLocationRelativeTo(null);
-    this.setVisible(true);
-    this.setTitle("Add Homework");
+    homeworkFrame.setSize(500, 500);
+    homeworkFrame.setLocationRelativeTo(null);
+    homeworkFrame.setVisible(true);
+    homeworkFrame.setTitle("Add Homework");
+    homeworkFrame.setLayout(null);
   }
 }
