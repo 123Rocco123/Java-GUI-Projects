@@ -3,7 +3,9 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-class mainClass extends JFrame {
+class mainClass {
+  JFrame mainFrame = new JFrame();
+
   // Used to contain the different functions of the App.
   JPanel classesPanel = new JPanel();
   JPanel calendarPanel = new JPanel();
@@ -39,37 +41,48 @@ class mainClass extends JFrame {
 
   public mainClass() {
     // JFrame Code
-    this.setTitle("Rocco's School App");
-    this.setSize(800, 500);
-    this.setLocationRelativeTo(null);
-    this.setVisible(true);
-    this.setLayout(null);
-    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    mainFrame.setTitle("Rocco's School App");
+    mainFrame.setSize(800, 500);
+    mainFrame.setLocationRelativeTo(null);
+    mainFrame.setVisible(true);
+    mainFrame.setLayout(null);
+    mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+    // Classes
     panelFunc(classesPanel, 5, 10, 250, 200, classesLabel, newClassButton);
     classesPanel.add(innerPanelFunc(10, 35, 230, 120, innerClassesPanel));
-    innerClassesPanel.add(innerScrollPane(10, 10, 210, 100, scrollClassesPanel));
+    innerClassesPanel.add(innerScrollPane(10, 20, 210, 100, scrollClassesPanel));
+    innerLabel(20, 0, 200, 25, "Name of Class | Time Class Starts", innerClassesPanel);
 
-    this.add(classesPanel);
+    mainFrame.add(classesPanel);
 
+    // Alert
     panelFunc(alertsPanel, 265, 10, 250, 200, alertsLabel, newAlertButton);
     alertsPanel.add(innerPanelFunc(10, 35, 230, 120, innerAlertsPanel));
-    this.add(alertsPanel);
 
+    mainFrame.add(alertsPanel);
+
+    // Homework
     panelFunc(homeWorkPanel, 525, 10, 250, 200, homeworkLabel, newHomeworkButton);
     homeWorkPanel.add(innerPanelFunc(10, 35, 230, 120, innerHomeWorkPanel));
-    this.add(homeWorkPanel);
 
+    mainFrame.add(homeWorkPanel);
+
+    // Reminder
     panelFunc(reminderPanel, 5, 220, 380, 200, reminderLabel, newReminderButton);
     reminderPanel.add(innerPanelFunc(10, 35, 360, 120, innerReminderPanel));
-    this.add(reminderPanel);
 
+    mainFrame.add(reminderPanel);
+
+    // Calendar
     panelFunc(calendarPanel, 395, 220, 380, 200, calendarLabel, addCalendarEventButton);
     calendarPanel.add(innerPanelFunc(10, 35, 360, 120, innerCalendarPanel));
-    this.add(calendarPanel);
 
+    mainFrame.add(calendarPanel);
+
+    // Exit Button
     exitButton.setBounds(340, 430, 100, 25);
-    this.add(exitButton);
+    mainFrame.add(exitButton);
 
     exitButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
@@ -138,8 +151,6 @@ class mainClass extends JFrame {
 
   public JScrollPane innerScrollPane(int x, int y, int width, int height, JScrollPane name) {
     name.setBounds(x, y, width, height);
-    name.setBackground(Color.black);
-
     return name;
   }
 }
