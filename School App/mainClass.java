@@ -183,6 +183,11 @@ class mainClass {
      // If there are files, then it will add them to the scroll panes.
   public void initialCheckerFunc() {
     if (new File("./classes").list().length > 0) {
+      String className = "";
+      String classTime = "";
+
+      for (int i = 0; i < new File("./classes").list().length; i++) {
+      }
     }
   }
 }
