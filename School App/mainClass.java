@@ -167,4 +167,11 @@ class mainClass {
     name.setBounds(x, y, width, height);
     return name;
   }
+
+  public void innerLabel(int x, int y, int width, int height, String text, JPanel panelName) {
+    JLabel info = new JLabel(text);
+
+    info.setBounds(x, y, width, height);
+    panelName.add(info);
+  }
 }
