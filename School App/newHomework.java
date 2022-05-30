@@ -32,7 +32,22 @@ class newHomework {
 
     saveAndQuit.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        homeworkFrame.dispose();
+        try {
+          if (!newHomework.getText().equals("Enter Homework Name Here")) {
+            newHomeworkFile = new File("./homework", (newHomework.getText() + " " + homeworkClass.getText() + ".txt"));
+
+            FileWriter homeworkWriter = new FileWriter(newHomeworkFile);
+
+            homeworkWriter.write("Homework: " + newHomework.getText());
+            homeworkWriter.write("\nClass: " + homeworkClass.getText());
+            homeworkWriter.write("\nDue Date: " + dueDate.getText());
+            homeworkWriter.close();
+
+            homeworkFrame.dispose();
+          } else {
+            JOptionPane.showMessageDialog(homeworkFrame, "Error! Class For Homework not Assigned.");
+          }
+        } catch (IOException ex) {}
       }
     });
   }
