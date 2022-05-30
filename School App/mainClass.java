@@ -144,6 +144,13 @@ class mainClass {
 
         (addNewHomework.homeworkFrame).addWindowListener(new WindowAdapter() {
           public void windowClosed(WindowEvent e) {
+            if ((addNewHomework.newHomeworkFile).exists()) {
+              scrollPaneHW.add(new JLabel(addNewHomework.newHomework.getText() + ": " + addNewHomework.homeworkClass.getText() + ": " + addNewHomework.dueDate.getText()));
+
+              // Used to re-fresh the page to display the new page.
+              mainFrame.invalidate();
+              mainFrame.validate();
+              mainFrame.repaint();
             }
           }
         });
