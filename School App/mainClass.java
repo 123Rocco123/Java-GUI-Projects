@@ -233,8 +233,41 @@ class mainClass {
             }
           }
           // JLabel used to append to the scroll pane for saved classes that the user added in previous sections.
-          JLabel newLabel = new JLabel(className + ": " + classTime);
+          JLabel newLabel = new JLabel(className + " | " + classTime);
           scrollPane.add(newLabel);
+
+        } catch (FileNotFoundException e) {}
+      }
+    }
+
+    // Used for files in homework directory
+    if (new File("./homework").list().length > 0) {
+      for (int i = 0; i < new File("./homework").list().length; i++) {
+        try {
+          String labelString = "";
+
+          File fileToWrite = new File("./homework", new File("./homework").list()[i]);
+
+          Scanner fileReader = new Scanner(fileToWrite);
+
+          while (fileReader.hasNextLine()) {
+            String line = fileReader.nextLine();
+
+            if (line.contains("Homework: ")) {
+              line = line.replace("Homework: ", "");
+
+              labelString += (line);
+            } else if (line.contains("Class: ")) {
+              line = line.replace("Class: ", "");
+
+              labelString += (" | " + line);
+            } else if (line.contains("Due Date: ")) {
+              line = line.replace("Due Date: ", "");
+
+              labelString += (" | " + line);
+            }
+          }
+          scrollPaneHW.add(new JLabel(labelString));
 
         } catch (FileNotFoundException e) {}
       }
