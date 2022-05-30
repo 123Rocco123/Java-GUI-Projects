@@ -13,6 +13,11 @@ class classes {
 
   JButton submitButton = new JButton("Save and Close");
 
+  String className;
+  String timeClassStarts;
+
+  File newClassFile;
+
   public classes() {
     testFrame.setSize(500, 200);
     testFrame.setLocationRelativeTo(null);
@@ -71,11 +76,11 @@ class classes {
     submitButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         try {
-          String className = newClass.getText();
-          String timeClassStarts = time.getText();
+          className = newClass.getText();
+          timeClassStarts = time.getText();
 
           if (!(className.equals("Enter New Class Name"))) {
-            File newClassFile = new File("./classes", (className + ".txt"));
+            newClassFile = new File("./classes", (className + ".txt"));
 
             if (newClassFile.createNewFile()) {
               FileWriter newClassWriter = new FileWriter(newClassFile);
