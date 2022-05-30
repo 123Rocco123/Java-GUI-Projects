@@ -93,7 +93,20 @@ class mainClass {
 
     newClassButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new classes();
+        classes newClass = new classes();
+
+        (newClass.testFrame).addWindowListener(new WindowAdapter() {
+          public void windowClosed(WindowEvent e) {
+            if ((newClass.newClassFile).exists()) {
+              scrollPane.add(new JLabel(newClass.className + ": " + newClass.timeClassStarts));
+
+              // Used to re-fresh the page to display the new page.
+              mainFrame.invalidate();
+              mainFrame.validate();
+              mainFrame.repaint();
+            }
+          }
+        });
       }
     });
 
