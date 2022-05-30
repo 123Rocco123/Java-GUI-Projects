@@ -187,6 +187,21 @@ class mainClass {
       String classTime = "";
 
       for (int i = 0; i < new File("./classes").list().length; i++) {
+        try {
+          // Make sure to change the directory to the classes folder.
+             // And then pass in each of the file name's for a list.
+          File file = new File("./classes", new File("./classes").list()[i]);
+
+          // Used to read the file
+          Scanner fileReader = new Scanner(file);
+
+          while(fileReader.hasNextLine()) {
+          }
+          // JLabel used to append to the scroll pane for saved classes that the user added in previous sections. 
+          JLabel newLabel = new JLabel(className + ": " + classTime);
+          scrollPane.add(newLabel);
+
+        } catch (FileNotFoundException e) {}
       }
     }
   }
