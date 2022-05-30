@@ -23,8 +23,12 @@ class mainClass {
   JPanel innerAlertsPanel = new JPanel();
   JPanel innerHomeWorkPanel = new JPanel();
 
+  // Panes and ScrollPanes for Notifications on the Main Page
   JPanel scrollPane = new JPanel(new GridLayout(0, 1));
   JScrollPane scrollClassesPanel = new JScrollPane(scrollPane);
+
+  JPanel scrollPaneHW = new JPanel(new GridLayout(0, 1));
+  JScrollPane scrollHomeworkPanel = new JScrollPane(scrollPaneHW);
 
   // Names of the main JPanels
   JLabel classesLabel = new JLabel("Classes");
@@ -70,6 +74,8 @@ class mainClass {
     // Homework
     panelFunc(homeWorkPanel, 525, 10, 250, 200, homeworkLabel, newHomeworkButton);
     homeWorkPanel.add(innerPanelFunc(10, 35, 230, 120, innerHomeWorkPanel));
+    innerHomeWorkPanel.add(innerScrollPane(10, 20, 210, 100, scrollHomeworkPanel));
+    innerLabel(30, 0, 200, 25, "Homework | Class | Due Date", innerHomeWorkPanel);
 
     mainFrame.add(homeWorkPanel);
 
@@ -169,6 +175,7 @@ class mainClass {
 
   public JScrollPane innerScrollPane(int x, int y, int width, int height, JScrollPane name) {
     name.setBounds(x, y, width, height);
+    name.setBorder(BorderFactory.createLineBorder(Color.black));
     return name;
   }
 
@@ -204,7 +211,7 @@ class mainClass {
               classTime = test.replace("Time Class Starts: ", "");
             }
           }
-          // JLabel used to append to the scroll pane for saved classes that the user added in previous sections. 
+          // JLabel used to append to the scroll pane for saved classes that the user added in previous sections.
           JLabel newLabel = new JLabel(className + ": " + classTime);
           scrollPane.add(newLabel);
 
