@@ -20,7 +20,8 @@ class mainClass {
   JPanel innerAlertsPanel = new JPanel();
   JPanel innerHomeWorkPanel = new JPanel();
 
-  JScrollPane scrollClassesPanel = new JScrollPane();
+  JPanel scrollPane = new JPanel(new GridLayout(0, 1));
+  JScrollPane scrollClassesPanel = new JScrollPane(scrollPane);
 
   // Names of the main JPanels
   JLabel classesLabel = new JLabel("Classes");
