@@ -140,7 +140,13 @@ class mainClass {
 
     newHomeworkButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new newHomework();
+        newHomework addNewHomework = new newHomework();
+
+        (addNewHomework.homeworkFrame).addWindowListener(new WindowAdapter() {
+          public void windowClosed(WindowEvent e) {
+            }
+          }
+        });
       }
     });
   }
