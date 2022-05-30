@@ -3,18 +3,21 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-class newHomework extends JFrame {
+import java.io.*;
+
 class newHomework {
   JFrame homeworkFrame = new JFrame();
 
   JTextField newHomework = new JTextField();
   JTextField homeworkClass = new JTextField();
-
+  JTextField dueDate = new JTextField();
 
   JButton saveAndQuit = new JButton("Save and Quit");
 
+  File newHomeworkFile;
+
   public newHomework() {
-    homeworkFrame.setSize(500, 500);
+    homeworkFrame.setSize(500, 265);
     homeworkFrame.setLocationRelativeTo(null);
     homeworkFrame.setVisible(true);
     homeworkFrame.setTitle("Add Homework");
@@ -22,8 +25,9 @@ class newHomework {
 
     homeworkFrame.add(fieldSetterFunc(10, 10, 465, 50, "Enter Homework Name Here", newHomework));
     homeworkFrame.add(fieldSetterFunc(10, 70, 465, 50, "Enter The Name of the Class For the Homework", homeworkClass));
+    homeworkFrame.add(fieldSetterFunc(10, 130, 465, 50, "Enter Date The Homework is Due (mm/dd/yyyy)", dueDate));
 
-    saveAndQuit.setBounds(175, 130, 150, 25);
+    saveAndQuit.setBounds(175, 190, 150, 25);
     homeworkFrame.add(saveAndQuit);
 
     saveAndQuit.addActionListener(new ActionListener() {
