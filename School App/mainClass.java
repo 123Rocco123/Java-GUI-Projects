@@ -3,6 +3,9 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
+import java.io.*;
+import java.util.Scanner;
+
 class mainClass {
   JFrame mainFrame = new JFrame();
 
@@ -41,6 +44,7 @@ class mainClass {
   JButton exitButton = new JButton("Quit");
 
   public mainClass() {
+    initialCheckerFunc();
     // JFrame Code
     mainFrame.setTitle("Rocco's School App");
     mainFrame.setSize(800, 500);
@@ -173,5 +177,12 @@ class mainClass {
 
     info.setBounds(x, y, width, height);
     panelName.add(info);
+  }
+
+  // The function is used to check if there are any files in the directories.
+     // If there are files, then it will add them to the scroll panes.
+  public void initialCheckerFunc() {
+    if (new File("./classes").list().length > 0) {
+    }
   }
 }
