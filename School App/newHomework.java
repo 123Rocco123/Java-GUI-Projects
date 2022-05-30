@@ -34,7 +34,7 @@ class newHomework {
       public void actionPerformed(ActionEvent e) {
         try {
           if (!newHomework.getText().equals("Enter Homework Name Here")) {
-            newHomeworkFile = new File("./homework", (newHomework.getText() + " " + homeworkClass.getText() + ".txt"));
+            newHomeworkFile = new File("./homework", (newHomework.getText() + ".txt"));
 
             FileWriter homeworkWriter = new FileWriter(newHomeworkFile);
 
