@@ -1,13 +1,25 @@
 import java.awt.*;
 import java.awt.event.*;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
 
-class reminder extends JFrame {
+import java.io.*;
+import java.util.*;
+import java.text.*;
+
+class reminder {
+  JFrame reminderFrame = new JFrame();
+
+
   public reminder() {
-    this.setSize(500, 500);
-    this.setLocationRelativeTo(null);
-    this.setVisible(true);
-    this.setTitle("Add New Reminder");
+    reminderFrame.setSize(500, 205);
+    reminderFrame.setLocationRelativeTo(null);
+    reminderFrame.setVisible(true);
+    reminderFrame.setTitle("Add New Reminder");
+    reminderFrame.setLayout(null);
   }
 }
