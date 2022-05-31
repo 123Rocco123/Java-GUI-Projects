@@ -44,6 +44,9 @@ class mainClass {
   JButton newAlertButton = new JButton("Add New Alert");
   JButton newHomeworkButton = new JButton("Add Homework");
 
+  // Extra Buttons
+  JButton alertsMoreInformation = new JButton("More Information");
+
   // Quit Button
   JButton exitButton = new JButton("Quit");
 
