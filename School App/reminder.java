@@ -24,5 +24,19 @@ class reminder {
     reminderFrame.setVisible(true);
     reminderFrame.setTitle("Add New Reminder");
     reminderFrame.setLayout(null);
+
+    reminder.setBounds(10, 10, 465, 50);
+    reminderFrame.add(reminder);
+
+    dateField.setBounds(10, 70, 465, 50);
+
+    /*String strDate = dateFormat.format(date);
+
+    dateField.setText(strDate);*/
+    reminderFrame.add(dateField);
+
+    submitButton.setBounds(175, 130, 150, 25);
+    reminderFrame.add(submitButton);
+
   }
 }
