@@ -40,6 +40,9 @@ class mainClass {
   JPanel scrollPaneHW = new JPanel(new GridLayout(0, 1));
   JScrollPane scrollHomeworkPanel = new JScrollPane(scrollPaneHW);
 
+  JPanel scrollPaneRem = new JPanel(new GridLayout(0, 1));
+  JScrollPane scrollReminderPanel = new JScrollPane(scrollPaneRem);
+
   // Names of the main JPanels
   JLabel classesLabel = new JLabel("Classes");
   JLabel calendarLabel = new JLabel("Calendar");
@@ -94,6 +97,8 @@ class mainClass {
     // Reminder
     panelFunc(reminderPanel, 5, 220, 380, 200, reminderLabel, newReminderButton);
     reminderPanel.add(innerPanelFunc(10, 35, 360, 120, innerReminderPanel));
+    innerReminderPanel.add(innerScrollPane(10, 20, 340, 100, scrollReminderPanel));
+    innerLabel(125, 0, 200, 25, "Reminder | Due Date", innerReminderPanel);
 
     mainFrame.add(reminderPanel);
 
