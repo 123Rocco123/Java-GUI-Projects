@@ -18,6 +18,8 @@ class reminder {
   JTextField dateField = new JTextField();
 
 
+  JButton submitButton = new JButton("Submit and Close");
+
   public reminder() {
     reminderFrame.setSize(500, 205);
     reminderFrame.setLocationRelativeTo(null);
@@ -40,6 +42,24 @@ class reminder {
 
     focusFunction(reminder, "Write Reminder");
     focusFunction(dateField, "Enter Date Here");
+
+    submitButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        if (!reminder.getText().equals("")) {
+          File newFile = new File("./reminder", (reminder.getText() + ".txt"));
+
+          try {
+            FileWriter newFileWriter = new FileWriter(newFile);
+
+            newFileWriter.write("Reminder: " + reminder.getText());
+            newFileWriter.close();
+
+            reminderFrame.dispose();
+          } catch (IOException ex) {}
+        }
+      }
+    });
+  }
 
   public void focusFunction(JTextField name, String defaultText) {
     name.setHorizontalAlignment(SwingConstants.CENTER);
