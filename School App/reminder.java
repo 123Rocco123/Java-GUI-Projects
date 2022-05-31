@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import javax.swing.JOptionPane;
 
 import java.io.*;
 import java.util.*;
@@ -17,8 +18,9 @@ class reminder {
   JTextField reminder = new JTextField();
   JTextField dateField = new JTextField();
 
-
   JButton submitButton = new JButton("Submit and Close");
+
+  Date convertedTime;
 
   public reminder() {
     reminderFrame.setSize(500, 205);
@@ -31,30 +33,30 @@ class reminder {
     reminderFrame.add(reminder);
 
     dateField.setBounds(10, 70, 465, 50);
-
-    /*String strDate = dateFormat.format(date);
-
-    dateField.setText(strDate);*/
     reminderFrame.add(dateField);
 
     submitButton.setBounds(175, 130, 150, 25);
     reminderFrame.add(submitButton);
 
     focusFunction(reminder, "Write Reminder");
-    focusFunction(dateField, "Enter Date Here");
+    focusFunction(dateField, "Enter Date Here (MM/dd/yyyy)");
 
     submitButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        if (!reminder.getText().equals("")) {
+        if (!reminder.getText().equals("") && !reminder.getText().equals("Write Reminder")) {
           File newFile = new File("./reminder", (reminder.getText() + ".txt"));
 
           try {
-            FileWriter newFileWriter = new FileWriter(newFile);
+            if (newFile.createNewFile()) {
+              FileWriter newFileWriter = new FileWriter(newFile);
 
-            newFileWriter.write("Reminder: " + reminder.getText());
-            newFileWriter.close();
+              newFileWriter.write("Reminder: " + reminder.getText());
+              newFileWriter.close();
 
-            reminderFrame.dispose();
+              reminderFrame.dispose();
+            } else {
+                JOptionPane.showMessageDialog(reminderFrame, "Error! Reminder Already Exists.");
+            }
           } catch (IOException ex) {}
         }
       }
