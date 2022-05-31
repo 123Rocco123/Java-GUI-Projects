@@ -38,5 +38,27 @@ class reminder {
     submitButton.setBounds(175, 130, 150, 25);
     reminderFrame.add(submitButton);
 
+    focusFunction(reminder, "Write Reminder");
+    focusFunction(dateField, "Enter Date Here");
+
+  public void focusFunction(JTextField name, String defaultText) {
+    name.setHorizontalAlignment(SwingConstants.CENTER);
+    name.setText(defaultText);
+
+    name.addFocusListener(new FocusListener() {
+      @Override
+      public void focusGained(FocusEvent e) {
+        if (name.getText().equals(defaultText)) {
+          name.setText("");
+        }
+      }
+
+      @Override
+      public void focusLost(FocusEvent e) {
+        if (name.getText().equals("")) {
+          name.setText(defaultText);
+        }
+      }
+    });
   }
 }
