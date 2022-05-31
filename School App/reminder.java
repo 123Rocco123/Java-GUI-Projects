@@ -14,6 +14,9 @@ import java.text.*;
 class reminder {
   JFrame reminderFrame = new JFrame();
 
+  JTextField reminder = new JTextField();
+  JTextField dateField = new JTextField();
+
 
   public reminder() {
     reminderFrame.setSize(500, 205);
