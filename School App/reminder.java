@@ -51,6 +51,7 @@ class reminder {
               FileWriter newFileWriter = new FileWriter(newFile);
 
               newFileWriter.write("Reminder: " + reminder.getText());
+              newFileWriter.write("\nTime: " + dateField.getText());
               newFileWriter.close();
 
               reminderFrame.dispose();
