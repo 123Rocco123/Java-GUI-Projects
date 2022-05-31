@@ -55,7 +55,7 @@ class reminder {
 
               reminderFrame.dispose();
             } else {
-                JOptionPane.showMessageDialog(reminderFrame, "Error! Reminder Already Exists.");
+              JOptionPane.showMessageDialog(reminderFrame, "Error! Reminder Already Exists.");
             }
           } catch (IOException ex) {}
         }
