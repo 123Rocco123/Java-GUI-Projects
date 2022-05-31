@@ -140,7 +140,29 @@ class mainClass {
 
     newReminderButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new reminder();
+        reminder reminderClass = new reminder();
+
+        // Used to convert the reminder alert date to a date data type.
+        reminderClass.reminderFrame.addWindowListener(new WindowAdapter() {
+          public void windowClosed(WindowEvent closed) {
+            if (!reminderClass.dateField.getText().equals("")) {
+              Date convertedTime = new Date();
+              try {
+                convertedTime = new SimpleDateFormat("MM/dd/yyyy").parse(reminderClass.dateField.getText());
+              } catch (ParseException ex) {}
+
+              Timer timer = new Timer();
+
+              TimerTask task = new TimerTask() {
+                @Override
+                public void run() {
+                  System.out.println("test");
+                }
+              };
+              timer.schedule(task, convertedTime);
+            }
+          }
+        });
       }
     });
 
