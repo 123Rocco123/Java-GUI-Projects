@@ -152,6 +152,13 @@ class mainClass {
           public void windowClosed(WindowEvent closed) {
             if (!reminderClass.dateField.getText().equals("")) {
               Date convertedTime = new Date();
+
+              scrollPaneRem.add(new Label(reminderClass.reminder.getText() + " | " + convertedTime));
+
+              // Used to re-fresh the page to display the new page.
+              mainFrame.invalidate();
+              mainFrame.validate();
+              mainFrame.repaint();
               try {
                 convertedTime = new SimpleDateFormat("MM/dd/yyyy").parse(reminderClass.dateField.getText());
               } catch (ParseException ex) {}
@@ -161,7 +168,7 @@ class mainClass {
               TimerTask task = new TimerTask() {
                 @Override
                 public void run() {
-                  System.out.println("test");
+                  JOptionPane.showMessageDialog(mainFrame, "Alert! " + reminderClass.reminder.getText());
                 }
               };
               timer.schedule(task, convertedTime);
