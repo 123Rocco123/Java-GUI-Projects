@@ -328,6 +328,15 @@ class mainClass {
     if (new File("./reminder").list().length > 0) {
       for (int i = 0; i < new File("./reminder").list().length; i++) {
         try {
+          File fileToRead = new File("./reminder", new File("./reminder").list()[i]);
+
+          Scanner fileReader = new Scanner(fileToRead);
+
+          Date convertedTime = new Date();
+
+          String LabelLine = "";
+          String alertDate = "";
+
         } catch (FileNotFoundException e) {}
       }
     }
