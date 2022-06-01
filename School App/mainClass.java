@@ -63,6 +63,10 @@ class mainClass {
   // Quit Button
   JButton exitButton = new JButton("Quit");
 
+  // Used to contain the reminder message for the initialize function.
+     // Using a gloabl variable because of "inner class must be final or effectively final" error.
+  String reminderString = "";
+
   public mainClass() {
     // JFrame Code
     mainFrame.setTitle("Rocco's School App");
@@ -316,6 +320,14 @@ class mainClass {
           }
           scrollPaneHW.add(new JLabel(labelString));
 
+        } catch (FileNotFoundException e) {}
+      }
+    }
+
+    // Used for the Reminder directory
+    if (new File("./reminder").list().length > 0) {
+      for (int i = 0; i < new File("./reminder").list().length; i++) {
+        try {
         } catch (FileNotFoundException e) {}
       }
     }
