@@ -337,6 +337,22 @@ class mainClass {
           String LabelLine = "";
           String alertDate = "";
 
+          while (fileReader.hasNextLine()) {
+            String line = fileReader.nextLine();
+
+            if (line.contains("Reminder: ")) {
+              line = line.replace("Reminder: ", "");
+              LabelLine += line;
+
+              reminderString = line;
+            } else if (line.contains("Time: ")) {
+              line = line.replace("Time: ", "");
+              LabelLine += (" | " + line);
+
+              alertDate = line;
+            }
+          }
+          };
         } catch (FileNotFoundException e) {}
       }
     }
