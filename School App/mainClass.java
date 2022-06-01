@@ -350,6 +350,9 @@ class mainClass {
               LabelLine += (" | " + line);
 
               alertDate = line;
+              try {
+                convertedTime = new SimpleDateFormat("MM/dd/yyyy").parse(alertDate);
+              } catch (ParseException ex) {}
             }
           }
           };
