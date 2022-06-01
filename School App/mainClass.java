@@ -355,7 +355,18 @@ class mainClass {
               } catch (ParseException ex) {}
             }
           }
+          scrollPaneRem.add(new JLabel(LabelLine));
+
+          Timer timer = new Timer();
+
+          TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+              JOptionPane.showMessageDialog(mainFrame, (reminderString));
+            }
           };
+
+          timer.schedule(task, convertedTime);
         } catch (FileNotFoundException e) {}
       }
     }
