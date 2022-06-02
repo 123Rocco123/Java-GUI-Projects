@@ -57,8 +57,12 @@ class mainClass {
   JButton newAlertButton = new JButton("Add New Alert");
   JButton newHomeworkButton = new JButton("Add Homework");
 
-  // Extra Buttons
-  JButton alertsMoreInformation = new JButton("More Information");
+  // Expanded Information Button
+  JButton classMoreInfo = new JButton("More Info");
+  JButton calendarMoreInfo = new JButton("More Info");
+  JButton reminderMoreInfo = new JButton("More Info");
+  JButton alertMoreInfo = new JButton("More Info");
+  JButton homeworkMoreInfo = new JButton("More Info");
 
   // Quit Button
   JButton exitButton = new JButton("Quit");
@@ -77,7 +81,7 @@ class mainClass {
     mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     // Classes
-    panelFunc(classesPanel, 5, 10, 250, 200, classesLabel, newClassButton);
+    panelFunc(classesPanel, 5, 10, 250, 200, classesLabel, newClassButton, classMoreInfo);
     classesPanel.add(innerPanelFunc(10, 35, 230, 120, innerClassesPanel));
     innerClassesPanel.add(innerScrollPane(10, 20, 210, 100, scrollClassesPanel));
     innerLabel(20, 0, 200, 25, "Name of Class | Time Class Starts", innerClassesPanel);
@@ -85,13 +89,13 @@ class mainClass {
     mainFrame.add(classesPanel);
 
     // Alert
-    panelFunc(alertsPanel, 265, 10, 250, 200, alertsLabel, newAlertButton);
+    panelFunc(alertsPanel, 265, 10, 250, 200, alertsLabel, newAlertButton, alertMoreInfo);
     alertsPanel.add(innerPanelFunc(10, 35, 230, 120, innerAlertsPanel));
 
     mainFrame.add(alertsPanel);
 
     // Homework
-    panelFunc(homeWorkPanel, 525, 10, 250, 200, homeworkLabel, newHomeworkButton);
+    panelFunc(homeWorkPanel, 525, 10, 250, 200, homeworkLabel, newHomeworkButton, homeworkMoreInfo);
     homeWorkPanel.add(innerPanelFunc(10, 35, 230, 120, innerHomeWorkPanel));
     innerHomeWorkPanel.add(innerScrollPane(10, 20, 210, 100, scrollHomeworkPanel));
     innerLabel(30, 0, 200, 25, "Homework | Class | Due Date", innerHomeWorkPanel);
@@ -99,7 +103,7 @@ class mainClass {
     mainFrame.add(homeWorkPanel);
 
     // Reminder
-    panelFunc(reminderPanel, 5, 220, 380, 200, reminderLabel, newReminderButton);
+    panelFunc(reminderPanel, 5, 220, 380, 200, reminderLabel, newReminderButton, reminderMoreInfo);
     reminderPanel.add(innerPanelFunc(10, 35, 360, 120, innerReminderPanel));
     innerReminderPanel.add(innerScrollPane(10, 20, 340, 100, scrollReminderPanel));
     innerLabel(125, 0, 200, 25, "Reminder | Due Date", innerReminderPanel);
@@ -107,7 +111,7 @@ class mainClass {
     mainFrame.add(reminderPanel);
 
     // Calendar
-    panelFunc(calendarPanel, 395, 220, 380, 200, calendarLabel, addCalendarEventButton);
+    panelFunc(calendarPanel, 395, 220, 380, 200, calendarLabel, addCalendarEventButton, calendarMoreInfo);
     calendarPanel.add(innerPanelFunc(10, 35, 360, 120, innerCalendarPanel));
 
     mainFrame.add(calendarPanel);
@@ -217,7 +221,6 @@ class mainClass {
   }
 
   // Used for the setup of the panels onto the main JFrame.
-  public void panelFunc(JPanel panelName, int x, int y, int width, int height, JLabel name, JButton buttonName) {
   public void panelFunc(JPanel panelName, int x, int y, int width, int height, JLabel name, JButton buttonName, JButton moreInfoButton) {
     panelName.setBounds(x, y, width, height);
     panelName.setBackground(Color.white);
