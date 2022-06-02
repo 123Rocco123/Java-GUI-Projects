@@ -218,6 +218,7 @@ class mainClass {
 
   // Used for the setup of the panels onto the main JFrame.
   public void panelFunc(JPanel panelName, int x, int y, int width, int height, JLabel name, JButton buttonName) {
+  public void panelFunc(JPanel panelName, int x, int y, int width, int height, JLabel name, JButton buttonName, JButton moreInfoButton) {
     panelName.setBounds(x, y, width, height);
     panelName.setBackground(Color.white);
     panelName.setLayout(null);
@@ -233,8 +234,11 @@ class mainClass {
     }
     panelName.add(name);
 
-    buttonName.setBounds((width / 2) - 65, (height - 35), 125, 25);
+    buttonName.setBounds((width / 2) - 115, (height - 35), 125, 25);
+    moreInfoButton.setBounds((width / 2) + 20, (height - 35), 100, 25);
+
     panelName.add(buttonName);
+    panelName.add(moreInfoButton);
   }
 
   // Used for the inner JPanels in the JPanels.
