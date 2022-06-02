@@ -211,6 +211,37 @@ class mainClass {
       }
     });
 
+    // Extra Info Button Listeners
+    classMoreInfo.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        new classes();
+      }
+    });
+
+    calendarMoreInfo.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        new calendar();
+      }
+    });
+
+    alertMoreInfo.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        new alerts();
+      }
+    });
+
+    homeworkMoreInfo.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        new newHomework();
+      }
+    });
+
+    reminderMoreInfo.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        new reminder();
+      }
+    });
+
     // Initial Function for the saved alerts and stuff.
     initialCheckerFunc();
 
