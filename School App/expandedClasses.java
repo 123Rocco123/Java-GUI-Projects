@@ -7,7 +7,9 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 
-class expandedClasses extends JFrame {
+class expandedClasses {
+  JFrame expandedClassesFrame = new JFrame();
+
   int arraySize = (new File("./classes").list().length);
   String[] classArray = new String[arraySize + 1];
 
@@ -17,21 +19,22 @@ class expandedClasses extends JFrame {
   JScrollPane innerPanelScroll = new JScrollPane(innerPanel);
 
   JButton deleteButton = new JButton("Delete");
+  JButton exitButton = new JButton("Exit");
 
   public expandedClasses() {
     classArray[0] = "";
 
-    this.setSize(500, 500);
-    this.setLocationRelativeTo(null);
-    this.setBackground(Color.white);
-    this.setTitle("Classes");
-    this.setLayout(null);
-    //this.setResizable(false);
-    this.setVisible(true);
+    expandedClassesFrame.setSize(500, 500);
+    expandedClassesFrame.setLocationRelativeTo(null);
+    expandedClassesFrame.setBackground(Color.white);
+    expandedClassesFrame.setTitle("Classes");
+    expandedClassesFrame.setLayout(null);
+    //expandedClassesFrame.setResizable(false);
+    expandedClassesFrame.setVisible(true);
 
     innerPanelScroll.setBounds(10, 10, 465, 240);
     innerPanelScroll.setBorder(BorderFactory.createLineBorder(Color.black));
-    this.add(innerPanelScroll);
+    expandedClassesFrame.add(innerPanelScroll);
 
     if (new File("./classes").list().length > 0) {
       String className = "";
@@ -69,17 +72,19 @@ class expandedClasses extends JFrame {
     JComboBox classes = new JComboBox(classArray);
 
     classes.setBounds(200, 260, 100, 25);
-    this.add(classes);
+    expandedClassesFrame.add(classes);
 
     deleteButton.setBounds(200, 295, 100, 25);
-    this.add(deleteButton);
+    expandedClassesFrame.add(deleteButton);
 
+    // Selected Dropdown
     classes.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent ev) {
         selectedItem = String.valueOf(classes.getSelectedItem());
       }
     });
 
+    // Delete Button
     deleteButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         if (!selectedItem.equals("")) {
@@ -96,8 +101,8 @@ class expandedClasses extends JFrame {
     });
 
     // Used to re-fresh page.
-    this.invalidate();
-    this.validate();
-    this.repaint();
+    expandedClassesFrame.invalidate();
+    expandedClassesFrame.validate();
+    expandedClassesFrame.repaint();
   }
 }
