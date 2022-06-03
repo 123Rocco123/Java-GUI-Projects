@@ -213,7 +213,20 @@ class mainClass {
     // Extra Info Button Listeners
     classMoreInfo.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new expandedClasses();
+        expandedClasses furtherInformation = new expandedClasses();
+
+        // Clear and re-set the JScrollPane
+        (furtherInformation.expandedClassesFrame).addWindowListener(new WindowAdapter() {
+          public void windowClosed(WindowEvent e) {
+            panelClearerFunc();
+            initialCheckerFunc();
+
+            // Used to re-fresh page.
+            mainFrame.invalidate();
+            mainFrame.validate();
+            mainFrame.repaint();
+          }
+        });
       }
     });
 
