@@ -14,7 +14,6 @@ import javax.swing.JOptionPane;
 import java.io.*;
 import java.util.*;
 import java.text.*;
-import java.util.Scanner;
 
 class mainClass {
   JFrame mainFrame = new JFrame();
@@ -214,7 +213,7 @@ class mainClass {
     // Extra Info Button Listeners
     classMoreInfo.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new classes();
+        new expandedClasses();
       }
     });
 
