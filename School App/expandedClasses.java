@@ -64,6 +64,15 @@ class expandedClasses {
             boolean result = Files.deleteIfExists(Paths.get("./classes/" + selectedItem + ".txt"));
             if (result) {
               System.out.println("File is deleted!");
+
+              // Used to remove and re-paint the panel once a user deleted a class
+              innerPanel.removeAll();
+              screenOutput();
+
+              // Used to re-fresh page.
+              expandedClassesFrame.invalidate();
+              expandedClassesFrame.validate();
+              expandedClassesFrame.repaint();
             } else {
               System.out.println("Sorry, unable to delete the file.");
             }
