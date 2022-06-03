@@ -294,6 +294,13 @@ class mainClass {
     panelName.add(info);
   }
 
+  // Clear Panels
+  public void panelClearerFunc() {
+    scrollPane.removeAll();
+    scrollPaneHW.removeAll();
+    scrollPaneRem.removeAll();
+  }
+
   // The function is used to check if there are any files in the directories.
      // If there are files, then it will add them to the scroll panes.
   public void initialCheckerFunc() {
