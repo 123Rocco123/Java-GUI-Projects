@@ -4,14 +4,19 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import java.io.*;
+import java.nio.file.*;
 import java.util.*;
 
 class expandedClasses extends JFrame {
   int arraySize = (new File("./classes").list().length);
-  String[] classArray = new String[arraySize];
+  String[] classArray = new String[arraySize + 1];
+
+  String selectedItem = "";
 
   JPanel innerPanel = new JPanel(new GridLayout(0, 1));
   JScrollPane innerPanelScroll = new JScrollPane(innerPanel);
+
+  JButton deleteButton = new JButton("Delete");
 
   public expandedClasses() {
     this.setSize(500, 500);
