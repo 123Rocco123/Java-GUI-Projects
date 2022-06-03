@@ -324,6 +324,7 @@ class mainClass {
           JLabel newLabel = new JLabel(className + " | " + classTime);
           scrollPane.add(newLabel);
 
+          fileReader.close();
         } catch (FileNotFoundException e) {}
       }
     }
@@ -357,6 +358,7 @@ class mainClass {
           }
           scrollPaneHW.add(new JLabel(labelString));
 
+          fileReader.close();
         } catch (FileNotFoundException e) {}
       }
     }
@@ -392,6 +394,7 @@ class mainClass {
               } catch (ParseException ex) {}
             }
           }
+          fileReader.close();
           scrollPaneRem.add(new JLabel(LabelLine));
 
           Timer timer = new Timer();
