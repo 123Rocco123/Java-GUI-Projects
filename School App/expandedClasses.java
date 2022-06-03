@@ -33,11 +33,6 @@ class expandedClasses extends JFrame {
     innerPanelScroll.setBorder(BorderFactory.createLineBorder(Color.black));
     this.add(innerPanelScroll);
 
-    // Used to re-fresh page.
-    this.invalidate();
-    this.validate();
-    this.repaint();
-
     if (new File("./classes").list().length > 0) {
       String className = "";
       String classTime = "";
