@@ -71,13 +71,33 @@ class expandedClasses extends JFrame {
     classes.setBounds(200, 260, 100, 25);
     this.add(classes);
 
+    deleteButton.setBounds(200, 295, 100, 25);
+    this.add(deleteButton);
+
+    classes.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent ev) {
+        selectedItem = String.valueOf(classes.getSelectedItem());
+      }
+    });
+
+    deleteButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        if (!selectedItem.equals("")) {
+          try {
+            boolean result = Files.deleteIfExists(Paths.get("./classes/" + selectedItem + ".txt"));
+            if (result) {
+              System.out.println("File is deleted!");
+            } else {
+              System.out.println("Sorry, unable to delete the file.");
+            }
+          } catch (IOException ex) {}
+        }
+      }
+    });
+
     // Used to re-fresh page.
     this.invalidate();
     this.validate();
     this.repaint();
-
-    for (int x = 0; x < classArray.length; x++) {
-      System.out.println(classArray[x]);
-    }
   }
 }
