@@ -77,6 +77,9 @@ class expandedClasses {
     deleteButton.setBounds(200, 295, 100, 25);
     expandedClassesFrame.add(deleteButton);
 
+    exitButton.setBounds(200, 330, 100, 25);
+    expandedClassesFrame.add(exitButton);
+
     // Selected Dropdown
     classes.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent ev) {
@@ -97,6 +100,13 @@ class expandedClasses {
             }
           } catch (IOException ex) {}
         }
+      }
+    });
+
+    // Exit Button
+    exitButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        expandedClassesFrame.dispose();
       }
     });
 
