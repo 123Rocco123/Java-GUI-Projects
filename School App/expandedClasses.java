@@ -19,6 +19,8 @@ class expandedClasses extends JFrame {
   JButton deleteButton = new JButton("Delete");
 
   public expandedClasses() {
+    classArray[0] = "";
+
     this.setSize(500, 500);
     this.setLocationRelativeTo(null);
     this.setBackground(Color.white);
@@ -27,7 +29,7 @@ class expandedClasses extends JFrame {
     //this.setResizable(false);
     this.setVisible(true);
 
-    innerPanelScroll.setBounds(10, 10, 240, 445);
+    innerPanelScroll.setBounds(10, 10, 465, 240);
     innerPanelScroll.setBorder(BorderFactory.createLineBorder(Color.black));
     this.add(innerPanelScroll);
 
@@ -55,7 +57,7 @@ class expandedClasses extends JFrame {
             if (test.contains("Class: ")) {
               className = test.replace("Class: ", "");
 
-              classArray[i] = className;
+              classArray[i + 1] = className;
             } else if (test.contains("Time Class Starts: ")) {
               classTime = test.replace("Time Class Starts: ", "");
             }
@@ -64,13 +66,14 @@ class expandedClasses extends JFrame {
           JLabel newLabel = new JLabel(className + " | " + classTime);
           innerPanel.add(newLabel);
 
+          fileReader.close();
         } catch (FileNotFoundException e) {}
       }
     }
 
     JComboBox classes = new JComboBox(classArray);
 
-    classes.setBounds(250, 10, 100, 25);
+    classes.setBounds(200, 260, 100, 25);
     this.add(classes);
 
     // Used to re-fresh page.
