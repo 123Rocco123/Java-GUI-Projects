@@ -1,13 +1,13 @@
+import java.util.*;
+
 import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
+import javax.swing.table.*;
 
-class calendar extends JFrame {
+class calendar extends JPanel {
   public calendar() {
-    this.setSize(500, 500);
-    this.setLocationRelativeTo(null);
-    this.setVisible(true);
-    this.setTitle("Add New Calendar Event");
+    this.setBounds(10, 35, 360, 155);
   }
 }
