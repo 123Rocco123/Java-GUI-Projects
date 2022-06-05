@@ -12,6 +12,10 @@ class calendar extends JPanel {
 
   String[] calendarArray = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
   String[] calendarWeek = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
+
+  // Equivalent to Object[][]
+  DefaultTableModel model = new DefaultTableModel(null, calendarWeek);
+
   public calendar() {
     this.setBounds(10, 35, 360, 155);
     this.setLayout(new BorderLayout());
@@ -25,5 +29,23 @@ class calendar extends JPanel {
     // First Day of Month
     calendar.set(Calendar.DAY_OF_MONTH, 1);
 
+    // Days of the Week
+    model.setRowCount(calendar.getActualMaximum(Calendar.WEEK_OF_MONTH));
+
+    // First Day of the Month
+       // We use "-2" because Calendar uses "Sunday" as the first day of the week
+    int startDay = calendar.get(Calendar.DAY_OF_WEEK) - 2;
+    // Calendar contained in a JTable
+    JTable table = new JTable(model);
+    // Used to contain the Calendar
+    JScrollPane pane = new JScrollPane(table);
+
+    for(int day = 1; day <= calendar.getActualMaximum(Calendar.DAY_OF_MONTH); day++){
+      // Data, Row, Column
+      model.setValueAt(day, startDay / 7, startDay % 7);
+      startDay++;
+    }
+
+    this.add(pane);
   }
 }
