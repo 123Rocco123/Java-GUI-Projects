@@ -113,6 +113,11 @@ class mainClass {
 
     mainFrame.add(calendarPanel);
 
+    // Used to re-fresh the page to display the new page.
+    mainFrame.invalidate();
+    mainFrame.validate();
+    mainFrame.repaint();
+
     // Exit Button
     exitButton.setBounds(340, 430, 100, 25);
     mainFrame.add(exitButton);
