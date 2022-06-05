@@ -255,9 +255,7 @@ class mainClass {
     panelName.setBackground(Color.white);
     panelName.setLayout(null);
 
-    if (buttonName.equals(addCalendarEventButton)) {
-      name.setBounds((width / 2) - 27, 10, 100, 25);
-    } else if (buttonName.equals(newReminderButton) || buttonName.equals(newHomeworkButton)) {
+    if (buttonName.equals(newReminderButton) || buttonName.equals(newHomeworkButton)) {
       name.setBounds((width / 2) - 30, 10, 100, 25);
     } else if (buttonName.equals(newAlertButton)) {
       name.setBounds((width / 2) - 21, 10, 100, 25);
