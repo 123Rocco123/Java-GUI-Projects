@@ -8,10 +8,14 @@ import javax.swing.table.*;
 
 class calendar extends JPanel {
   Calendar calendar = new GregorianCalendar();
+  JLabel calendarTitle;
+
   String[] calendarArray = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
   String[] calendarWeek = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
   public calendar() {
     this.setBounds(10, 35, 360, 155);
+    this.setLayout(new BorderLayout());
+
     // JLabel Code
     calendarTitle = new JLabel(calendarArray[calendar.get(Calendar.MONTH)] + " " + calendar.get(Calendar.YEAR));
     calendarTitle.setBounds(100, 10, 100, 25);
