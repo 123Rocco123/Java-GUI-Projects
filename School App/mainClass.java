@@ -142,12 +142,6 @@ class mainClass {
       }
     });
 
-    addCalendarEventButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        new calendar();
-      }
-    });
-
     newReminderButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         reminder reminderClass = new reminder();
@@ -225,12 +219,6 @@ class mainClass {
             mainFrame.repaint();
           }
         });
-      }
-    });
-
-    calendarMoreInfo.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        new calendar();
       }
     });
 
