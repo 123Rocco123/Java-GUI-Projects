@@ -110,7 +110,7 @@ class mainClass {
     // Calendar
     panelFunc(calendarPanel, 395, 220, 380, 200, calendarLabel);
     calendarPanel.add(innerCalendarPanel);
-    
+
     mainFrame.add(calendarPanel);
 
     // Exit Button
