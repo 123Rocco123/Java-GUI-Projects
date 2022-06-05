@@ -108,9 +108,9 @@ class mainClass {
     mainFrame.add(reminderPanel);
 
     // Calendar
-    panelFunc(calendarPanel, 395, 220, 380, 200, calendarLabel, addCalendarEventButton, calendarMoreInfo);
-    calendarPanel.add(innerPanelFunc(10, 35, 360, 120, innerCalendarPanel));
-
+    panelFunc(calendarPanel, 395, 220, 380, 200, calendarLabel);
+    calendarPanel.add(innerCalendarPanel);
+    
     mainFrame.add(calendarPanel);
 
     // Exit Button
@@ -283,6 +283,17 @@ class mainClass {
 
     panelName.add(buttonName);
     panelName.add(moreInfoButton);
+  }
+
+  // Used for the setup of the panels onto the main JFrame.
+     // Overload
+  public void panelFunc(JPanel panelName, int x, int y, int width, int height, JLabel name) {
+    panelName.setBounds(x, y, width, height);
+    panelName.setBackground(Color.white);
+    panelName.setLayout(null);
+
+    name.setBounds((width / 2) - 25, 10, 100, 25);
+    panelName.add(name);
   }
 
   // Used for the inner JPanels in the JPanels.
