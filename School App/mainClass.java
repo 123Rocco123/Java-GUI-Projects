@@ -27,7 +27,7 @@ class mainClass {
 
   // Used to display most recent Alert / Homework / ...
   JPanel innerClassesPanel = new JPanel();
-  JPanel innerCalendarPanel = new JPanel();
+  JPanel innerCalendarPanel = new calendar();
   JPanel innerReminderPanel = new JPanel();
   JPanel innerAlertsPanel = new JPanel();
   JPanel innerHomeWorkPanel = new JPanel();
@@ -51,14 +51,12 @@ class mainClass {
 
   // JFrame Buttons
   JButton newClassButton = new JButton("Add New Class");
-  JButton addCalendarEventButton = new JButton("New Event");
   JButton newReminderButton = new JButton("New Reminder");
   JButton newAlertButton = new JButton("Add New Alert");
   JButton newHomeworkButton = new JButton("Add Homework");
 
   // Expanded Information Button
   JButton classMoreInfo = new JButton("More Info");
-  JButton calendarMoreInfo = new JButton("More Info");
   JButton reminderMoreInfo = new JButton("More Info");
   JButton alertMoreInfo = new JButton("More Info");
   JButton homeworkMoreInfo = new JButton("More Info");
