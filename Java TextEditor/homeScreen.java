@@ -137,21 +137,20 @@ class homeScreen extends JFrame {
                     System.out.println("Error occured");
                     error.printStackTrace();
                   }
-              }
-            } catch (IOException error) {
-              System.out.println("Error occured");
-              error.printStackTrace();
-            }
-        } else if (whatOpened.equals("existing")) {
-            // This is in case the file is located inside of the project directory.
-            if (nonDefaultFileLocation == false) {
-              try {
-                FileWriter newWriter = new FileWriter(savedFile);
+                } else {
+                    try {
+                      FileWriter newWriter = new FileWriter(newFile);
 
-                newWriter.write(textEditor.getText());
-                newWriter.close();
+                      newWriter.write(textEditor.getText());
+                      newWriter.close();
+                    } catch (IOException error) {
+                      System.out.println("Error occured");
+                      error.printStackTrace();
+                    }
+                }
               } catch (IOException error) {
                 System.out.println("Error occured");
+                error.printStackTrace();
               }
           } else {
               try {
