@@ -42,6 +42,9 @@ class mainClass {
   JPanel scrollPaneRem = new JPanel(new GridLayout(0, 1));
   JScrollPane scrollReminderPanel = new JScrollPane(scrollPaneRem);
 
+  JPanel scrollPaneJournal = new JPanel(new GridLayout(0, 1));
+  JScrollPane scrollJournalPanel = new JScrollPane(scrollPaneJournal);
+
   // Names of the main JPanels
   JLabel classesLabel = new JLabel("Classes");
   JLabel calendarLabel = new JLabel("Calendar");
@@ -88,6 +91,8 @@ class mainClass {
     // Journal
     panelFunc(journalPanel, 265, 10, 250, 200, journalLabel, newJournalButton);
     journalPanel.add(innerPanelFunc(10, 35, 230, 120, innerJournalPanel));
+    innerJournalPanel.add(innerScrollPane(10, 20, 210, 100, scrollJournalPanel));
+    innerLabel(60, 0, 200, 25, "Journal Entry | Date", innerJournalPanel);
 
     mainFrame.add(journalPanel);
 
