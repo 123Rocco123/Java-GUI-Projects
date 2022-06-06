@@ -37,6 +37,8 @@ class homeScreen extends JFrame {
 
   File savedFile;
 
+  File newFile;
+
   Boolean nonDefaultFileLocation = false;
 
   public homeScreen(String newOrOld, File fileToOpen) {
@@ -93,8 +95,7 @@ class homeScreen extends JFrame {
         int userSelection = fileChooser.showSaveDialog(null);
 
         if (userSelection == JFileChooser.APPROVE_OPTION) {
-            File fileToSave = fileChooser.getSelectedFile();
-
+            savedFile = fileChooser.getSelectedFile();
             // We save the directory and user file name, and thnen remove the file name from the directory.
                // This is so that we can then write the new file to the the place that the user specified with the name that they specified with the FileWriter.
             String saveDirectory = fileChooser.getSelectedFile().getAbsolutePath();
