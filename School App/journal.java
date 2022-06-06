@@ -11,6 +11,7 @@ class journal {
   JTextArea journalEntry = new JTextArea();
 
   JButton submit = new JButton("Save Entry");
+  JButton closeButton = new JButton("Close");
 
   public journal() {
     journalFrame.setSize(500, 500);
@@ -26,8 +27,15 @@ class journal {
     journalEntry.setBounds(10, 10, 465, 300);
     journalEntry.setBorder(BorderFactory.createLineBorder(Color.black));
     this.add(journalEntry);
+    closeButton.setBounds(200, 390, 100, 25);
+    journalFrame.add(closeButton);
 
     submit.setBounds(200, 320, 100, 25);
     this.add(submit);
+    closeButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        journalFrame.dispose();
+      }
+    });
   }
 }
