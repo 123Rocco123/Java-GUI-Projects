@@ -27,11 +27,26 @@ class journal {
     journalEntry.setBounds(10, 10, 465, 300);
     journalEntry.setBorder(BorderFactory.createLineBorder(Color.black));
     this.add(journalEntry);
+    submit.setBounds(200, 355, 100, 25);
+    journalFrame.add(submit);
+
     closeButton.setBounds(200, 390, 100, 25);
     journalFrame.add(closeButton);
 
-    submit.setBounds(200, 320, 100, 25);
-    this.add(submit);
+    submit.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        try {
+          File newFile = new File("./alerts", "test.txt");
+          FileWriter newWriter = new FileWriter(newFile);
+
+          newWriter.write(journalEntry.getText());
+          newWriter.close();
+
+          journalFrame.dispose();
+        } catch (IOException ex) {}
+      }
+    });
+
     closeButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         journalFrame.dispose();
