@@ -4,16 +4,18 @@ import java.awt.event.*;
 import javax.swing.*;
 
 class journal extends JFrame {
+class journal {
+  JFrame journalFrame = new JFrame("Add New Journal Entry");
   JTextArea journalEntry = new JTextArea();
 
   JButton submit = new JButton("Save Entry");
 
   public journal() {
-    this.setSize(500, 500);
-    this.setLocationRelativeTo(null);
-    this.setVisible(true);
-    this.setTitle("Add New Journal Entry");
-    this.setLayout(null);
+    journalFrame.setSize(500, 500);
+    journalFrame.setLocationRelativeTo(null);
+    journalFrame.setVisible(true);
+    journalFrame.setLayout(null);
+
 
     // X Y WIDHT HEIGHT
     journalEntry.setBounds(10, 10, 465, 300);
