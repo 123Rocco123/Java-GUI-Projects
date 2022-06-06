@@ -57,5 +57,40 @@ class journal {
         journalFrame.dispose();
       }
     });
+
+    focusFunc(journalTitle, journalEntry, "Enter Entry Title Here", "Enter Content Here");
+  }
+
+  void focusFunc(JTextField textField, JTextArea textArea, String text1, String text2) {
+    textField.setText(text1);
+    textArea.setText(text2);
+
+    textField.addFocusListener(new FocusListener() {
+      public void focusGained(FocusEvent e) {
+        if (textField.getText().equals(text1)) {
+          textField.setText("");
+        }
+      }
+
+      public void focusLost(FocusEvent e) {
+        if (textField.getText().equals("")) {
+          textField.setText(text1);
+        }
+      }
+    });
+
+    textArea.addFocusListener(new FocusListener() {
+      public void focusGained(FocusEvent e) {
+        if (textArea.getText().equals(text2)) {
+          textArea.setText("");
+        }
+      }
+
+      public void focusLost(FocusEvent e) {
+        if (textArea.getText().equals("")) {
+          textArea.setText(text2);
+        }
+      }
+    });
   }
 }
