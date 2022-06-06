@@ -22,14 +22,14 @@ class mainClass {
   JPanel classesPanel = new JPanel();
   JPanel calendarPanel = new JPanel();
   JPanel reminderPanel = new JPanel();
-  JPanel alertsPanel = new JPanel();
+  JPanel journalPanel = new JPanel();
   JPanel homeWorkPanel = new JPanel();
 
-  // Used to display most recent Alert / Homework / ...
+  // Used to display most recent Journal / Homework / ...
   JPanel innerClassesPanel = new JPanel();
   JPanel innerCalendarPanel = new calendar();
   JPanel innerReminderPanel = new JPanel();
-  JPanel innerAlertsPanel = new JPanel();
+  JPanel innerJournalPanel = new JPanel();
   JPanel innerHomeWorkPanel = new JPanel();
 
   // Panes and ScrollPanes for Notifications on the Main Page
@@ -46,13 +46,13 @@ class mainClass {
   JLabel classesLabel = new JLabel("Classes");
   JLabel calendarLabel = new JLabel("Calendar");
   JLabel reminderLabel = new JLabel("Reminders");
-  JLabel alertsLabel = new JLabel("Alerts");
+  JLabel journalLabel = new JLabel("Journal");
   JLabel homeworkLabel = new JLabel("Homework");
 
   // JFrame Buttons
   JButton newClassButton = new JButton("Add New Class");
   JButton newReminderButton = new JButton("New Reminder");
-  JButton newAlertButton = new JButton("Add New Alert");
+  JButton newJournalButton = new JButton("New Journal");
   JButton newHomeworkButton = new JButton("Add Homework");
 
   // Expanded Information Button
@@ -86,11 +86,11 @@ class mainClass {
 
     mainFrame.add(classesPanel);
 
-    // Alert
-    panelFunc(alertsPanel, 265, 10, 250, 200, alertsLabel, newAlertButton, alertMoreInfo);
-    alertsPanel.add(innerPanelFunc(10, 35, 230, 120, innerAlertsPanel));
+    // Journal
+    panelFunc(journalPanel, 265, 10, 250, 200, journalLabel, newJournalButton, alertMoreInfo);
+    journalPanel.add(innerPanelFunc(10, 35, 230, 120, innerJournalPanel));
 
-    mainFrame.add(alertsPanel);
+    mainFrame.add(journalPanel);
 
     // Homework
     panelFunc(homeWorkPanel, 525, 10, 250, 200, homeworkLabel, newHomeworkButton, homeworkMoreInfo);
@@ -173,7 +173,7 @@ class mainClass {
               TimerTask task = new TimerTask() {
                 @Override
                 public void run() {
-                  JOptionPane.showMessageDialog(mainFrame, "Alert! " + reminderClass.reminder.getText());
+                  JOptionPane.showMessageDialog(mainFrame, "Journal! " + reminderClass.reminder.getText());
                 }
               };
               timer.schedule(task, convertedTime);
@@ -183,9 +183,9 @@ class mainClass {
       }
     });
 
-    newAlertButton.addActionListener(new ActionListener() {
+    newJournalButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new alerts();
+        new journal();
       }
     });
 
@@ -230,7 +230,7 @@ class mainClass {
 
     alertMoreInfo.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new alerts();
+        new journal();
       }
     });
 
@@ -246,7 +246,7 @@ class mainClass {
       }
     });
 
-    // Initial Function for the saved alerts and stuff.
+    // Initial Function for the saved journal and stuff.
     initialCheckerFunc();
 
     // Used to re-fresh page.
@@ -263,7 +263,7 @@ class mainClass {
 
     if (buttonName.equals(newReminderButton) || buttonName.equals(newHomeworkButton)) {
       name.setBounds((width / 2) - 30, 10, 100, 25);
-    } else if (buttonName.equals(newAlertButton)) {
+    } else if (buttonName.equals(newJournalButton)) {
       name.setBounds((width / 2) - 21, 10, 100, 25);
     } else {
       name.setBounds((width / 2) - 25, 10, 100, 25);
