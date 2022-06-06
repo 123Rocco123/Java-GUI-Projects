@@ -152,19 +152,41 @@ class homeScreen extends JFrame {
                 System.out.println("Error occured");
                 error.printStackTrace();
               }
-          } else {
-              try {
-                FileWriter fw = new FileWriter(new File(newDirectory, (fileName + ".txt")));
+          } else if (whatOpened.equals("existing")) {
+              // This is in case the file is located inside of the project directory.
+              if (nonDefaultFileLocation == false) {
+                try {
+                  FileWriter newWriter = new FileWriter(savedFile);
 
-                fw.write(textEditor.getText());
-                fw.close();
-              } catch (IOException error) {
-                System.out.println("Error occured");
-              }
+                  newWriter.write(textEditor.getText());
+                  newWriter.close();
+                } catch (IOException error) {
+                  System.out.println("Error occured");
+                }
+            } else {
+                try {
+                  FileWriter fw = new FileWriter(new File(newDirectory, (fileName + ".txt")));
+
+                  fw.write(textEditor.getText());
+                  fw.close();
+                } catch (IOException error) {
+                  System.out.println("Error occured");
+                }
+            }
+          }
+        } // Used when the user  
+        else if (nonDefaultFileLocation == true) {
+            try {
+              FileWriter newWriter = new FileWriter(savedFile+".txt");
+
+              newWriter.write(textEditor.getText());
+              newWriter.close();
+            } catch (IOException error) {
+              System.out.println(error);
+            }
           }
         }
-      }
-    });
+      });
 
     // Save and Exit Button
     saveAndExit.addActionListener(new ActionListener() {
