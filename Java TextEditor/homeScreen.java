@@ -118,26 +118,16 @@ class homeScreen extends JFrame {
     // submitButton Action Listener
     submitButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        if (whatOpened.equals("new")) {
-          if ((nameOfFile.getText()).equals("") || (nameOfFile.getText()).length() > 20) {
-            Error errorScreen = new Error();
-          } // The if condition makes it so that when the user clicks the "New File" button, when the "sumbit" button is pressed, it will either create a new file, or save work to the new file.
-            try {
-              String nameFile = nameOfFile.getText();
-              // We first create the file.
-              File newFile = new File(".\\Default Directory", nameFile + ".txt");
+        if (nonDefaultFileLocation == false) {
+          if (whatOpened.equals("new")) {
+            if ((nameOfFile.getText()).equals("") || (nameOfFile.getText()).length() > 20) {
+              Error errorScreen = new Error();
+            } // The if condition makes it so that when the user clicks the "New File" button, when the "sumbit" button is pressed, it will either create a new file, or save work to the new file.
+              try {
+                String nameFile = nameOfFile.getText();// We first create the file.
+                newFile = new File(".\\Default Directory", nameFile + ".txt");
 
-              if (newFile.createNewFile()) {
-                try {
-                  FileWriter newWriter = new FileWriter(newFile);
-
-                  newWriter.write(textEditor.getText());
-                  newWriter.close();
-                } catch (IOException error) {
-                  System.out.println("Error occured");
-                  error.printStackTrace();
-                }
-              } else {
+                if (newFile.createNewFile()) {
                   try {
                     FileWriter newWriter = new FileWriter(newFile);
 
