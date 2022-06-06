@@ -24,9 +24,10 @@ class journal {
     journalFrame.add(journalTitle);
 
     // X Y WIDHT HEIGHT
-    journalEntry.setBounds(10, 10, 465, 300);
+    journalEntry.setBounds(10, 45, 465, 300);
     journalEntry.setBorder(BorderFactory.createLineBorder(Color.black));
-    this.add(journalEntry);
+    journalFrame.add(journalEntry);
+
     submit.setBounds(200, 355, 100, 25);
     journalFrame.add(submit);
 
