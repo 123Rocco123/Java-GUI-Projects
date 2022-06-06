@@ -6,6 +6,8 @@ import javax.swing.*;
 class journal extends JFrame {
 class journal {
   JFrame journalFrame = new JFrame("Add New Journal Entry");
+
+  JTextField journalTitle = new JTextField();
   JTextArea journalEntry = new JTextArea();
 
   JButton submit = new JButton("Save Entry");
@@ -16,6 +18,9 @@ class journal {
     journalFrame.setVisible(true);
     journalFrame.setLayout(null);
 
+    journalTitle.setBounds(10, 10, 465, 25);
+    journalTitle.setBorder(BorderFactory.createLineBorder(Color.black));
+    journalFrame.add(journalTitle);
 
     // X Y WIDHT HEIGHT
     journalEntry.setBounds(10, 10, 465, 300);
