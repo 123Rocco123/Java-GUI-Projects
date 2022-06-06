@@ -277,7 +277,21 @@ class mainClass {
     panelName.add(moreInfoButton);
   }
 
-  // Used for the setup of the panels onto the main JFrame.
+  // Used for the setup of the Panel with 1 button instead of 2.
+     // Overload
+  public void panelFunc(JPanel panelName, int x, int y, int width, int height, JLabel name, JButton buttonName) {
+    panelName.setBounds(x, y, width, height);
+    panelName.setBackground(Color.white);
+    panelName.setLayout(null);
+
+    name.setBounds((width / 2) - 25, 10, 100, 25);
+    panelName.add(name);
+
+    buttonName.setBounds((width / 2) - 65, (height - 35), 125, 25);
+    panelName.add(buttonName);
+  }
+
+  // Used for the setup of the Panel with no buttons.
      // Overload
   public void panelFunc(JPanel panelName, int x, int y, int width, int height, JLabel name) {
     panelName.setBounds(x, y, width, height);
