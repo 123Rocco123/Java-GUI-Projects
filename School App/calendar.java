@@ -16,6 +16,8 @@ class calendar extends JPanel {
   // Equivalent to Object[][]
   DefaultTableModel model = new DefaultTableModel(null, calendarWeek);
 
+  int today = calendar.get(Calendar.DAY_OF_MONTH);
+
   public calendar() {
     this.setBounds(10, 35, 360, 155);
     this.setLayout(new BorderLayout());
@@ -40,9 +42,15 @@ class calendar extends JPanel {
     // Used to contain the Calendar
     JScrollPane pane = new JScrollPane(table);
 
+    // Used to add the data, dates, to the calendar
     for(int day = 1; day <= calendar.getActualMaximum(Calendar.DAY_OF_MONTH); day++){
-      // Data, Row, Column
-      model.setValueAt(day, startDay / 7, startDay % 7);
+      if (day == today) {
+        // Data, Row, Column
+        model.setValueAt(day + " (TDY)", startDay / 7, startDay % 7);
+      } else {
+        // Data, Row, Column
+        model.setValueAt(day, startDay / 7, startDay % 7);
+      }
       startDay++;
     }
 
