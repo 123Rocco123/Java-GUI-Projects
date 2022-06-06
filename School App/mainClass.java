@@ -75,6 +75,7 @@ class mainClass {
     mainFrame.setLocationRelativeTo(null);
     mainFrame.setVisible(true);
     mainFrame.setLayout(null);
+    mainFrame.setResizable(false);
     mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     // Classes
