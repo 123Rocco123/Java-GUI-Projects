@@ -3,7 +3,9 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-class journal extends JFrame {
+import java.io.*;
+import java.util.*;
+
 class journal {
   JFrame journalFrame = new JFrame("Add New Journal Entry");
 
@@ -12,6 +14,8 @@ class journal {
 
   JButton submit = new JButton("Save Entry");
   JButton closeButton = new JButton("Close");
+
+  Calendar timeVar = new GregorianCalendar();
 
   public journal() {
     journalFrame.setSize(500, 500);
