@@ -58,7 +58,6 @@ class mainClass {
   // Expanded Information Button
   JButton classMoreInfo = new JButton("More Info");
   JButton reminderMoreInfo = new JButton("More Info");
-  JButton alertMoreInfo = new JButton("More Info");
   JButton homeworkMoreInfo = new JButton("More Info");
 
   // Quit Button
@@ -87,7 +86,7 @@ class mainClass {
     mainFrame.add(classesPanel);
 
     // Journal
-    panelFunc(journalPanel, 265, 10, 250, 200, journalLabel, newJournalButton, alertMoreInfo);
+    panelFunc(journalPanel, 265, 10, 250, 200, journalLabel, newJournalButton);
     journalPanel.add(innerPanelFunc(10, 35, 230, 120, innerJournalPanel));
 
     mainFrame.add(journalPanel);
@@ -225,12 +224,6 @@ class mainClass {
             mainFrame.repaint();
           }
         });
-      }
-    });
-
-    alertMoreInfo.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        new journal();
       }
     });
 
