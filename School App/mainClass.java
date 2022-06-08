@@ -10,6 +10,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import javax.swing.JOptionPane;
+import javax.swing.JComboBox;
 
 import java.io.*;
 import java.util.*;
@@ -189,7 +190,12 @@ class mainClass {
 
     newJournalButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new journal();
+        journal newEntry = new journal();
+
+        newEntry.journalFrame.addWindowListener(new WindowAdapter() {
+          public void windowClosed(WindowEvent e) {
+          }
+        });
       }
     });
 
