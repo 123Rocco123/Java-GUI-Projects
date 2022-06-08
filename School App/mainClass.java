@@ -194,6 +194,27 @@ class mainClass {
 
         newEntry.journalFrame.addWindowListener(new WindowAdapter() {
           public void windowClosed(WindowEvent e) {
+            if (new File("./alerts").list().length > 0) {
+              String[] entriesArray = new String[new File("./alerts").list().length];
+
+              for (int i = 0; i < new File("./alerts").list().length; i++) {
+                String toAdd = new File("./alerts").list()[i];
+
+                if (toAdd.contains(".txt")) {
+                  toAdd = toAdd.replace(".txt", "");
+
+                  entriesArray[i] = toAdd;
+                }
+              }
+
+              JComboBox entries = new JComboBox(entriesArray);
+              scrollPaneJournal.add(entries);
+            }
+
+            // Used to re-fresh the page to display the new page.
+            mainFrame.invalidate();
+            mainFrame.validate();
+            mainFrame.repaint();
           }
         });
       }
