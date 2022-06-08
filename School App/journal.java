@@ -41,7 +41,7 @@ class journal {
     submit.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         try {
-          File newFile = new File("./alerts", "test.txt");
+          File newFile = new File("./alerts", (journalEntry.getText() + ".txt"));
           FileWriter newWriter = new FileWriter(newFile);
 
           newWriter.write(journalEntry.getText());
@@ -61,7 +61,7 @@ class journal {
     focusFunc(journalTitle, journalEntry, "Enter Entry Title Here", "Enter Content Here");
   }
 
-  void focusFunc(JTextField textField, JTextArea textArea, String text1, String text2) {
+  public void focusFunc(JTextField textField, JTextArea textArea, String text1, String text2) {
     textField.setText(text1);
     textArea.setText(text2);
 
