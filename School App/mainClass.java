@@ -470,5 +470,18 @@ class mainClass {
         } catch (FileNotFoundException e) {}
       }
     }
+
+    // Used for the Journal
+    if (new File("./alerts").list().length > 0) {
+      for (int i = 0; i < new File("./alerts").list().length; i++) {
+        try {
+          String[] arrayToAdd = new String[(new File("./alerts").list().length)];
+
+          for (int x = 0; x < arrayToAdd.length; x++) {
+            
+          }
+        } catch (FileNotFoundException e) {}
+      }
+    }
   }
 }
