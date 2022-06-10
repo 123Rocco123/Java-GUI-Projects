@@ -197,6 +197,8 @@ class mainClass {
         newEntry.journalFrame.addWindowListener(new WindowAdapter() {
           public void windowClosed(WindowEvent e) {
             if (new File("./alerts").list().length > 0) {
+              scrollPaneJournal.removeAll();
+
               String[] entriesArray = new String[new File("./alerts").list().length];
 
               for (int i = 0; i < new File("./alerts").list().length; i++) {
