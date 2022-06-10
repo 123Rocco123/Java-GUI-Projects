@@ -188,10 +188,12 @@ class mainClass {
       }
     });
 
+    // Action Listener for Journal Panel
     newJournalButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         journal newEntry = new journal();
 
+        // Window Listener for Journal Frame
         newEntry.journalFrame.addWindowListener(new WindowAdapter() {
           public void windowClosed(WindowEvent e) {
             if (new File("./alerts").list().length > 0) {
