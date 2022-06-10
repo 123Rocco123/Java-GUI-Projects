@@ -473,22 +473,21 @@ class mainClass {
 
     // Used for the Journal
     if (new File("./alerts").list().length > 0) {
+      JComboBox comboBoxToAdd = new JComboBox();
+      String[] arrayToAdd = new String[(new File("./alerts").list().length)];
+
       for (int i = 0; i < new File("./alerts").list().length; i++) {
-        String[] arrayToAdd = new String[(new File("./alerts").list().length)];
+        String nameToChange = (new File("./alerts")).list()[i];
 
-        for (int x = 0; x < arrayToAdd.length; x++) {
-          String nameToChange = (new File("./alerts")).list()[i];
-
-          if (nameToChange.contains(".txt")) {
-            nameToChange = nameToChange.replace(".txt", "");
-          }
-
-          arrayToAdd[x] = nameToChange;
+        if (nameToChange.contains(".txt")) {
+          nameToChange = nameToChange.replace(".txt", "");
         }
 
-        JComboBox comboBoxToAdd = new JComboBox(arrayToAdd);
-        scrollPaneJournal.add(comboBoxToAdd);
+        arrayToAdd[i] = nameToChange;
+
+        comboBoxToAdd = new JComboBox(arrayToAdd);
       }
+      scrollPaneJournal.add(comboBoxToAdd);
     }
   }
 }
