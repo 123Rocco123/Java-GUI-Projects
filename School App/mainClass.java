@@ -476,7 +476,18 @@ class mainClass {
       for (int i = 0; i < new File("./alerts").list().length; i++) {
         String[] arrayToAdd = new String[(new File("./alerts").list().length)];
 
+        for (int x = 0; x < arrayToAdd.length; x++) {
+          String nameToChange = (new File("./alerts")).list()[i];
+
+          if (nameToChange.contains(".txt")) {
+            nameToChange = nameToChange.replace(".txt", "");
           }
+
+          arrayToAdd[x] = nameToChange;
+        }
+
+        JComboBox comboBoxToAdd = new JComboBox(arrayToAdd);
+        scrollPaneJournal.add(comboBoxToAdd);
       }
     }
   }
