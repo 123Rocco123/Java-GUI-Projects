@@ -213,6 +213,13 @@ class mainClass {
 
               JComboBox entries = new JComboBox(entriesArray);
               scrollPaneJournal.add(entries);
+
+              // Used for selected JComboBox item
+              entries.addActionListener(new ActionListener() {
+                public void actionPerformed (ActionEvent ev) {
+                  System.out.println(entries.getSelectedItem());
+                }
+              });
             }
 
             // Used to re-fresh the page to display the new page.
