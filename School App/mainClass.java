@@ -221,10 +221,10 @@ class mainClass {
 
               newJournalButton.setBounds(10, 165, 120, 25);
 
-              // Used for selected JComboBox item
-              entries.addActionListener(new ActionListener() {
-                public void actionPerformed (ActionEvent ev) {
 
+              chooseButton.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                  System.out.println(entries.getSelectedItem());
                 }
               });
             }
