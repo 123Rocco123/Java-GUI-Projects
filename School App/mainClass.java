@@ -228,6 +228,7 @@ class mainClass {
               // Used to read the selected journal entry
               chooseButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
+                  journalMoreInfo newInstance = new journalMoreInfo();
                   System.out.println(entries.getSelectedItem());
                 }
               });
@@ -520,7 +521,7 @@ class mainClass {
       // Used to read the selected journal entry
       chooseButton.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          new journalMoreInfo();
+          journalMoreInfo newInstance = new journalMoreInfo();
           System.out.println(comboBoxToAdd.getSelectedItem());
         }
       });
