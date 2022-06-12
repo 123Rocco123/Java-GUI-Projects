@@ -67,6 +67,10 @@ class mainClass {
   // Quit Button
   JButton exitButton = new JButton("Quit");
 
+  // Used to contain the JComboBox for Journal Initial Setup.
+     // Using a gloabl variable because of "inner class must be final or effectively final" error.
+  JComboBox comboBoxToAdd = new JComboBox();
+
   // Used to contain the reminder message for the initialize function.
      // Using a gloabl variable because of "inner class must be final or effectively final" error.
   String reminderString = "";
@@ -491,7 +495,6 @@ class mainClass {
 
     // Used for the Journal
     if (new File("./alerts").list().length > 0) {
-      JComboBox comboBoxToAdd = new JComboBox();
       String[] arrayToAdd = new String[(new File("./alerts").list().length) + 1];
 
       arrayToAdd[0] = "";
@@ -507,6 +510,19 @@ class mainClass {
         comboBoxToAdd = new JComboBox(arrayToAdd);
       }
       scrollPaneJournal.add(comboBoxToAdd);
+
+      JButton chooseButton = new JButton("Choose");
+      chooseButton.setBounds(140, 165, 100, 25);
+      journalPanel.add(chooseButton);
+
+      newJournalButton.setBounds(10, 165, 120, 25);
+
+      // Used to read the selected journal entry
+      chooseButton.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+          System.out.println(comboBoxToAdd.getSelectedItem());
+        }
+      });
     }
   }
 }
