@@ -6,6 +6,8 @@ import java.awt.event.*;
 class journalMoreInfo {
   JTextArea readArea = new JTextArea();
 
+  JButton closeButton = new JButton("Close");
+
   JFrame moreInfoFrame = new JFrame("Journal Entries");
 
   public journalMoreInfo() {
@@ -13,5 +15,10 @@ class journalMoreInfo {
     moreInfoFrame.setLocationRelativeTo(null);
     moreInfoFrame.setVisible(true);
 
+    closeButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        moreInfoFrame.dispose();
+      }
+    });
   }
 }
