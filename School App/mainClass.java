@@ -199,15 +199,16 @@ class mainClass {
             if (new File("./alerts").list().length > 0) {
               scrollPaneJournal.removeAll();
 
-              String[] entriesArray = new String[new File("./alerts").list().length];
+              String[] entriesArray = new String[new File("./alerts").list().length + 1];
 
+              entriesArray[0] = "";
               for (int i = 0; i < new File("./alerts").list().length; i++) {
                 String toAdd = new File("./alerts").list()[i];
 
                 if (toAdd.contains(".txt")) {
                   toAdd = toAdd.replace(".txt", "");
 
-                  entriesArray[i] = toAdd;
+                  entriesArray[i + 1] = toAdd;
                 }
               }
 
