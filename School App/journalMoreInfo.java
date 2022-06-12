@@ -3,13 +3,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-class journalMoreInfo extends JFrame {
+class journalMoreInfo {
   JTextArea readArea = new JTextArea();
 
+  JFrame moreInfoFrame = new JFrame("Journal Entries");
+
   public journalMoreInfo() {
-    this.setSize(500, 500);
-    this.setTitle("Journal Entries");
-    this.setLocationRelativeTo(null);
-    this.setVisible(true);
+    moreInfoFrame.setSize(500, 500);
+    moreInfoFrame.setLocationRelativeTo(null);
+    moreInfoFrame.setVisible(true);
+
   }
 }
