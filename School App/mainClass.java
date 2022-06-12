@@ -221,7 +221,7 @@ class mainClass {
 
               newJournalButton.setBounds(10, 165, 120, 25);
 
-
+              // Used to read the selected journal entry
               chooseButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                   System.out.println(entries.getSelectedItem());
@@ -492,8 +492,9 @@ class mainClass {
     // Used for the Journal
     if (new File("./alerts").list().length > 0) {
       JComboBox comboBoxToAdd = new JComboBox();
-      String[] arrayToAdd = new String[(new File("./alerts").list().length)];
+      String[] arrayToAdd = new String[(new File("./alerts").list().length) + 1];
 
+      arrayToAdd[0] = "";
       for (int i = 0; i < new File("./alerts").list().length; i++) {
         String nameToChange = (new File("./alerts")).list()[i];
 
@@ -501,7 +502,7 @@ class mainClass {
           nameToChange = nameToChange.replace(".txt", "");
         }
 
-        arrayToAdd[i] = nameToChange;
+        arrayToAdd[i + 1] = nameToChange;
 
         comboBoxToAdd = new JComboBox(arrayToAdd);
       }
