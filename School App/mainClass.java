@@ -214,10 +214,16 @@ class mainClass {
               JComboBox entries = new JComboBox(entriesArray);
               scrollPaneJournal.add(entries);
 
+              JButton chooseButton = new JButton("Choose");
+              chooseButton.setBounds(140, 165, 100, 25);
+              journalPanel.add(chooseButton);
+
+              newJournalButton.setBounds(10, 165, 120, 25);
+
               // Used for selected JComboBox item
               entries.addActionListener(new ActionListener() {
                 public void actionPerformed (ActionEvent ev) {
-                  System.out.println(entries.getSelectedItem());
+
                 }
               });
             }
