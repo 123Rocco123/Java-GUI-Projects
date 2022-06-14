@@ -37,6 +37,7 @@ class journalMoreInfo {
       }
     });
 
+    // File reader try catch statement
     try {
       File fileToReadFile = new File("./alerts", (fileToRead + ".txt"));
       Scanner fileReader = new Scanner(fileToReadFile);
