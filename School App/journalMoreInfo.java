@@ -36,5 +36,14 @@ class journalMoreInfo {
         moreInfoFrame.dispose();
       }
     });
+
+    try {
+      File fileToReadFile = new File("./alerts", (fileToRead + ".txt"));
+      Scanner fileReader = new Scanner(fileToReadFile);
+
+      while(fileReader.hasNextLine()) {
+        readArea.append(fileReader.nextLine() + "\n");
+      }
+    } catch (FileNotFoundException e) {}
   }
 }
