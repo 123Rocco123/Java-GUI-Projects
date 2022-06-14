@@ -283,18 +283,6 @@ class mainClass {
       }
     });
 
-    homeworkMoreInfo.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        new newHomework();
-      }
-    });
-
-    reminderMoreInfo.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        new reminder();
-      }
-    });
-
     // Initial Function for the saved journal and stuff.
     initialCheckerFunc();
 
