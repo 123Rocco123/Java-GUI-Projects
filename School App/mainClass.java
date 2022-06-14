@@ -298,7 +298,7 @@ class mainClass {
     panelName.setBackground(Color.white);
     panelName.setLayout(null);
 
-    if (buttonName.equals(newReminderButton) || buttonName.equals(newHomeworkButton)) {
+    if (buttonName.equals(newHomeworkButton)) {
       name.setBounds((width / 2) - 30, 10, 100, 25);
     } else if (buttonName.equals(newJournalButton)) {
       name.setBounds((width / 2) - 21, 10, 100, 25);
@@ -321,7 +321,11 @@ class mainClass {
     panelName.setBackground(Color.white);
     panelName.setLayout(null);
 
-    name.setBounds((width / 2) - 25, 10, 100, 25);
+    if (buttonName.equals(newReminderButton)) {
+      name.setBounds(160, 10, 100, 25);
+    } else {
+      name.setBounds((width / 2) - 25, 10, 100, 25);
+    }
     panelName.add(name);
 
     buttonName.setBounds((width / 2) - 65, (height - 35), 125, 25);
