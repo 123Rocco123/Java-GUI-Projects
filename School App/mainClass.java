@@ -61,8 +61,6 @@ class mainClass {
 
   // Expanded Information Button
   JButton classMoreInfo = new JButton("More Info");
-  JButton reminderMoreInfo = new JButton("More Info");
-  JButton homeworkMoreInfo = new JButton("More Info");
 
   // Quit Button
   JButton exitButton = new JButton("Quit");
@@ -102,7 +100,7 @@ class mainClass {
     mainFrame.add(journalPanel);
 
     // Homework
-    panelFunc(homeWorkPanel, 525, 10, 250, 200, homeworkLabel, newHomeworkButton, homeworkMoreInfo);
+    panelFunc(homeWorkPanel, 525, 10, 250, 200, homeworkLabel, newHomeworkButton);
     homeWorkPanel.add(innerPanelFunc(10, 35, 230, 120, innerHomeWorkPanel));
     innerHomeWorkPanel.add(innerScrollPane(10, 20, 210, 100, scrollHomeworkPanel));
     innerLabel(30, 0, 200, 25, "Homework | Class | Due Date", innerHomeWorkPanel);
@@ -110,7 +108,7 @@ class mainClass {
     mainFrame.add(homeWorkPanel);
 
     // Reminder
-    panelFunc(reminderPanel, 5, 220, 380, 200, reminderLabel, newReminderButton, reminderMoreInfo);
+    panelFunc(reminderPanel, 5, 220, 380, 200, reminderLabel, newReminderButton);
     reminderPanel.add(innerPanelFunc(10, 35, 360, 120, innerReminderPanel));
     innerReminderPanel.add(innerScrollPane(10, 20, 340, 100, scrollReminderPanel));
     innerLabel(125, 0, 200, 25, "Reminder | Due Date", innerReminderPanel);
