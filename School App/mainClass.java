@@ -228,8 +228,12 @@ class mainClass {
               // Used to read the selected journal entry
               chooseButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                  journalMoreInfo newInstance = new journalMoreInfo();
-                  System.out.println(entries.getSelectedItem());
+                  if (!comboBoxToAdd.getSelectedItem().equals("")) {
+                    String line = (String)(comboBoxToAdd.getSelectedItem());
+
+                    journalMoreInfo newInstance = new journalMoreInfo(line);
+                    System.out.println(comboBoxToAdd.getSelectedItem());
+                  }
                 }
               });
             }
@@ -521,8 +525,12 @@ class mainClass {
       // Used to read the selected journal entry
       chooseButton.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          journalMoreInfo newInstance = new journalMoreInfo();
-          System.out.println(comboBoxToAdd.getSelectedItem());
+          if (!comboBoxToAdd.getSelectedItem().equals("")) {
+            String line = (String)(comboBoxToAdd.getSelectedItem());
+
+            journalMoreInfo newInstance = new journalMoreInfo(line);
+            System.out.println(comboBoxToAdd.getSelectedItem());
+          }
         }
       });
     }
