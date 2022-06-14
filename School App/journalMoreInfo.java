@@ -13,8 +13,16 @@ class journalMoreInfo {
   public journalMoreInfo() {
     moreInfoFrame.setSize(500, 500);
     moreInfoFrame.setLocationRelativeTo(null);
+    moreInfoFrame.setLayout(null);
     moreInfoFrame.setVisible(true);
 
+    readArea.setBounds(10, 10, 480, 400);
+    moreInfoFrame.add(readArea);
+
+    closeButton.setBounds(200, 420, 100, 25);
+    moreInfoFrame.add(closeButton);
+
+    // Close Button Action Listener
     closeButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         moreInfoFrame.dispose();
