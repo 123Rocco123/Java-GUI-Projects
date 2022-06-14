@@ -230,7 +230,6 @@ class mainClass {
                     String line = (String)(comboBoxToAdd.getSelectedItem());
 
                     journalMoreInfo newInstance = new journalMoreInfo(line);
-                    System.out.println(comboBoxToAdd.getSelectedItem());
                   }
                 }
               });
@@ -527,7 +526,6 @@ class mainClass {
             String line = (String)(comboBoxToAdd.getSelectedItem());
 
             journalMoreInfo newInstance = new journalMoreInfo(line);
-            System.out.println(comboBoxToAdd.getSelectedItem());
           }
         }
       });
