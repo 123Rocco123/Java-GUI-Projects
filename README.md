@@ -5,6 +5,8 @@ This is a collection of projects that I'm working on that feature a Java GUI.
 ## Current Projects
 ### Currently Working On
 - Indiana Jones GUI Textbased adventure game
+- School App
+  - Add delete funtionality to "Homework","Journal", and "Reminder" panels. 
 
 ### Completed
 - Java Based Text Editor
