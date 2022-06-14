@@ -10,7 +10,7 @@ class journalMoreInfo {
 
   JFrame moreInfoFrame = new JFrame("Journal Entries");
 
-  public journalMoreInfo() {
+  public journalMoreInfo(String fileName) {
     moreInfoFrame.setSize(500, 500);
     moreInfoFrame.setLocationRelativeTo(null);
     moreInfoFrame.setLayout(null);
