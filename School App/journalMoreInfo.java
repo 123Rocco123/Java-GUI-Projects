@@ -3,6 +3,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+import java.util.Scanner;
+import java.io.*;
+
 class journalMoreInfo {
   JTextArea readArea = new JTextArea();
 
@@ -10,13 +13,18 @@ class journalMoreInfo {
 
   JFrame moreInfoFrame = new JFrame("Journal Entries");
 
+  String fileToRead = "";
+
   public journalMoreInfo(String fileName) {
     moreInfoFrame.setSize(500, 500);
     moreInfoFrame.setLocationRelativeTo(null);
     moreInfoFrame.setLayout(null);
     moreInfoFrame.setVisible(true);
 
+    this.fileToRead = fileName;
+
     readArea.setBounds(10, 10, 480, 400);
+    readArea.setEditable(false);
     moreInfoFrame.add(readArea);
 
     closeButton.setBounds(200, 420, 100, 25);
