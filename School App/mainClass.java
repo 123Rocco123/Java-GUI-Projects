@@ -568,6 +568,12 @@ class mainClass {
             String line = (String)(comboBoxToAdd.getSelectedItem());
 
             journalMoreInfo newInstance = new journalMoreInfo(line);
+
+            (newInstance.moreInfoFrame).addWindowListener(new WindowAdapter() {
+              public void windowClosed(WindowEvent event) {
+                deleted();
+              }
+            });
           }
         }
       });
