@@ -10,6 +10,7 @@ class journalMoreInfo {
   JTextArea readArea = new JTextArea();
 
   JButton closeButton = new JButton("Close");
+  JButton deleteButton = new JButton("Delete");
 
   JFrame moreInfoFrame = new JFrame("Journal Entries");
 
@@ -30,10 +31,21 @@ class journalMoreInfo {
     closeButton.setBounds(200, 420, 100, 25);
     moreInfoFrame.add(closeButton);
 
+    deleteButton.setBounds(310, 420, 100, 25);
+    moreInfoFrame.add(deleteButton);
+
     // Close Button Action Listener
     closeButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         moreInfoFrame.dispose();
+      }
+    });
+
+    deleteButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        File fileToReadFile = new File("./alerts", (fileToRead + ".txt"));
+
+        fileToReadFile.delete();
       }
     });
 
