@@ -67,6 +67,8 @@ class journalMoreInfo {
       while(fileReader.hasNextLine()) {
         readArea.append(fileReader.nextLine() + "\n");
       }
+
+      fileReader.close();
     } catch (FileNotFoundException e) {}
   }
 }
