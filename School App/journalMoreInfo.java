@@ -45,7 +45,17 @@ class journalMoreInfo {
       public void actionPerformed(ActionEvent e) {
         File fileToReadFile = new File("./alerts", (fileToRead + ".txt"));
 
-        fileToReadFile.delete();
+          int outcome = JOptionPane.showConfirmDialog(moreInfoFrame, "Are you sure you want to delete the file?");
+
+          if (outcome == 0) {
+            if (fileToReadFile.delete()) {
+              JOptionPane.showMessageDialog(moreInfoFrame, "Successfully Deleted File");
+
+              moreInfoFrame.dispose();
+            } else {
+              JOptionPane.showMessageDialog(moreInfoFrame, "Couldn't Delete File");
+            }
+          } else if (outcome == 1 || outcome == 2) {}
       }
     });
 
