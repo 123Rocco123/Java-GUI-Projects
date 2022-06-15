@@ -262,6 +262,23 @@ class mainClass {
             if ((addNewHomework.newHomeworkFile).exists()) {
               scrollPaneHW.add(new JLabel(addNewHomework.newHomework.getText() + ": " + addNewHomework.homeworkClass.getText() + ": " + addNewHomework.dueDate.getText()));
 
+              // Width = 250 Height = 200
+
+              // New Homework Button Re-Formatting
+              newHomeworkButton.setBounds(10, 165, 110, 25);
+              newHomeworkButton.setText("New HW");
+
+              // Delete Button Formatting
+              homeworkDelete.setBounds(130, 165, 110, 25);
+              homeWorkPanel.add(homeworkDelete);
+
+              // Create a new instance of the delete homework JFrame
+              homeworkDelete.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                  
+                }
+              });
+
               refreshFunc();
             }
           }
