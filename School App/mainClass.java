@@ -534,6 +534,35 @@ class mainClass {
 
       // Used to read the selected journal entry
       chooseButton.addActionListener(new ActionListener() {
+        public void JComboBoxSetup() {
+          String[] entriesArray = new String[new File("./alerts").list().length + 1];
+
+          entriesArray[0] = "";
+          for (int i = 0; i < new File("./alerts").list().length; i++) {
+            String toAdd = new File("./alerts").list()[i];
+
+            if (toAdd.contains(".txt")) {
+              toAdd = toAdd.replace(".txt", "");
+
+              entriesArray[i + 1] = toAdd;
+            }
+          }
+
+          comboBoxToAdd = new JComboBox(entriesArray);
+          scrollPaneJournal.add(comboBoxToAdd);
+        }
+
+        public void deleted() {
+          scrollPaneJournal.removeAll();
+
+          JComboBoxSetup();
+
+          // Used to re-fresh the page to display the new page.
+          mainFrame.invalidate();
+          mainFrame.validate();
+          mainFrame.repaint();
+        }
+
         public void actionPerformed(ActionEvent e) {
           if (!comboBoxToAdd.getSelectedItem().equals("")) {
             String line = (String)(comboBoxToAdd.getSelectedItem());
