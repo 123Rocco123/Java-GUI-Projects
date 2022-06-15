@@ -28,10 +28,10 @@ class journalMoreInfo {
     readArea.setEditable(false);
     moreInfoFrame.add(readArea);
 
-    closeButton.setBounds(200, 420, 100, 25);
+    closeButton.setBounds(145, 420, 100, 25);
     moreInfoFrame.add(closeButton);
 
-    deleteButton.setBounds(310, 420, 100, 25);
+    deleteButton.setBounds(255, 420, 100, 25);
     moreInfoFrame.add(deleteButton);
 
     // Close Button Action Listener
