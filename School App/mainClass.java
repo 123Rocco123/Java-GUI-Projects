@@ -121,10 +121,7 @@ class mainClass {
 
     mainFrame.add(calendarPanel);
 
-    // Used to re-fresh the page to display the new page.
-    mainFrame.invalidate();
-    mainFrame.validate();
-    mainFrame.repaint();
+    refreshFunc();
 
     // Exit Button
     exitButton.setBounds(340, 430, 100, 25);
@@ -145,10 +142,7 @@ class mainClass {
             if ((newClass.newClassFile).exists()) {
               scrollPane.add(new JLabel(newClass.className + ": " + newClass.timeClassStarts));
 
-              // Used to re-fresh the page to display the new page.
-              mainFrame.invalidate();
-              mainFrame.validate();
-              mainFrame.repaint();
+              refreshFunc();
             }
           }
         });
@@ -167,10 +161,8 @@ class mainClass {
 
               scrollPaneRem.add(new Label(reminderClass.reminder.getText() + " | " + convertedTime));
 
-              // Used to re-fresh the page to display the new page.
-              mainFrame.invalidate();
-              mainFrame.validate();
-              mainFrame.repaint();
+              refreshFunc();
+
               try {
                 convertedTime = new SimpleDateFormat("MM/dd/yyyy").parse(reminderClass.dateField.getText());
               } catch (ParseException ex) {}
@@ -220,10 +212,7 @@ class mainClass {
 
             JComboBoxSetup();
 
-            // Used to re-fresh the page to display the new page.
-            mainFrame.invalidate();
-            mainFrame.validate();
-            mainFrame.repaint();
+            refreshFunc();
           }
 
           public void windowClosed(WindowEvent e) {
@@ -256,10 +245,7 @@ class mainClass {
               });
             }
 
-            // Used to re-fresh the page to display the new page.
-            mainFrame.invalidate();
-            mainFrame.validate();
-            mainFrame.repaint();
+            refreshFunc();
           }
         });
       }
@@ -274,10 +260,7 @@ class mainClass {
             if ((addNewHomework.newHomeworkFile).exists()) {
               scrollPaneHW.add(new JLabel(addNewHomework.newHomework.getText() + ": " + addNewHomework.homeworkClass.getText() + ": " + addNewHomework.dueDate.getText()));
 
-              // Used to re-fresh the page to display the new page.
-              mainFrame.invalidate();
-              mainFrame.validate();
-              mainFrame.repaint();
+              refreshFunc();
             }
           }
         });
@@ -295,10 +278,7 @@ class mainClass {
             panelClearerFunc();
             initialCheckerFunc();
 
-            // Used to re-fresh page.
-            mainFrame.invalidate();
-            mainFrame.validate();
-            mainFrame.repaint();
+            refreshFunc();
           }
         });
       }
@@ -307,6 +287,10 @@ class mainClass {
     // Initial Function for the saved journal and stuff.
     initialCheckerFunc();
 
+    refreshFunc();
+  }
+
+  public void refreshFunc() {
     // Used to re-fresh page.
     mainFrame.invalidate();
     mainFrame.validate();
@@ -557,10 +541,7 @@ class mainClass {
 
           JComboBoxSetup();
 
-          // Used to re-fresh the page to display the new page.
-          mainFrame.invalidate();
-          mainFrame.validate();
-          mainFrame.repaint();
+          refreshFunc();
         }
 
         public void actionPerformed(ActionEvent e) {
