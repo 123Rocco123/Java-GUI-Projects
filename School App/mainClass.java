@@ -197,25 +197,20 @@ class mainClass {
 
         // Window Listener for Journal Frame
         newEntry.journalFrame.addWindowListener(new WindowAdapter() {
-          public void windowClosed(WindowEvent e) {
-            if (new File("./alerts").list().length > 0) {
-              scrollPaneJournal.removeAll();
+          public void JComboBoxSetup() {
+            String[] entriesArray = new String[new File("./alerts").list().length + 1];
 
-              String[] entriesArray = new String[new File("./alerts").list().length + 1];
+            entriesArray[0] = "";
+            for (int i = 0; i < new File("./alerts").list().length; i++) {
+              String toAdd = new File("./alerts").list()[i];
 
-              entriesArray[0] = "";
-              for (int i = 0; i < new File("./alerts").list().length; i++) {
-                String toAdd = new File("./alerts").list()[i];
+              if (toAdd.contains(".txt")) {
+                toAdd = toAdd.replace(".txt", "");
 
-                if (toAdd.contains(".txt")) {
-                  toAdd = toAdd.replace(".txt", "");
-
-                  entriesArray[i + 1] = toAdd;
-                }
+                entriesArray[i + 1] = toAdd;
               }
 
-              comboBoxToAdd = new JComboBox(entriesArray);
-              scrollPaneJournal.add(comboBoxToAdd);
+              JComboBoxSetup();
 
               JButton chooseButton = new JButton("Choose");
               chooseButton.setBounds(140, 165, 100, 25);
