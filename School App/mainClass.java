@@ -214,8 +214,8 @@ class mainClass {
                 }
               }
 
-              JComboBox entries = new JComboBox(entriesArray);
-              scrollPaneJournal.add(entries);
+              comboBoxToAdd = new JComboBox(entriesArray);
+              scrollPaneJournal.add(comboBoxToAdd);
 
               JButton chooseButton = new JButton("Choose");
               chooseButton.setBounds(140, 165, 100, 25);
