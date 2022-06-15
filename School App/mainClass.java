@@ -209,6 +209,12 @@ class mainClass {
 
                 entriesArray[i + 1] = toAdd;
               }
+            }
+
+            comboBoxToAdd = new JComboBox(entriesArray);
+            scrollPaneJournal.add(comboBoxToAdd);
+          }
+
           public void deleted() {
             scrollPaneJournal.removeAll();
 
