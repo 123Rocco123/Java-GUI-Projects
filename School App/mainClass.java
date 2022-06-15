@@ -209,6 +209,16 @@ class mainClass {
 
                 entriesArray[i + 1] = toAdd;
               }
+          public void deleted() {
+            scrollPaneJournal.removeAll();
+
+            JComboBoxSetup();
+
+            // Used to re-fresh the page to display the new page.
+            mainFrame.invalidate();
+            mainFrame.validate();
+            mainFrame.repaint();
+          }
 
               JComboBoxSetup();
 
