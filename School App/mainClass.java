@@ -62,6 +62,8 @@ class mainClass {
   // Expanded Information Button
   JButton classMoreInfo = new JButton("More Info");
 
+  // Delete and Complete Buttons
+  JButton homeworkDelete = new JButton("More Info");
   // Quit Button
   JButton exitButton = new JButton("Quit");
 
