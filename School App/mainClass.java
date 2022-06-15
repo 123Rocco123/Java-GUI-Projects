@@ -226,6 +226,10 @@ class mainClass {
             mainFrame.repaint();
           }
 
+          public void windowClosed(WindowEvent e) {
+            if (new File("./alerts").list().length > 0) {
+              scrollPaneJournal.removeAll();
+
               JComboBoxSetup();
 
               JButton chooseButton = new JButton("Choose");
