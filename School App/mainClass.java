@@ -461,6 +461,21 @@ class mainClass {
           fileReader.close();
         } catch (FileNotFoundException e) {}
       }
+
+      // New Homework Button Re-Formatting
+      newHomeworkButton.setBounds(10, 165, 110, 25);
+      newHomeworkButton.setText("New HW");
+
+      // Delete Button Formatting
+      homeworkDelete.setBounds(130, 165, 110, 25);
+      homeWorkPanel.add(homeworkDelete);
+
+      // Create a new instance of the delete homework JFrame
+      homeworkDelete.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+          deleteHomework deleteHomeworkInstance = new deleteHomework();
+        }
+      });
     }
 
     // Used for the Reminder directory
