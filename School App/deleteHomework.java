@@ -29,9 +29,11 @@ class deleteHomework {
     homeworkChangeFrame.setLayout(null);
     homeworkChangeFrame.setLocationRelativeTo(null);
 
-    scrollHWContainer.setBounds(10, 10, 480, 480);
-    
     // ScrollPane Formatting
+    scrollHWContainer.setBounds(10, 45, 465, 365);
+    scrollHWContainer.setBorder(BorderFactory.createLineBorder(Color.black));
+    homeworkChangeFrame.add(scrollHWContainer);
+
     // Remove Button Formatting
     // JComboBox Formatting
     // Remove Button Action Listener
