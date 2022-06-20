@@ -7,6 +7,8 @@ import java.io.*;
 
 class deleteHomework {
   // Contains the homework directory
+  File directoryContainer = new File("./homework");
+
   // Homework Frame
   JFrame homeworkChangeFrame = new JFrame();
 
