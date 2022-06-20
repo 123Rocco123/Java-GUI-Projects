@@ -44,6 +44,12 @@ class deleteHomework {
     homeworkChangeFrame.add(homeworkContainer);
 
     // Remove Button Action Listener
+    removeHomeworkButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+      }
+    });
+  }
+
   // Homework Checker Func
   }
 }
