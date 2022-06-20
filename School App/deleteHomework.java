@@ -12,6 +12,8 @@ class deleteHomework {
   // Homework Frame
   JFrame homeworkChangeFrame = new JFrame();
 
+  JComboBox homeworkContainer = new JComboBox();
+
   // Used to display the homework
   JPanel homeworkConstainer = new JPanel(new GridLayout(0,1));
   JScrollPane scrollHWContainer = new JScrollPane(homeworkConstainer);
