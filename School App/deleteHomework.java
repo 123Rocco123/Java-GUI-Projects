@@ -19,6 +19,8 @@ class deleteHomework {
   JScrollPane scrollHWContainer = new JScrollPane(homeworkConstainer);
 
   // Remove HW Button
+  JButton removeHomeworkButton = new JButton("Remove HW");
+
   public deleteHomework() {
     // JFrame Formatting
     homeworkChangeFrame.setTitle("Modify Homework");
