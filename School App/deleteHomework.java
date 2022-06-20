@@ -56,10 +56,13 @@ class deleteHomework {
     int amountOfHomework = directoryContainer.list().length;
 
     // Contains the Array for the JComboBox
-    String[] JComboBoxArray = new String[amountOfHomework];
+    String[] JComboBoxArray = new String[amountOfHomework + 1];
 
+    // Set the first index to 0.
+       // This is to avoid the null point exception for the JComboBox.
+    JComboBoxArray[0] = "";
     for (int i = 0; i < amountOfHomework; i++) {
-      JComboBoxArray[i] = directoryContainer.list()[i];
+      JComboBoxArray[i + 1] = directoryContainer.list()[i];
     }
 
     this.homeworkContainer = new JComboBox(JComboBoxArray);
