@@ -275,7 +275,7 @@ class mainClass {
               // Create a new instance of the delete homework JFrame
               homeworkDelete.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                  
+                  deleteHomework deleteHomeworkInstance = new deleteHomework();
                 }
               });
 
