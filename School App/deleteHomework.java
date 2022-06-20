@@ -51,5 +51,17 @@ class deleteHomework {
   }
 
   // Homework Checker Func
+  void homeworkAmountCheckFunc() {
+    // Contains the amount of homework user has stored in the HW file
+    int amountOfHomework = directoryContainer.list().length;
+
+    // Contains the Array for the JComboBox
+    String[] JComboBoxArray = new String[amountOfHomework];
+
+    for (int i = 0; i < amountOfHomework; i++) {
+      JComboBoxArray[i] = directoryContainer.list()[i];
+    }
+
+    this.homeworkContainer = new JComboBox(JComboBoxArray);
   }
 }
