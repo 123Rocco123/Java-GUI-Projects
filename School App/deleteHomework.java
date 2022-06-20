@@ -35,6 +35,9 @@ class deleteHomework {
     homeworkChangeFrame.add(scrollHWContainer);
 
     // Remove Button Formatting
+    removeHomeworkButton.setBounds(175, 420, 150, 25);
+    homeworkChangeFrame.add(removeHomeworkButton);
+
     // JComboBox Formatting
     // Remove Button Action Listener
   // Homework Checker Func
