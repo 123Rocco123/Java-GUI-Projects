@@ -295,8 +295,12 @@ class mainClass {
                             homework += fileReader.nextLine();
                           }
 
-                          System.out.println(homework);
                           // JLabel String Formatting
+                          homework = homework.replace("Homework: ", "");
+                          homework = homework.replace("Class: ", " | ");
+                          homework = homework.replace("Due Date: ", " | ");
+
+                          scrollPaneHW.add(new JLabel(homework));
                           fileReader.close();
                         } catch (FileNotFoundException ex) {}
                       }
