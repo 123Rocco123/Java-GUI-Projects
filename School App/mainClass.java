@@ -276,6 +276,11 @@ class mainClass {
               homeworkDelete.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                   deleteHomework deleteHomeworkInstance = new deleteHomework();
+
+                  // Delete Homework JFrame Window Listener
+                  (deleteHomeworkInstance.homeworkChangeFrame).addWindowListener(new WindowAdapter() {
+                    }
+                  });
                 }
               });
 
