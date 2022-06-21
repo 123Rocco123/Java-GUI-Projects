@@ -279,20 +279,24 @@ class mainClass {
 
                   // Delete Homework JFrame Window Listener
                   (deleteHomeworkInstance.homeworkChangeFrame).addWindowListener(new WindowAdapter() {
+                    // Used to delete and re-paint the
                     public void deleted() {
                       File fileDirectory = new File("./homework");
 
                       String homework = "";
 
+                      // Used to loop through all the files in the homework directory
                       for (int i = 0; i < fileDirectory.list().length; i++) {
                         try {
                           Scanner fileReader = new Scanner(new File("./homework", fileDirectory.list()[i]));
 
+                          // String Add
                           while(fileReader.hasNextLine()) {
                             homework += fileReader.nextLine();
                           }
 
                           System.out.println(homework);
+                          // JLabel String Formatting
                           fileReader.close();
                         } catch (FileNotFoundException ex) {}
                       }
