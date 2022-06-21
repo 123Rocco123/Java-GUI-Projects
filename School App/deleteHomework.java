@@ -84,6 +84,6 @@ class deleteHomework {
       JComboBoxArray[i + 1] = directoryContainer.list()[i];
     }
 
-    this.homeworkContainer = new JComboBox(JComboBoxArray);
+    homeworkContainer = new JComboBox(JComboBoxArray);
   }
 }
