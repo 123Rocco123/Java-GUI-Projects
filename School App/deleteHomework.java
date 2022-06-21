@@ -12,6 +12,7 @@ class deleteHomework {
   // Homework Frame
   JFrame homeworkChangeFrame = new JFrame();
 
+  String[] JComboBoxArray = {};
   JComboBox homeworkContainer = new JComboBox();
 
   // Used to display the homework
@@ -74,7 +75,7 @@ class deleteHomework {
     int amountOfHomework = directoryContainer.list().length;
 
     // Contains the Array for the JComboBox
-    String[] JComboBoxArray = new String[amountOfHomework + 1];
+    JComboBoxArray = new String[amountOfHomework + 1];
 
     // Set the first index to 0.
        // This is to avoid the null point exception for the JComboBox.
