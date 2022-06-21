@@ -279,6 +279,25 @@ class mainClass {
 
                   // Delete Homework JFrame Window Listener
                   (deleteHomeworkInstance.homeworkChangeFrame).addWindowListener(new WindowAdapter() {
+                    public void deleted() {
+                      File fileDirectory = new File("./homework");
+
+                      String homework = "";
+
+                      for (int i = 0; i < fileDirectory.list().length; i++) {
+                        try {
+                          Scanner fileReader = new Scanner(new File("./homework", fileDirectory.list()[i]));
+
+                          while(fileReader.hasNextLine()) {
+                            homework += fileReader.nextLine();
+                          }
+
+                          System.out.println(homework);
+                          fileReader.close();
+                        } catch (FileNotFoundException ex) {}
+                      }
+                    }
+
                     public void windowClosed(WindowEvent ev) {
                       deleted();
                     }
