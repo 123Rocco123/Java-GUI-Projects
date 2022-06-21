@@ -46,6 +46,16 @@ class deleteHomework {
     // Remove Button Action Listener
     removeHomeworkButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
+
+      }
+    });
+
+    // JComboBox Listener
+    homeworkContainer.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        if (!homeworkContainer.getSelectedItem().equals("")) {
+          System.out.println(homeworkContainer.getSelectedItem());
+        }
       }
     });
   }
