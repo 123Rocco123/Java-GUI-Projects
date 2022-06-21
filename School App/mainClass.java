@@ -279,6 +279,8 @@ class mainClass {
 
                   // Delete Homework JFrame Window Listener
                   (deleteHomeworkInstance.homeworkChangeFrame).addWindowListener(new WindowAdapter() {
+                    public void windowClosed(WindowEvent ev) {
+                      deleted();
                     }
                   });
                 }
