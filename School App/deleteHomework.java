@@ -57,6 +57,8 @@ class deleteHomework {
           if (userChoice == 0) {
             if (fileToDelete.delete()) {
               JOptionPane.showMessageDialog(null, "Successfully Deleted File: " + fileToDelete.getName());
+
+              homeworkChangeFrame.dispose();
             } else {
               JOptionPane.showMessageDialog(null, "Something Went Wrong", "Error", JOptionPane.ERROR_MESSAGE);
             }
