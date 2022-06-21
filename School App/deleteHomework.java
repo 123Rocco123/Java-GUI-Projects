@@ -46,7 +46,24 @@ class deleteHomework {
     // Remove Button Action Listener
     removeHomeworkButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
+        if (!homeworkContainer.getSelectedItem().equals("")) {
+          File fileToDelete = new File("./homework", (String)(homeworkContainer.getSelectedItem()));
 
+          // Used to make sure that the user is sure to delete their homework.
+             // JOptionPane returns an int value of 0 to 2.
+          int userChoice = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete: " + fileToDelete.getName());
+
+          // Yes Option
+          if (userChoice == 0) {
+            if (fileToDelete.delete()) {
+              JOptionPane.showMessageDialog(null, "Successfully Deleted File: " + fileToDelete.getName());
+            } else {
+              JOptionPane.showMessageDialog(null, "Something Went Wrong", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+          }
+
+          homeworkAmountCheckFunc();
+        }
       }
     });
 
