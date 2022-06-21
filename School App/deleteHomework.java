@@ -61,17 +61,6 @@ class deleteHomework {
               JOptionPane.showMessageDialog(null, "Something Went Wrong", "Error", JOptionPane.ERROR_MESSAGE);
             }
           }
-
-          homeworkAmountCheckFunc();
-        }
-      }
-    });
-
-    // JComboBox Listener
-    homeworkContainer.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        if (!homeworkContainer.getSelectedItem().equals("")) {
-          System.out.println(homeworkContainer.getSelectedItem());
         }
       }
     });
