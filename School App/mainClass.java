@@ -64,6 +64,8 @@ class mainClass {
 
   // Delete and Complete Buttons
   JButton homeworkDelete = new JButton("More Info");
+  JButton reminderDelete = new JButton("More Info");
+
   // Quit Button
   JButton exitButton = new JButton("Quit");
 
@@ -180,7 +182,13 @@ class mainClass {
               };
               timer.schedule(task, convertedTime);
 
-              // newReminderButton BUtton Re-Fromatting 380
+              // newReminderButton Button Re-Fromatting 380
+              newReminderButton.setBounds(65, 165, 120, 25);
+
+              // Reminder Delete Button Formatting and Add
+              reminderDelete.setBounds(195, 165, 100, 25);
+              reminderPanel.add(reminderDelete);
+
             }
           }
         });
@@ -256,7 +264,7 @@ class mainClass {
       }
     });
 
-    // Homework BUtton Action Listener
+    // Homework Button Action Listener
     newHomeworkButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         newHomework addNewHomework = new newHomework();
