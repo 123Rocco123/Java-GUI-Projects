@@ -189,6 +189,7 @@ class mainClass {
               reminderDelete.setBounds(195, 165, 100, 25);
               reminderPanel.add(reminderDelete);
 
+              removeActionListenerFunc(reminderDelete);
               // Reminder Delete ActionListener to delete remidners
               reminderDelete.addActionListener(new ActionListener() {
                 void actionPerformed(ActionEvent e) {
@@ -277,18 +278,11 @@ class mainClass {
 
         // New Homework Window Listener
         (addNewHomework.homeworkFrame).addWindowListener(new WindowAdapter() {
-          // Used to remove any previous ActionListeners that the Delete Button had from the initialCheckerFunc.
-             // This fixes the two delete JFrames that would appear after a new homework task was added.
-          public void removeActionListenerFunc() {
-            ActionListener[] listeners = homeworkDelete.getActionListeners();
-            for (int i = 0; i < listeners.length; i++) {
-                homeworkDelete.removeActionListener(listeners[i]);
-            }
-          }
-
           public void windowClosed(WindowEvent e) {
             if ((addNewHomework.newHomeworkFile).exists()) {
-              removeActionListenerFunc();
+              // Used to remove any previous ActionListeners that the Delete Button had from the initialCheckerFunc.
+                 // This fixes the two delete JFrames that would appear after a new homework task was added.
+              removeActionListenerFunc(homeworkDelete);
 
               scrollPaneHW.add(new JLabel(addNewHomework.newHomework.getText() + ": " + addNewHomework.homeworkClass.getText() + ": " + addNewHomework.dueDate.getText()));
 
