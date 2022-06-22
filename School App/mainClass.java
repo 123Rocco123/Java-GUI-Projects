@@ -375,6 +375,15 @@ class mainClass {
     refreshFunc();
   }
 
+  // Remove JButton ActionListeners Func
+  public void removeActionListenerFunc(JButton buttonToClear) {
+    ActionListener[] listeners = buttonToClear.getActionListeners();
+    for (int i = 0; i < listeners.length; i++) {
+        buttonToClear.removeActionListener(listeners[i]);
+    }
+  }
+
+  // Function to Re-Fresh JPanel
   public void refreshFunc() {
     // Used to re-fresh page.
     mainFrame.invalidate();
