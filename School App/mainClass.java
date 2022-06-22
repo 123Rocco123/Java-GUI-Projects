@@ -626,6 +626,20 @@ class mainClass {
           };
 
           timer.schedule(task, convertedTime);
+
+          // newReminderButton Button Re-Fromatting 380
+          newReminderButton.setBounds(65, 165, 120, 25);
+
+          // Reminder Delete Button Formatting and Add
+          reminderDelete.setBounds(195, 165, 100, 25);
+          reminderPanel.add(reminderDelete);
+
+          // Reminder Delete ActionListener to delete remidners
+          reminderDelete.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+              deleteReminder deleteReminderObj = new deleteReminder();
+            }
+          });
         } catch (FileNotFoundException e) {}
       }
     }
