@@ -521,6 +521,44 @@ class mainClass {
       homeworkDelete.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
           deleteHomework deleteHomeworkInstance = new deleteHomework();
+
+          // Delete Homework JFrame Window Listener
+          (deleteHomeworkInstance.homeworkChangeFrame).addWindowListener(new WindowAdapter() {
+            // Used to delete and re-paint the
+            public void deleted() {
+              scrollPaneHW.removeAll();
+
+              File fileDirectory = new File("./homework");
+
+              String homework = "";
+
+              // Used to loop through all the files in the homework directory
+              for (int i = 0; i < fileDirectory.list().length; i++) {
+                try {
+                  Scanner fileReader = new Scanner(new File("./homework", fileDirectory.list()[i]));
+
+                  // String Add
+                  while(fileReader.hasNextLine()) {
+                    homework += fileReader.nextLine();
+                  }
+
+                  // JLabel String Formatting
+                  homework = homework.replace("Homework: ", "");
+                  homework = homework.replace("Class: ", " | ");
+                  homework = homework.replace("Due Date: ", " | ");
+
+                  scrollPaneHW.add(new JLabel(homework));
+                  fileReader.close();
+                } catch (FileNotFoundException ex) {}
+              }
+
+              refreshFunc();
+            }
+
+            public void windowClosed(WindowEvent ev) {
+              deleted();
+            }
+          });
         }
       });
     }
