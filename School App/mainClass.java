@@ -315,6 +315,8 @@ class mainClass {
                           fileReader.close();
                         } catch (FileNotFoundException ex) {}
                       }
+
+                      refreshFunc();
                     }
 
                     public void windowClosed(WindowEvent ev) {
