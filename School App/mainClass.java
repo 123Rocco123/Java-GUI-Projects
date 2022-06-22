@@ -258,6 +258,15 @@ class mainClass {
         newHomework addNewHomework = new newHomework();
 
         (addNewHomework.homeworkFrame).addWindowListener(new WindowAdapter() {
+          // Used to remove any previous ActionListeners that the Delete Button had from the initialCheckerFunc.
+             // This fixes the two delete JFrames that would appear after a new homework task was added.
+          public void reboot() {
+            ActionListener[] listeners = homeworkDelete.getActionListeners();
+            for (int i = 0; i < listeners.length; i++) {
+                homeworkDelete.removeActionListener(listeners[i]);
+            }
+          }
+
           public void windowClosed(WindowEvent e) {
             if ((addNewHomework.newHomeworkFile).exists()) {
               scrollPaneHW.add(new JLabel(addNewHomework.newHomework.getText() + ": " + addNewHomework.homeworkClass.getText() + ": " + addNewHomework.dueDate.getText()));
