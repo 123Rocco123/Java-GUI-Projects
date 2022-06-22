@@ -192,7 +192,7 @@ class mainClass {
               removeActionListenerFunc(reminderDelete);
               // Reminder Delete ActionListener to delete remidners
               reminderDelete.addActionListener(new ActionListener() {
-                void actionPerformed(ActionEvent e) {
+                public void actionPerformed(ActionEvent e) {
                   deleteReminder deleteReminderObj = new deleteReminder();
                 }
               });
