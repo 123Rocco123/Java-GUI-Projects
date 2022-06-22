@@ -189,11 +189,14 @@ class mainClass {
               reminderDelete.setBounds(195, 165, 100, 25);
               reminderPanel.add(reminderDelete);
 
+              // Removing previous ActionListeners
               removeActionListenerFunc(reminderDelete);
+
               // Reminder Delete ActionListener to delete remidners
               reminderDelete.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                   deleteReminder deleteReminderObj = new deleteReminder();
+
                 }
               });
             }
@@ -372,6 +375,7 @@ class mainClass {
   // Remove JButton ActionListeners Func
   public void removeActionListenerFunc(JButton buttonToClear) {
     ActionListener[] listeners = buttonToClear.getActionListeners();
+
     for (int i = 0; i < listeners.length; i++) {
         buttonToClear.removeActionListener(listeners[i]);
     }
@@ -637,6 +641,9 @@ class mainClass {
           reminderDelete.setBounds(195, 165, 100, 25);
           reminderPanel.add(reminderDelete);
 
+          // Removing previous ActionListeners
+          removeActionListenerFunc(reminderDelete);
+          
           // Reminder Delete ActionListener to delete remidners
           reminderDelete.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
