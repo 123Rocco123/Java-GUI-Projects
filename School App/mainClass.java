@@ -189,6 +189,12 @@ class mainClass {
               reminderDelete.setBounds(195, 165, 100, 25);
               reminderPanel.add(reminderDelete);
 
+              // Reminder Delete ActionListener to delete remidners
+              reminderDelete.addActionListener(new ActionListener() {
+                void actionPerformed(ActionEvent e) {
+                  deleteReminder deleteReminderObj = new deleteReminder();
+                }
+              });
             }
           }
         });
