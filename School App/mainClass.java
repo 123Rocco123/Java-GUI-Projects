@@ -151,6 +151,7 @@ class mainClass {
       }
     });
 
+    // Reminder Button Acion Listener
     newReminderButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         reminder reminderClass = new reminder();
@@ -178,6 +179,8 @@ class mainClass {
                 }
               };
               timer.schedule(task, convertedTime);
+
+              // newReminderButton BUtton Re-Fromatting 380
             }
           }
         });
@@ -253,10 +256,12 @@ class mainClass {
       }
     });
 
+    // Homework BUtton Action Listener
     newHomeworkButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         newHomework addNewHomework = new newHomework();
 
+        // New Homework Window Listener
         (addNewHomework.homeworkFrame).addWindowListener(new WindowAdapter() {
           // Used to remove any previous ActionListeners that the Delete Button had from the initialCheckerFunc.
              // This fixes the two delete JFrames that would appear after a new homework task was added.
@@ -290,7 +295,7 @@ class mainClass {
 
                   // Delete Homework JFrame Window Listener
                   (deleteHomeworkInstance.homeworkChangeFrame).addWindowListener(new WindowAdapter() {
-                    // Used to delete and re-paint the
+                    // Used to delete and re-paint the JComboBox
                     public void deleted() {
                       File fileDirectory = new File("./homework");
 
