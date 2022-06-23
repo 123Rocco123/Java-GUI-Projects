@@ -3,6 +3,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+import java.util.Scanner;
+import java.io.*;
+
 class deleteReminder {
   JFrame deleteReminderFrame = new JFrame();
 
