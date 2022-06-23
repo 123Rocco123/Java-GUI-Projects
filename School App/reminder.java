@@ -22,6 +22,7 @@ class reminder {
 
   Date convertedTime;
 
+  // Create New Reminder
   public reminder() {
     reminderFrame.setSize(500, 205);
     reminderFrame.setLocationRelativeTo(null);
@@ -59,6 +60,43 @@ class reminder {
               JOptionPane.showMessageDialog(reminderFrame, "Error! Reminder Already Exists.");
             }
           } catch (IOException ex) {}
+        }
+      }
+    });
+  }
+
+  // Modify Reminder
+  public reminder(File fileToChange) {
+    reminderFrame.setSize(500, 205);
+    reminderFrame.setLocationRelativeTo(null);
+    reminderFrame.setVisible(true);
+    reminderFrame.setTitle("Add New Reminder");
+    reminderFrame.setLayout(null);
+
+    reminder.setBounds(10, 10, 465, 50);
+    reminderFrame.add(reminder);
+
+    dateField.setBounds(10, 70, 465, 50);
+    reminderFrame.add(dateField);
+
+    reWriteButton.setBounds(175, 130, 150, 25);
+    reminderFrame.add(reWriteButton);
+
+    focusFunction(reminder, "Write Reminder");
+    focusFunction(dateField, "Enter Date Here (MM/dd/yyyy)");
+
+    reWriteButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent ev) {
+        if (!reminder.getText().equals("") && !reminder.getText().equals("Write Reminder")) {
+          try {
+            FileWriter FileWriterMod = new FileWriter(fileToChange);
+
+            FileWriterMod.write("Reminder: " + reminder.getText());
+            FileWriterMod.write("\nTime: " + dateField.getText());
+            FileWriterMod.close();
+
+            reminderFrame.dispose();
+          } catch (IOException e) {}
         }
       }
     });
