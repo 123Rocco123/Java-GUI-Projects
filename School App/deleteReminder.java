@@ -26,6 +26,8 @@ class deleteReminder {
     deleteReminderFrame.setLayout(null);
     deleteReminderFrame.setLocationRelativeTo(null);
 
-    
+    // Homework Container Formatting
+    homeworkOutputArea.setBounds(10, 45, 460, 100);
+    deleteReminderFrame.add(homeworkOutputArea);
   }
 }
