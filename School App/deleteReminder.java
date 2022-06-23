@@ -42,5 +42,10 @@ class deleteReminder {
     // ModifyReminder Button Formatting
     modifyReminder.setBounds(250, 160, 140, 25);
     deleteReminderFrame.add(modifyReminder);
+
+    // JComboBox ActionListener
+    homeworkContainer.addActionListener(new ActionListener() {
+    });
+  }
   }
 }
