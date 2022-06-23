@@ -57,6 +57,9 @@ class deleteReminder {
           while (newReader.hasNextLine()) {
             homeworkOutputArea.append(newReader.nextLine() + "\n");
           }
+
+          // To avoid File type errors
+          newReader.close();
         } catch (FileNotFoundException ex) {}
       }
     });
