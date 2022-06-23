@@ -63,6 +63,31 @@ class deleteReminder {
         } catch (FileNotFoundException ex) {}
       }
     });
+
+    // Action Listener for Deleting Remniders
+    deleteReminder.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        File fileToDelete = new File("./reminder");
+
+        // Used to check if there are any reminders in the file
+        if (fileToDelete.list().length > 0) {
+          fileToDelete = new File("./reminder", (String)(homeworkContainer.getSelectedItem()));
+
+          int userChoice = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete: " + fileToDelete.getName());
+
+          // Yes Option
+          if (userChoice == 0) {
+            if (fileToDelete.delete()) {
+              JOptionPane.showMessageDialog(null, "Successfully Deleted File: " + (String)homeworkContainer.getSelectedItem());
+
+              deleteReminderFrame.dispose();
+            } else {
+              JOptionPane.showMessageDialog(null, "Something Went Wrong", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+          }
+        }
+      }
+    });
   }
 
   // Used to setup the JComboBox
