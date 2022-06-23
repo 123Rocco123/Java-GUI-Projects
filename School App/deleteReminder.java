@@ -92,9 +92,9 @@ class deleteReminder {
     // Modify Reminder Action Listener
     modifyReminder.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        reminder reminderClass = new reminder();
-
-        
+        // Check that the user has selected a file that they want to modify
+        if (!((String)(homeworkContainer.getSelectedItem())).equals("")) {
+        }
       }
     });
   }
