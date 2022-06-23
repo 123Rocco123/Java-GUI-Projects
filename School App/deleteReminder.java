@@ -94,6 +94,7 @@ class deleteReminder {
       public void actionPerformed(ActionEvent e) {
         // Check that the user has selected a file that they want to modify
         if (!((String)(homeworkContainer.getSelectedItem())).equals("")) {
+          reminder reminderClass = new reminder(new File("./reminder", (String)(homeworkContainer.getSelectedItem())));
         }
       }
     });
