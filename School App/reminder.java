@@ -19,6 +19,7 @@ class reminder {
   JTextField dateField = new JTextField();
 
   JButton submitButton = new JButton("Submit and Close");
+  JButton reWriteButton = new JButton("Overwrite Reminder");
 
   Date convertedTime;
 
