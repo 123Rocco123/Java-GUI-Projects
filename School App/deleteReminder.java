@@ -38,5 +38,9 @@ class deleteReminder {
     // Delete Reminder Formatting
     deleteReminder.setBounds(100, 160, 140, 25);
     deleteReminderFrame.add(deleteReminder);
+
+    // ModifyReminder Button Formatting
+    modifyReminder.setBounds(250, 160, 140, 25);
+    deleteReminderFrame.add(modifyReminder);
   }
 }
