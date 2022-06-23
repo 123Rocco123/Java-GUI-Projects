@@ -61,5 +61,23 @@ class deleteReminder {
       }
     });
   }
+
+  // Used to setup the JComboBox
+  public void comboBoxSetupFunc() {
+    File fileChecker = new File("./reminder");
+
+    // JComboBoxArray Formatting
+    String[] JComboBoxArray = new String[fileChecker.list().length + 1];
+    JComboBoxArray[0] = "";
+
+    // Check that the reminder directory isn't empty
+    if (fileChecker.list().length > 0) {
+      for (int i = 0; i < fileChecker.list().length; i++) {
+        JComboBoxArray[i + 1] = fileChecker.list()[i];
+      }
+    }
+
+    // Re-Assign the JComboBox
+    homeworkContainer = new JComboBox(JComboBoxArray);
   }
 }
