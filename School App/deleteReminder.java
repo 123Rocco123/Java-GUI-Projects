@@ -21,7 +21,7 @@ class deleteReminder {
   deleteReminder() {
     // JFrame Formatting
     deleteReminderFrame.setTitle("Modify Reminders");
-    deleteReminderFrame.setSize(500, 500);
+    deleteReminderFrame.setSize(500, 240);
     deleteReminderFrame.setVisible(true);
     deleteReminderFrame.setLayout(null);
     deleteReminderFrame.setLocationRelativeTo(null);
