@@ -34,5 +34,9 @@ class deleteReminder {
     comboBoxSetupFunc();
     homeworkContainer.setBounds(175, 10, 150, 25);
     deleteReminderFrame.add(homeworkContainer);
+
+    // Delete Reminder Formatting
+    deleteReminder.setBounds(100, 160, 140, 25);
+    deleteReminderFrame.add(deleteReminder);
   }
 }
