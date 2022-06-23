@@ -131,12 +131,14 @@ class mainClass {
     exitButton.setBounds(340, 430, 100, 25);
     mainFrame.add(exitButton);
 
+    // Quit Program Functionality
     exitButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         System.exit(0);
       }
     });
 
+    // New Class Action Listener
     newClassButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         classes newClass = new classes();
@@ -643,7 +645,7 @@ class mainClass {
 
           // Removing previous ActionListeners
           removeActionListenerFunc(reminderDelete);
-          
+
           // Reminder Delete ActionListener to delete remidners
           reminderDelete.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
