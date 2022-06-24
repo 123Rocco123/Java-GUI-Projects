@@ -81,6 +81,13 @@ class deleteReminder {
         // Check that the user has selected a file that they want to modify
         if (!((String)(homeworkContainer.getSelectedItem())).equals("")) {
           reminder reminderClass = new reminder(new File("./reminder", (String)(homeworkContainer.getSelectedItem())));
+
+          // Used to repaint the JTextArea with the modified dates
+          (reminderClass.reminderFrame).addWindowListener(new WindowAdapter() {
+            public void windowClosed(WindowEvent ev) {
+              textAreaFunc();
+            }
+          });
         }
       }
     });
