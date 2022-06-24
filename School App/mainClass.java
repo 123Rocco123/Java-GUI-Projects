@@ -194,17 +194,19 @@ class mainClass {
           }
         });
 
-              // Removing previous ActionListeners
-              removeActionListenerFunc(reminderDelete);
+        // Removing previous ActionListeners
+        removeActionListenerFunc(reminderDelete);
 
-              // Reminder Delete ActionListener to delete remidners
-              reminderDelete.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                  deleteReminder deleteReminderObj = new deleteReminder();
+        // Reminder Delete ActionListener to delete remidners
+        reminderDelete.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            deleteReminder deleteReminderObj = new deleteReminder();
 
-                }
-              });
-            }
+            // This will be activated when the deleteReminder window has been closed
+            (deleteReminderObj.deleteReminderFrame).addWindowListener(new WindowAdapter() {
+              public void windowClosing(WindowEvent ev) {
+              }
+            });
           }
         });
       }
