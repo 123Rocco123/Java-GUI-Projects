@@ -190,6 +190,9 @@ class mainClass {
               // Reminder Delete Button Formatting and Add
               reminderDelete.setBounds(195, 165, 100, 25);
               reminderPanel.add(reminderDelete);
+            }
+          }
+        });
 
               // Removing previous ActionListeners
               removeActionListenerFunc(reminderDelete);
