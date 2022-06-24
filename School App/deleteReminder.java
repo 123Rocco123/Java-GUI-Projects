@@ -46,21 +46,7 @@ class deleteReminder {
     // JComboBox ActionListener
     homeworkContainer.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        // Clear homeworkOutputArea
-        homeworkOutputArea.setText("");
-
-        try {
-          File newFile = new File("./reminder", (String)(homeworkContainer.getSelectedItem()));
-
-          Scanner newReader = new Scanner(newFile);
-
-          while (newReader.hasNextLine()) {
-            homeworkOutputArea.append(newReader.nextLine() + "\n");
-          }
-
-          // To avoid File type errors
-          newReader.close();
-        } catch (FileNotFoundException ex) {}
+        textAreaFunc();
       }
     });
 
