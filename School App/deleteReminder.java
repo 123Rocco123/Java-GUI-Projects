@@ -100,6 +100,25 @@ class deleteReminder {
     });
   }
 
+  // Used to add text to the text area
+  public void textAreaFunc() {
+    // Clear homeworkOutputArea
+    homeworkOutputArea.setText("");
+
+    try {
+      File newFile = new File("./reminder", (String)(homeworkContainer.getSelectedItem()));
+
+      Scanner newReader = new Scanner(newFile);
+
+      while (newReader.hasNextLine()) {
+        homeworkOutputArea.append(newReader.nextLine() + "\n");
+      }
+
+      // To avoid File type errors
+      newReader.close();
+    } catch (FileNotFoundException ex) {}
+  }
+
   // Used to setup the JComboBox
   public void comboBoxSetupFunc() {
     File fileChecker = new File("./reminder");
