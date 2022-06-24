@@ -86,6 +86,7 @@ class reminder {
     focusFunction(reminder, "Write Reminder");
     focusFunction(dateField, "Enter Date Here (MM/dd/yyyy)");
 
+    // Modify Reminders Button
     reWriteButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent ev) {
         if (!reminder.getText().equals("") && !reminder.getText().equals("Write Reminder")) {
