@@ -203,6 +203,7 @@ class mainClass {
             deleteReminder deleteReminderObj = new deleteReminder();
 
             // This will be activated when the deleteReminder window has been closed
+               // With the purpose of re-freshing the reminder panel so that the user can get the reminders that they have.
             (deleteReminderObj.deleteReminderFrame).addWindowListener(new WindowAdapter() {
               public void windowClosing(WindowEvent ev) {
               }
