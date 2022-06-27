@@ -212,6 +212,31 @@ class mainClass {
                   // Used to iterate over the reminder directory to add the labels to the JPanel.
                   for (int i = 0; i < new File("./reminder").list().length; i++) {
                     try {
+                      Scanner newFileReader = new Scanner(new File("./reminder", (new File("./reminder").list())[i]));
+
+                      // Used to store the string for the JLabel
+                      String newLabelToAdd = "";
+                      // Used to read the lines in the file
+                      while (newFileReader.hasNextLine()) {
+                        // Used to current hasNextLine()
+                           // Used to avoid the "dereferncing" error from modifying newFileReader.nextLine()
+                        String currentLine = newFileReader.nextLine();
+
+                        // If and else if block is used to format the string.
+                        if (currentLine.contains("Reminder: ")) {
+                          newLabelToAdd += currentLine.replace("Reminder: ", "");
+                        } else if (currentLine.contains("Time: ")) {
+                          newLabelToAdd += currentLine.replace("Time: ", " | ");
+
+                          // Used to add the JLabels to the Reminder JPanel
+                          scrollPaneRem.add(new JLabel(newLabelToAdd));
+                          newLabelToAdd = "";
+                        }
+                      }
+
+                      refreshFunc();
+                      // Close fileReader to avoid bugs.
+                      newFileReader.close();
                     } catch (FileNotFoundException ex) {}
                   }
                 }
