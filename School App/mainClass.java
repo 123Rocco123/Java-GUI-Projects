@@ -694,6 +694,51 @@ class mainClass {
           reminderDelete.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
               deleteReminder deleteReminderObj = new deleteReminder();
+
+              // This will be activated when the deleteReminder window has been closed
+                 // With the purpose of re-freshing the reminder panel so that the user can get the reminders that they have.
+              (deleteReminderObj.deleteReminderFrame).addWindowListener(new WindowAdapter() {
+                public void windowClosing(WindowEvent ev) {
+                  if (new File("./reminder").list().length > 0) {
+                    // Clear all JLabels off of the screen.
+                    scrollPaneRem.removeAll();
+                    // Used to iterate over the reminder directory to add the labels to the JPanel.
+                    for (int i = 0; i < new File("./reminder").list().length; i++) {
+                      try {
+                        Scanner newFileReader = new Scanner(new File("./reminder", (new File("./reminder").list())[i]));
+
+                        // Used to store the string for the JLabel
+                        String newLabelToAdd = "";
+                        // Used to read the lines in the file
+                        while (newFileReader.hasNextLine()) {
+                          // Used to current hasNextLine()
+                             // Used to avoid the "dereferncing" error from modifying newFileReader.nextLine()
+                          String currentLine = newFileReader.nextLine();
+
+                          // If and else if block is used to format the string.
+                          if (currentLine.contains("Reminder: ")) {
+                            newLabelToAdd += currentLine.replace("Reminder: ", "");
+                          } else if (currentLine.contains("Time: ")) {
+                            newLabelToAdd += currentLine.replace("Time: ", " | ");
+
+                            // Used to add the JLabels to the Reminder JPanel
+                            scrollPaneRem.add(new JLabel(newLabelToAdd));
+                            newLabelToAdd = "";
+                          }
+                        }
+
+                        refreshFunc();
+                        // Close fileReader to avoid bugs.
+                        newFileReader.close();
+                      } catch (FileNotFoundException ex) {}
+                    }
+                  }
+                  // If the user has decided to delete all of their reminders, then we will simply remove all the labels saved onto the JPanel.
+                  else {
+                    scrollPaneRem.removeAll();
+                  }
+                }
+              });
             }
           });
         } catch (FileNotFoundException e) {}
