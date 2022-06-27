@@ -207,6 +207,15 @@ class mainClass {
             (deleteReminderObj.deleteReminderFrame).addWindowListener(new WindowAdapter() {
               public void windowClosing(WindowEvent ev) {
                 if (new File("./reminder").list().length > 0) {
+                  // Clear all JLabels off of the screen.
+                  scrollPaneRem.removeAll();
+                  // Used to iterate over the reminder directory to add the labels to the JPanel.
+                  for (int i = 0; i < new File("./reminder").list().length; i++) {
+                    try {
+                    } catch (FileNotFoundException ex) {}
+                  }
+                }
+                // If the user has decided to delete all of their reminders, then we will simply remove all the labels saved onto the JPanel.
                 else {
                   scrollPaneRem.removeAll();
                 }
