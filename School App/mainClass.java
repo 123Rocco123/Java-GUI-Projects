@@ -138,6 +138,25 @@ class mainClass {
       }
     });
 
+    // Keyboard Listener
+       // Used to quit the program with the escape key.
+    mainFrame.addKeyListener(new KeyListener() {
+      @Override
+      public void keyTyped(KeyEvent e) {}
+
+      @Override
+      public void keyReleased(KeyEvent arg0) {}
+
+      // Used to quit teh program when "esc" is pressed.
+      @Override
+      public void keyPressed(KeyEvent arg0) {
+        // TODO Auto-generated method stub
+        if( arg0.getKeyCode() == KeyEvent.VK_ESCAPE) {
+          System.exit(0);
+        }
+      }
+    });
+
     // New Class Action Listener
     newClassButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
