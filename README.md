@@ -6,9 +6,9 @@ This is a collection of projects that I'm working on that feature a Java GUI.
 ### Currently Working On
 - Indiana Jones GUI Textbased adventure game
 - School App
-  - Add Refresh Functionality to Reminder JPanel after modifications to the reminder directory.
   - Add completed functionality to "Homework" and "Reminder" panels.
   - Add semesters to classes panel.
+  - Add Grades Functionality
 
 ## Future Projects
 - 
@@ -18,6 +18,7 @@ This is a collection of projects that I'm working on that feature a Java GUI.
   - This is a basic text editor which can be used to edit / create text files.
 - Java Login System
   - This is a basic login system which can be implemented when user verification is required. 
+  - Add Refresh Functionality to Reminder JPanel after modifications to the reminder directory.
 - School App (Currently Working On)
   - Add delete funtionality to "Journal", "Homework", and "Reminder" panels.
   - Add "Modify" functionality to "Reminder" panels.
