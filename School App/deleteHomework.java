@@ -39,7 +39,7 @@ class deleteHomework {
     homeworkChangeFrame.add(scrollHWContainer);
 
     // Remove Button Formatting
-    removeHomeworkButton.setBounds(175, 420, 150, 25);
+    removeHomeworkButton.setBounds(88, 420, 150, 25);
     homeworkChangeFrame.add(removeHomeworkButton);
 
     // JComboBox Formatting
