@@ -51,6 +51,13 @@ class deleteHomework {
     homeworkContainer.setBounds(175, 10, 150, 25);
     homeworkChangeFrame.add(homeworkContainer);
 
+    // Used for completing homework
+    completedHW.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        
+      }
+    });
+
     // Remove Button Action Listener
     removeHomeworkButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
