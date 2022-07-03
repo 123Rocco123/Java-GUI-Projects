@@ -54,7 +54,16 @@ class deleteHomework {
     // Used for completing homework
     completedHW.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        
+        // Make sure that the user selected a real homework
+        if (!homeworkContainer.getSelectedItem().equals("")) {
+          // Used to store the choice of the user
+          int confirmFinished = JOptionPane.showConfirmDialog(null, "Confirm that the homework is completed?");
+
+          // Used to move the file to "completedHW" directory given that the user has selected "yes".
+          if (confirmFinished == 0) {
+            
+          }
+        }
       }
     });
 
