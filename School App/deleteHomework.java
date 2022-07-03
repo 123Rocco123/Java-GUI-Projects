@@ -42,6 +42,10 @@ class deleteHomework {
     removeHomeworkButton.setBounds(88, 420, 150, 25);
     homeworkChangeFrame.add(removeHomeworkButton);
 
+    // Complete Homework Formatting
+    completedHW.setBounds(248, 420, 175, 25);
+    homeworkChangeFrame.add(completedHW);
+
     // JComboBox Formatting
     homeworkAmountCheckFunc();
     homeworkContainer.setBounds(175, 10, 150, 25);
