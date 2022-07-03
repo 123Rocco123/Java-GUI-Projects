@@ -22,6 +22,9 @@ class deleteHomework {
   // Remove HW Button
   JButton removeHomeworkButton = new JButton("Remove HW");
 
+  // Complete Homework Button
+  JButton completedHW = new JButton("Complete Homework");
+
   public deleteHomework() {
     // JFrame Formatting
     homeworkChangeFrame.setTitle("Modify Homework");
