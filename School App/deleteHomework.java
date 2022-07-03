@@ -61,7 +61,9 @@ class deleteHomework {
 
           // Used to move the file to "completedHW" directory given that the user has selected "yes".
           if (confirmFinished == 0) {
-            
+            File fileToMove = new File("./homework/" + homeworkContainer.getSelectedItem());
+
+            fileToMove.renameTo(new File("./homework/completedHW/" + homeworkContainer.getSelectedItem()));
           }
         }
       }
