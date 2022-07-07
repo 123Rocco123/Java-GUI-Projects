@@ -15,6 +15,7 @@ class deleteReminder {
   // Used to contain the homework
   JTextArea homeworkOutputArea = new JTextArea();
 
+  // JButtons to modify reminders
   JButton deleteReminder = new JButton("Delete Reminder");
   JButton modifyReminder = new JButton("Modify Reminder");
 
