@@ -70,8 +70,8 @@ class reminder {
     // Initial Setup Function
     intiialSetupFunc();
 
-    reWriteButton.setBounds(175, 130, 150, 25);
     // Re-Write JButton Formatting
+    reWriteButton.setBounds(95, 130, 150, 25);
     reminderFrame.add(reWriteButton);
 
     // Completed Reminder JButton Formatting
