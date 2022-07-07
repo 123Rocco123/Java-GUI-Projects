@@ -90,6 +90,13 @@ class reminder {
     });
 
     // Completed Reminder JButton ActionListener
+    completedReminder.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+
+      }
+    });
+  }
+
   // Initial Setup Function
   public void intiialSetupFunc() {
     // JFrame Modification
