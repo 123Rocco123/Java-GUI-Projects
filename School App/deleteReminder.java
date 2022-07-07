@@ -118,7 +118,7 @@ class deleteReminder {
     File fileChecker = new File("./reminder");
 
     // JComboBoxArray Formatting
-    String[] JComboBoxArray = new String[fileChecker.list().length + 1];
+    String[] JComboBoxArray = new String[fileChecker.list().length];
     JComboBoxArray[0] = "";
 
     // Check that the reminder directory isn't empty
