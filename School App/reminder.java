@@ -75,6 +75,9 @@ class reminder {
     reminderFrame.add(reWriteButton);
 
     // Completed Reminder JButton Formatting
+    completedReminder.setBounds(255, 130, 150, 25);
+    reminderFrame.add(completedReminder);
+
     // Modify Reminders Button
     reWriteButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent ev) {
