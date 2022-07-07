@@ -124,7 +124,10 @@ class deleteReminder {
     // Check that the reminder directory isn't empty
     if (fileChecker.list().length > 0) {
       for (int i = 0; i < fileChecker.list().length; i++) {
-        JComboBoxArray[i + 1] = fileChecker.list()[i];
+        // Since the completed Reminder directory is inside of the reminder directory, we have to add the condition.
+        if (!fileChecker.list()[i].equals("completedReminder")) {
+          JComboBoxArray[i + 1] = fileChecker.list()[i];
+        }
       }
     }
 
