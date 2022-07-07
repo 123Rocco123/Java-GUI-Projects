@@ -25,17 +25,8 @@ class reminder {
 
   // Create New Reminder
   public reminder() {
-    reminderFrame.setSize(500, 205);
-    reminderFrame.setLocationRelativeTo(null);
-    reminderFrame.setVisible(true);
-    reminderFrame.setTitle("Add New Reminder");
-    reminderFrame.setLayout(null);
-
-    reminder.setBounds(10, 10, 465, 50);
-    reminderFrame.add(reminder);
-
-    dateField.setBounds(10, 70, 465, 50);
-    reminderFrame.add(dateField);
+    // Initial Setup Function
+    intiialSetupFunc();
 
     submitButton.setBounds(175, 130, 150, 25);
     reminderFrame.add(submitButton);
@@ -68,17 +59,7 @@ class reminder {
 
   // Modify Reminder
   public reminder(File fileToChange) {
-    reminderFrame.setSize(500, 205);
-    reminderFrame.setLocationRelativeTo(null);
-    reminderFrame.setVisible(true);
-    reminderFrame.setTitle("Add New Reminder");
-    reminderFrame.setLayout(null);
-
-    reminder.setBounds(10, 10, 465, 50);
-    reminderFrame.add(reminder);
-
-    dateField.setBounds(10, 70, 465, 50);
-    reminderFrame.add(dateField);
+    intiialSetupFunc();
 
     reWriteButton.setBounds(175, 130, 150, 25);
     reminderFrame.add(reWriteButton);
@@ -102,6 +83,25 @@ class reminder {
         }
       }
     });
+  // Initial Setup Function
+  public void intiialSetupFunc() {
+    // JFrame Modification
+    reminderFrame.setSize(500, 205);
+    reminderFrame.setLocationRelativeTo(null);
+    reminderFrame.setVisible(true);
+    reminderFrame.setTitle("Add New Reminder");
+    reminderFrame.setLayout(null);
+
+    // Reminder JTextField Modification
+    reminder.setBounds(10, 10, 465, 50);
+    reminderFrame.add(reminder);
+
+    // Datefield JTextField Modification
+    dateField.setBounds(10, 70, 465, 50);
+    reminderFrame.add(dateField);
+
+    focusFunction(reminder, "Write Reminder");
+    focusFunction(dateField, "Enter Date Here (MM/dd/yyyy)");
   }
 
   public void focusFunction(JTextField name, String defaultText) {
