@@ -67,11 +67,14 @@ class reminder {
   // Modify Reminder
      // Overwrite constructor with file parameter
   public reminder(File fileToChange) {
+    // Initial Setup Function
     intiialSetupFunc();
 
     reWriteButton.setBounds(175, 130, 150, 25);
+    // Re-Write JButton Formatting
     reminderFrame.add(reWriteButton);
 
+    // Completed Reminder JButton Formatting
     // Modify Reminders Button
     reWriteButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent ev) {
@@ -118,6 +121,7 @@ class reminder {
     focusFunction(dateField, "Enter Date Here (MM/dd/yyyy)");
   }
 
+  // JTextField Focus Function
   public void focusFunction(JTextField name, String defaultText) {
     name.setHorizontalAlignment(SwingConstants.CENTER);
     name.setText(defaultText);
