@@ -98,7 +98,19 @@ class reminder {
     // Completed Reminder JButton ActionListener
     completedReminder.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
+        // String Variable used to store the name of the file.
+        String fileName = fileToChange.getName();
+        // Used to remove the file extension of the file name
+        fileName = fileName.replace("./reminder/", "");
 
+        // Try Statement Used for Scanner FileNotFoundException
+        try {
+          Scanner newFileReader = new Scanner(fileToChange);
+
+          while(newFileReader.hasNextLine()) {
+            System.out.println(newFileReader.nextLine());
+          }
+        } catch (FileNotFoundException ex) {}
       }
     });
   }
