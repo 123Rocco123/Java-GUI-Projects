@@ -25,6 +25,8 @@ class reminder {
   JButton reWriteButton = new JButton("Overwrite Reminder");
 
   // Jbutton to Complete Reminders
+  JButton completedReminder = new JButton("Complete Reminder");
+
   // Used to store the converted time
      // Used for the alerts to display to the user.
   Date convertedTime;
