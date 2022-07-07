@@ -40,9 +40,6 @@ class reminder {
     submitButton.setBounds(175, 130, 150, 25);
     reminderFrame.add(submitButton);
 
-    focusFunction(reminder, "Write Reminder");
-    focusFunction(dateField, "Enter Date Here (MM/dd/yyyy)");
-
     // Submit JButton ActionListener
     submitButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
@@ -74,9 +71,6 @@ class reminder {
 
     reWriteButton.setBounds(175, 130, 150, 25);
     reminderFrame.add(reWriteButton);
-
-    focusFunction(reminder, "Write Reminder");
-    focusFunction(dateField, "Enter Date Here (MM/dd/yyyy)");
 
     // Modify Reminders Button
     reWriteButton.addActionListener(new ActionListener() {
