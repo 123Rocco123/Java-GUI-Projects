@@ -13,14 +13,20 @@ import java.util.*;
 import java.text.*;
 
 class reminder {
+  // JFrame
   JFrame reminderFrame = new JFrame();
 
+  // Used to allow users to write the reminder and the date for it
   JTextField reminder = new JTextField();
   JTextField dateField = new JTextField();
 
+  // JButtons for reminder modification
   JButton submitButton = new JButton("Submit and Close");
   JButton reWriteButton = new JButton("Overwrite Reminder");
 
+  // Jbutton to Complete Reminders
+  // Used to store the converted time
+     // Used for the alerts to display to the user.
   Date convertedTime;
 
   // Create New Reminder
@@ -28,12 +34,14 @@ class reminder {
     // Initial Setup Function
     intiialSetupFunc();
 
+    // Submit JButton Modification
     submitButton.setBounds(175, 130, 150, 25);
     reminderFrame.add(submitButton);
 
     focusFunction(reminder, "Write Reminder");
     focusFunction(dateField, "Enter Date Here (MM/dd/yyyy)");
 
+    // Submit JButton ActionListener
     submitButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         if (!reminder.getText().equals("") && !reminder.getText().equals("Write Reminder")) {
@@ -58,6 +66,7 @@ class reminder {
   }
 
   // Modify Reminder
+     // Overwrite constructor with file parameter
   public reminder(File fileToChange) {
     intiialSetupFunc();
 
@@ -83,6 +92,8 @@ class reminder {
         }
       }
     });
+
+    // Completed Reminder JButton ActionListener
   // Initial Setup Function
   public void intiialSetupFunc() {
     // JFrame Modification
