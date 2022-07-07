@@ -107,9 +107,22 @@ class reminder {
         try {
           Scanner newFileReader = new Scanner(fileToChange);
 
-          while(newFileReader.hasNextLine()) {
-            System.out.println(newFileReader.nextLine());
-          }
+          // Try Statement used for IOException from FileWriter
+          try {
+            File fileInNewLocation = new File("./reminder/completedReminder/", fileName);
+            FileWriter fileWriter = new FileWriter(fileInNewLocation);
+
+            while (newFileReader.hasNextLine()) {
+              fileWriter.write(newFileReader.nextLine() + "\n");
+            }
+            // Close the Reader and Writer to avoid having bugs where file operations don't work
+            newFileReader.close();
+            fileWriter.close();
+
+            // Create the new file, and delete the old
+            File fileToDelete = new File("./reminder", fileName);
+            fileToDelete.delete();
+          } catch (IOException exc) {}
         } catch (FileNotFoundException ex) {}
       }
     });
