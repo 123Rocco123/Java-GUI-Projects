@@ -373,6 +373,9 @@ class mainClass {
                   (deleteHomeworkInstance.homeworkChangeFrame).addWindowListener(new WindowAdapter() {
                     // Used to delete and re-paint the JComboBox
                     public void deleted() {
+                      // Used to remove everything off of the panel.
+                      scrollPaneHW.removeAll();
+
                       File fileDirectory = new File("./homework");
 
                       String homework = "";
