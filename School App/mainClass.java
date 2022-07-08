@@ -227,6 +227,13 @@ class mainClass {
                     JOptionPane.showMessageDialog(mainFrame, "Journal! " + reminderClass.reminder.getText());
                   }
                 };
+                // newReminderButton Button Re-Fromatting
+                newReminderButton.setBounds(65, 165, 120, 25);
+
+                // Reminder Delete Button Formatting and Add
+                reminderDelete.setBounds(195, 165, 100, 25);
+                reminderPanel.add(reminderDelete);
+              }
             }
           }
         });
