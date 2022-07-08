@@ -185,9 +185,13 @@ class mainClass {
             if (!reminderClass.dateField.getText().equals("")) {
               // Remove all of the JLabels in the scrollPaneRem
               scrollPaneRem.removeAll();
+
+              // The variable contains the current date
               Date convertedTime = new Date();
+              // "fileName" variable is used for storing of the name of the file
               String fileName = "";
 
+              // For loop used to iterate through all the files in the reminder directory
               for (int i = 0; i < (new File("./reminder").list().length) - 1; i++) {
                 try {
                   File fileToRead = new File("./reminder", (new File("./reminder").list()[i]));
