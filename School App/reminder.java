@@ -122,6 +122,8 @@ class reminder {
             // Create the new file, and delete the old
             File fileToDelete = new File("./reminder", fileName);
             fileToDelete.delete();
+            // Close the current window
+            reminderFrame.dispose();
           } catch (IOException exc) {}
         } catch (FileNotFoundException ex) {}
       }
