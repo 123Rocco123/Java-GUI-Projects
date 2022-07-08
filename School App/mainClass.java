@@ -183,6 +183,8 @@ class mainClass {
         (reminderClass.reminderFrame).addWindowListener(new WindowAdapter() {
           public void windowClosed(WindowEvent closed) {
             if (!reminderClass.dateField.getText().equals("")) {
+              // Remove all of the JLabels in the scrollPaneRem
+              scrollPaneRem.removeAll();
               Date convertedTime = new Date();
 
               scrollPaneRem.add(new Label(reminderClass.reminder.getText() + " | " + convertedTime));
