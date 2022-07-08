@@ -188,30 +188,45 @@ class mainClass {
               Date convertedTime = new Date();
               String fileName = "";
 
-              scrollPaneRem.add(new Label(reminderClass.reminder.getText() + " | " + convertedTime));
+              for (int i = 0; i < (new File("./reminder").list().length) - 1; i++) {
+                try {
+                  File fileToRead = new File("./reminder", (new File("./reminder").list()[i]));
+                  Scanner newFileReader = new Scanner(fileToRead);
 
-              refreshFunc();
+                  // String Variables used to store the name and time of the reminder
+                  fileName = (String)(new File("./reminder").list()[i]);
+                  String experationDate = "";
 
-              try {
-                convertedTime = new SimpleDateFormat("MM/dd/yyyy").parse(reminderClass.dateField.getText());
-              } catch (ParseException ex) {}
+                  // While Loop used to
+                  while(newFileReader.hasNextLine()) {
+                    experationDate = newFileReader.nextLine();
+                  }
 
-              Timer timer = new Timer();
+                  // To avoid file maipulation bugs
+                  newFileReader.close();
 
-              TimerTask task = new TimerTask() {
-                @Override
-                public void run() {
-                  JOptionPane.showMessageDialog(mainFrame, "Journal! " + reminderClass.reminder.getText());
-                }
-              };
-              timer.schedule(task, convertedTime);
+                  // Remove and replace the extensions from the filename
+                  fileName = fileName.replace(".\\reminder\\", "");
+                  fileName = fileName.replace(".txt", "");
+                  // experationDate formatting
+                  experationDate = experationDate.replace("Time: ", "");
 
-              // newReminderButton Button Re-Fromatting 380
-              newReminderButton.setBounds(65, 165, 120, 25);
+                  try {
+                    convertedTime = new SimpleDateFormat("MM/dd/yyyy").parse(experationDate);
+                  } catch (ParseException ex) {}
+                } catch (IOException ex) {}
 
-              // Reminder Delete Button Formatting and Add
-              reminderDelete.setBounds(195, 165, 100, 25);
-              reminderPanel.add(reminderDelete);
+                scrollPaneRem.add(new JLabel(fileName + " | " + convertedTime));
+                refreshFunc();
+
+                Timer timer = new Timer();
+
+                TimerTask task = new TimerTask() {
+                  @Override
+                  public void run() {
+                    JOptionPane.showMessageDialog(mainFrame, "Journal! " + reminderClass.reminder.getText());
+                  }
+                };
             }
           }
         });
