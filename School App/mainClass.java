@@ -186,6 +186,7 @@ class mainClass {
               // Remove all of the JLabels in the scrollPaneRem
               scrollPaneRem.removeAll();
               Date convertedTime = new Date();
+              String fileName = "";
 
               scrollPaneRem.add(new Label(reminderClass.reminder.getText() + " | " + convertedTime));
 
