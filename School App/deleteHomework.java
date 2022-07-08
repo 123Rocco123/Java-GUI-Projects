@@ -106,7 +106,10 @@ class deleteHomework {
        // This is to avoid the null point exception for the JComboBox.
     JComboBoxArray[0] = "";
     for (int i = 0; i < amountOfHomework; i++) {
-      JComboBoxArray[i + 1] = directoryContainer.list()[i];
+      // If condition used to make sure that the "completedHW" folder isnt added.
+      if (!directoryContainer.list()[i].equals("completedHW")) {
+        JComboBoxArray[i + 1] = directoryContainer.list()[i];
+      }
     }
 
     homeworkContainer = new JComboBox(JComboBoxArray);
