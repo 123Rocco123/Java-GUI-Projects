@@ -227,6 +227,8 @@ class mainClass {
                     JOptionPane.showMessageDialog(mainFrame, "Journal! " + reminderClass.reminder.getText());
                   }
                 };
+                timer.schedule(task, convertedTime);
+
                 // newReminderButton Button Re-Fromatting
                 newReminderButton.setBounds(65, 165, 120, 25);
 
