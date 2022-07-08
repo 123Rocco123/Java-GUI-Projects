@@ -617,6 +617,7 @@ class mainClass {
           (deleteHomeworkInstance.homeworkChangeFrame).addWindowListener(new WindowAdapter() {
             // Used to delete and re-paint the
             public void deleted() {
+              // Used to remove everything off of the panel.
               scrollPaneHW.removeAll();
 
               File fileDirectory = new File("./homework");
@@ -820,6 +821,7 @@ class mainClass {
           refreshFunc();
         }
 
+        // Function called when the button is pressed
         public void actionPerformed(ActionEvent e) {
           if (!comboBoxToAdd.getSelectedItem().equals("")) {
             String line = (String)(comboBoxToAdd.getSelectedItem());
