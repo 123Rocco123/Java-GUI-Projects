@@ -180,7 +180,7 @@ class mainClass {
         reminder reminderClass = new reminder();
 
         // Used to convert the reminder alert date to a date data type.
-        reminderClass.reminderFrame.addWindowListener(new WindowAdapter() {
+        (reminderClass.reminderFrame).addWindowListener(new WindowAdapter() {
           public void windowClosed(WindowEvent closed) {
             if (!reminderClass.dateField.getText().equals("")) {
               Date convertedTime = new Date();
