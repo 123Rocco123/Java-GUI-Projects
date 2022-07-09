@@ -295,6 +295,7 @@ class mainClass {
                 // If the user has decided to delete all of their reminders, then we will simply remove all the labels saved onto the JPanel.
                 else {
                   scrollPaneRem.removeAll();
+                  refreshFunc();
                 }
               }
             });
