@@ -695,6 +695,10 @@ class mainClass {
     // Used for the Reminder directory
     if (new File("./reminder").list().length > 0) {
       for (int i = 0; i < new File("./reminder").list().length; i++) {
+      // Used to remove everything from the panel and refresh the screen
+      scrollPaneRem.removeAll();
+      refreshFunc();
+
         try {
           File fileToRead = new File("./reminder", new File("./reminder").list()[i]);
 
@@ -756,7 +760,7 @@ class mainClass {
                  // With the purpose of re-freshing the reminder panel so that the user can get the reminders that they have.
               (deleteReminderObj.deleteReminderFrame).addWindowListener(new WindowAdapter() {
                 public void windowClosing(WindowEvent ev) {
-                  if (new File("./reminder").list().length > 0) {
+                  if (new File("./reminder").list().length > 1) {
                     // Clear all JLabels off of the screen.
                     scrollPaneRem.removeAll();
                     // Used to iterate over the reminder directory to add the labels to the JPanel.
