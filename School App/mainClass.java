@@ -255,8 +255,10 @@ class mainClass {
             // This will be activated when the deleteReminder window has been closed
                // With the purpose of re-freshing the reminder panel so that the user can get the reminders that they have.
             (deleteReminderObj.deleteReminderFrame).addWindowListener(new WindowAdapter() {
-              public void windowClosed(WindowEvent ev) {
-                if (new File("./reminder").list().length > 0) {
+              public void windowClosing(WindowEvent ev) {
+                // The reason that the length is 1 instead of 0, is because of the "completedReminder" directory.
+                   // If the user deletes everything, then the else statement has to be executed, since the "completedReminder" directory is inside of the "reminder" one, it will never execute.
+                if (new File("./reminder").list().length > 1) {
                   // Clear all JLabels off of the screen.
                   scrollPaneRem.removeAll();
                   // Used to iterate over the reminder directory to add the labels to the JPanel.
