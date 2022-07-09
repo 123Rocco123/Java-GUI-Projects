@@ -694,11 +694,11 @@ class mainClass {
 
     // Used for the Reminder directory
     if (new File("./reminder").list().length > 0) {
-      for (int i = 0; i < new File("./reminder").list().length; i++) {
       // Used to remove everything from the panel and refresh the screen
       scrollPaneRem.removeAll();
       refreshFunc();
 
+      for (int i = 0; i < new File("./reminder").list().length - 1; i++) {
         try {
           File fileToRead = new File("./reminder", new File("./reminder").list()[i]);
 
