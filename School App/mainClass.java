@@ -131,8 +131,12 @@ class mainClass {
     refreshFunc();
 
     // Exit Button
-    exitButton.setBounds(340, 430, 100, 25);
+    exitButton.setBounds(285, 430, 100, 25);
     mainFrame.add(exitButton);
+
+    // New Semester Formatting
+    newSemester.setBounds(395, 430, 130, 25);
+    mainFrame.add(newSemester);
 
     // Quit Program Functionality
     exitButton.addActionListener(new ActionListener() {
