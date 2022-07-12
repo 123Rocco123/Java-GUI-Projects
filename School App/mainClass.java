@@ -145,6 +145,26 @@ class mainClass {
       }
     });
 
+    // Used for the "New Semester" JButton
+    newSemester.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        // THis variable contains the response of the user after they've pressed the button.
+        int order66 = JOptionPane.showConfirmDialog(null, "Starting a new Semester will delete previous information. Are you sure to continue? ");
+
+
+        // Close the old window, and start a new semseter.
+        mainFrame.dispose();
+
+        // Here we are essentially using re-cursion to call the class again from the function inside of it.
+           // This will result in executing all the initial functions again.
+        mainClass semesterPlus = new mainClass();
+
+        // showMessageDialog to tell the user that they've started a new semseter
+        JOptionPane.showMessageDialog(null, "New Semseter, good luck.");
+        }
+      }
+    });
+
     // Keyboard Listener
        // Used to quit the program with the escape key.
     mainFrame.addKeyListener(new KeyListener() {
