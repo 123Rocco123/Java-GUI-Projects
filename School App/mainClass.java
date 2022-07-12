@@ -69,6 +69,9 @@ class mainClass {
   // Quit Button
   JButton exitButton = new JButton("Quit");
 
+  // New Semester Button
+  JButton newSemester = new JButton("New Semester");
+
   // Used to contain the JComboBox for Journal Initial Setup.
      // Using a gloabl variable because of "inner class must be final or effectively final" error.
   JComboBox comboBoxToAdd = new JComboBox();
