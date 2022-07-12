@@ -151,6 +151,28 @@ class mainClass {
         // THis variable contains the response of the user after they've pressed the button.
         int order66 = JOptionPane.showConfirmDialog(null, "Starting a new Semester will delete previous information. Are you sure to continue? ");
 
+        // If condition executed if order66 variable equals yes
+        if (order66 == 0) {
+          // Used to delete all of the files stored inside of the "alerts folder" (homework).
+          for (int i = 0; i < new File("./alerts").list().length; i++) {
+            File fileToDelete = new File("./alerts", (new File("./alerts").list())[i]);
+
+            fileToDelete.delete();
+          }
+
+          // Used to delete all of the files stored inside of the "alerts folder" (homework).
+          for (int i = 0; i < new File("./classes").list().length; i++) {
+            File fileToDelete = new File("./classes", (new File("./classes").list())[i]);
+
+            fileToDelete.delete();
+          }
+
+          // Used to delete all of the files stored inside of the "alerts folder" (homework).
+          for (int i = 0; i < new File("./alerts").list().length; i++) {
+            File fileToDelete = new File("./alerts", (new File("./alerts").list())[i]);
+
+            fileToDelete.delete();
+          }
 
         // Close the old window, and start a new semseter.
         mainFrame.dispose();
