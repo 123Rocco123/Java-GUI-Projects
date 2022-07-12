@@ -174,6 +174,26 @@ class mainClass {
             fileToDelete.delete();
           }
 
+          // Used to delete all of the files stored inside of the "alerts folder" (homework).
+          for (int i = 0; i < new File("./homework").list().length; i++) {
+            File fileToDelete = new File("./homework", (new File("./homework").list())[i]);
+            String stringFile = (new File("./homework").list())[i];
+
+            if (stringFile.contains(".txt")) {
+              fileToDelete.delete();
+            }
+          }
+
+          // Used to delete all of the files stored inside of the "alerts folder" (homework).
+          for (int i = 0; i < new File("./reminder").list().length; i++) {
+            File fileToDelete = new File("./reminder", (new File("./reminder").list())[i]);
+            String stringFile = (new File("./reminder").list())[i];
+
+            if (stringFile.contains(".txt")) {
+              fileToDelete.delete();
+            }
+          }
+
         // Close the old window, and start a new semseter.
         mainFrame.dispose();
 
