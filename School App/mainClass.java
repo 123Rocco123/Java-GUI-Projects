@@ -222,8 +222,8 @@ class mainClass {
 
     // Used to execute the Grades JFrame
     gradesButton.addActionListener(new ActionListener() {
-      public void actionPerformed() {
-        
+      public void actionPerformed(ActionEvent e) {
+        grades modifyGrades = new grades();
       }
     });
 
