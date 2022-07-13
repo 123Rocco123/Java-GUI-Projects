@@ -4,5 +4,5 @@ Java TextEditor/Default Directory/GameFileScript.txt
 
 School App/alerts/
 School App/classes/
-School App/homework/
-School App/reminder/
+School App/homework/*.txt
+School App/reminder/*.txt
