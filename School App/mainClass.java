@@ -220,6 +220,13 @@ class mainClass {
       }
     });
 
+    // Used to execute the Grades JFrame
+    gradesButton.addActionListener(new ActionListener() {
+      public void actionPerformed() {
+        
+      }
+    });
+
     // Keyboard Listener
        // Used to quit the program with the escape key.
     mainFrame.addKeyListener(new KeyListener() {
