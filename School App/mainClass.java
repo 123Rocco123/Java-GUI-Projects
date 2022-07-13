@@ -90,6 +90,8 @@ class mainClass {
     mainFrame.setResizable(false);
     mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+    // PANEL FORMATTINGS
+
     // Classes
     panelFunc(classesPanel, 5, 10, 250, 200, classesLabel, newClassButton, classMoreInfo);
     classesPanel.add(innerPanelFunc(10, 35, 230, 120, innerClassesPanel));
@@ -129,6 +131,8 @@ class mainClass {
     mainFrame.add(calendarPanel);
 
     refreshFunc();
+
+    // BOTTOM MAINFRAME BUTTON FORMATTING
 
     // Exit Button
     exitButton.setBounds(285, 430, 100, 25);
@@ -225,6 +229,8 @@ class mainClass {
         }
       }
     });
+
+    // ACTION LISTENERS
 
     // New Class Action Listener
     newClassButton.addActionListener(new ActionListener() {
@@ -551,6 +557,8 @@ class mainClass {
         buttonToClear.removeActionListener(listeners[i]);
     }
   }
+
+  // FUNCTIONS
 
   // Function to Re-Fresh JPanel
   public void refreshFunc() {
