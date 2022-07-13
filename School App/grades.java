@@ -24,6 +24,10 @@ class grades {
     gradesFrame.setLayout(null);
 
     gradesFrame.setVisible(true);
+
+    JComboBoxSetup();
+  }
+
   public void JComboBoxSetup() {
     // HashMap Setup
     for (int i = 0; i < new File("./classes").list().length; i++) {
