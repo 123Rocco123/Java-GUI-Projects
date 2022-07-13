@@ -138,12 +138,18 @@ class mainClass {
     // BOTTOM MAINFRAME BUTTON FORMATTING
 
     // Exit Button
-    exitButton.setBounds(285, 430, 100, 25);
+    exitButton.setBounds(215, 430, 100, 25);
     mainFrame.add(exitButton);
 
     // New Semester Formatting
-    newSemester.setBounds(395, 430, 130, 25);
+    newSemester.setBounds(325, 430, 130, 25);
     mainFrame.add(newSemester);
+
+    // Grades Formatting
+    gradesButton.setBounds(465, 430, 100, 25);
+    mainFrame.add(gradesButton);
+
+    // BOTTOM MAINFRAME BUTTON ACTION LISTENERS
 
     // Quit Program Functionality
     exitButton.addActionListener(new ActionListener() {
