@@ -29,7 +29,7 @@ class expandedClasses {
     expandedClassesFrame.setBackground(Color.white);
     expandedClassesFrame.setTitle("Classes");
     expandedClassesFrame.setLayout(null);
-    //expandedClassesFrame.setResizable(false);
+    expandedClassesFrame.setResizable(false);
     expandedClassesFrame.setVisible(true);
 
     innerPanelScroll.setBounds(10, 10, 465, 240);
