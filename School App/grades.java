@@ -12,6 +12,10 @@ class grades {
   // Used to store all of the classes that the user has
   JComboBox subjectContainer = new JComboBox();
 
+  // Used to store the 
+  JTextField classContainer = new JTextField();
+
+  // Used to contiain the Class with its grades.
   HashMap<String, ArrayList<Integer>> classGradesMap = new HashMap<String, ArrayList<Integer>>();
 
   public grades() {
