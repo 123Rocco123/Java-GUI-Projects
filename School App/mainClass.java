@@ -642,12 +642,14 @@ class mainClass {
     return panelName;
   }
 
+  // Used to format the scrollpanes inside of the mainFrame
   public JScrollPane innerScrollPane(int x, int y, int width, int height, JScrollPane name) {
     name.setBounds(x, y, width, height);
     name.setBorder(BorderFactory.createLineBorder(Color.black));
     return name;
   }
 
+  // Function is used to format the label inside of the JPanel
   public void innerLabel(int x, int y, int width, int height, String text, JPanel panelName) {
     JLabel info = new JLabel(text);
 
