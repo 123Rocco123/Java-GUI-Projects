@@ -39,6 +39,11 @@ class grades {
     gradeContainer.setBounds(200, 370, 100, 25);
     gradesFrame.add(gradeContainer);
 
+    // ActionListener used to allow user to add grades to their classes
+    addGradesBtn.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+      }
+    });
   }
 
   public void JComboBoxSetup() {
