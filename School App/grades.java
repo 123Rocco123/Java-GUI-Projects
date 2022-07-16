@@ -42,6 +42,19 @@ class grades {
     // ActionListener used to allow user to add grades to their classes
     addGradesBtn.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
+    gradeContainer.addFocusListener(new FocusListener() {
+      @Override
+      public void focusGained(FocusEvent e) {
+        if (gradeContainer.getText().equals("Insert Grade (%)")) {
+          gradeContainer.setText("");
+        }
+      }
+
+      @Override
+      public void focusLost(FocusEvent e) {
+        if (gradeContainer.getText().equals("")) {
+          gradeContainer.setText("Insert Grade (%)");
+        }
       }
     });
   }
