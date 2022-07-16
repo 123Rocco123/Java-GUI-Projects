@@ -34,6 +34,11 @@ class grades {
     // Formatting of add grades button
     addGradesBtn.setBounds(200, 405, 100, 25);
     gradesFrame.add(addGradesBtn);
+
+    // Formatting of the grades container
+    gradeContainer.setBounds(200, 370, 100, 25);
+    gradesFrame.add(gradeContainer);
+
   }
 
   public void JComboBoxSetup() {
