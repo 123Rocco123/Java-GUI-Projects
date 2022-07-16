@@ -13,6 +13,7 @@ class grades {
   JComboBox subjectContainer = new JComboBox();
 
   // Used to store the 
+  // Used to store the classes
   JTextField classContainer = new JTextField();
 
   // Used to contiain the Class with its grades.
@@ -29,6 +30,7 @@ class grades {
 
     gradesFrame.setVisible(true);
 
+    // Function Call for JComboBox
     JComboBoxSetup();
 
     // Formatting of add grades button
@@ -59,6 +61,7 @@ class grades {
     });
   }
 
+  // Used to setupt the JComboBox with the names of the classes that the user takes.
   public void JComboBoxSetup() {
     // HashMap Setup
     for (int i = 0; i < new File("./classes").list().length; i++) {
