@@ -88,6 +88,9 @@ class mainClass {
     mainFrame.setTitle("Rocco's School App");
     mainFrame.setSize(800, 500);
     mainFrame.setLocationRelativeTo(null);
+    // Used to change the background color of the JFrame
+       // We have to use "getContentPane()" to get the JFrames built in JPanel.
+    mainFrame.getContentPane().setBackground(Color.LIGHT_GRAY);
     mainFrame.setVisible(true);
     mainFrame.setLayout(null);
     mainFrame.setResizable(false);
