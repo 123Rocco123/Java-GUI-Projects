@@ -15,6 +15,9 @@ class grades {
   // Used to store the 
   // Used to store the classes
   JTextField classContainer = new JTextField();
+  // Used to store the new grade that the user wants to add to the class
+  JTextField gradeContainer = new JTextField();
+
   // JButton used for adding grades to the classes
   JButton addGradesBtn = new JButton("Add Grades");
 
