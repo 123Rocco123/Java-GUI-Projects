@@ -15,6 +15,8 @@ class grades {
   // Used to store the 
   // Used to store the classes
   JTextField classContainer = new JTextField();
+  // JButton used for adding grades to the classes
+  JButton addGradesBtn = new JButton("Add Grades");
 
   // Used to contiain the Class with its grades.
   HashMap<String, ArrayList<Integer>> classGradesMap = new HashMap<String, ArrayList<Integer>>();
