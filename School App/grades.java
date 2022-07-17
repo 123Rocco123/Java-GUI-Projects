@@ -72,6 +72,7 @@ class grades {
       @Override
       public void focusGained(FocusEvent e) {
         if (gradeContainer.getText().equals("Insert Grade (%)")) {
+          gradeContainer.setHorizontalAlignment(JTextField.LEFT);
           gradeContainer.setText("");
         }
       }
@@ -79,6 +80,7 @@ class grades {
       @Override
       public void focusLost(FocusEvent e) {
         if (gradeContainer.getText().equals("")) {
+          gradeContainer.setHorizontalAlignment(JTextField.CENTER);
           gradeContainer.setText("Insert Grade (%)");
         }
       }
