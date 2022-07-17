@@ -37,6 +37,9 @@ class grades {
     // Function Call for JComboBox
     JComboBoxSetup();
 
+    // HashMap Setup function call
+    hashMapSetup();
+
     String[] gradeContainerArray = new String[new File("./classes").list().length + 1];
 
     // For loop used to to add classes to the array for the JComboBox
@@ -74,6 +77,9 @@ class grades {
         for (int i = 0; i < classGradesMap.size(); i++) {
           if (classGradesMap.containsValue((String)(chosenClass))) {
             classGradesMap.put((String)(chosenClass), 1);
+          if (classGradesMap.containsKey((String)(chosenClass))) {
+            // If statement below is used to check if the user has inserted a grade or not
+            if (!gradeContainer.getText().equals("Insert Grade (%)")) {
 
             System.out.println(classGradesMap);
           }
