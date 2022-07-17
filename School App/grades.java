@@ -71,6 +71,16 @@ class grades {
         // Used to contain the grade that the user added
         String gradeToAdd = gradeContainer.getText();
         Object chosenClass = subjectContainer.getSelectedItem();
+        for (int i = 0; i < classGradesMap.size(); i++) {
+          if (classGradesMap.containsValue((String)(chosenClass))) {
+            classGradesMap.put((String)(chosenClass), 1);
+
+            System.out.println(classGradesMap);
+          }
+        }
+      }
+    });
+
     gradeContainer.addFocusListener(new FocusListener() {
       @Override
       public void focusGained(FocusEvent e) {
