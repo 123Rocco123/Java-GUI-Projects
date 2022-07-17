@@ -21,6 +21,7 @@ class grades {
   JButton addGradesBtn = new JButton("Add Grades");
 
   // Used to contiain the Class with its grades.
+  HashMap<String, Integer> classGradesMap = new HashMap<String, Integer>();
 
   public grades() {
     // JFrame Formatting
