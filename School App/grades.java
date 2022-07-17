@@ -59,7 +59,7 @@ class grades {
     gradesFrame.add(addGradesBtn);
 
     // Formatting of the grades container
-    gradeContainer.setBounds(200, 370, 100, 25);
+    gradeContainer.setBounds(150, 370, 200, 25);
     gradesFrame.add(gradeContainer);
 
     // ActionListener used to allow user to add grades to their classes
