@@ -43,6 +43,9 @@ class grades {
     for (int i = 0; i < new File("./classes").list().length; i++) {
       gradeContainerArray[i + 1] = (String)(new File("./classes").list()[i]);
     }
+    // JComboBox Formatting
+    subjectContainer.setBounds(150, 300, 200, 25);
+    gradesFrame.add(subjectContainer);
     // Formatting of add grades button
     addGradesBtn.setBounds(200, 405, 100, 25);
     gradesFrame.add(addGradesBtn);
