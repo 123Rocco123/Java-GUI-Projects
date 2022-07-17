@@ -38,6 +38,11 @@ class grades {
     JComboBoxSetup();
 
     String[] gradeContainerArray = new String[new File("./classes").list().length + 1];
+
+    // For loop used to to add classes to the array for the JComboBox
+    for (int i = 0; i < new File("./classes").list().length; i++) {
+      gradeContainerArray[i + 1] = (String)(new File("./classes").list()[i]);
+    }
     // Formatting of add grades button
     addGradesBtn.setBounds(200, 405, 100, 25);
     gradesFrame.add(addGradesBtn);
