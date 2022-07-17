@@ -61,6 +61,9 @@ class grades {
     // Formatting of the grades container
     gradeContainer.setBounds(150, 370, 200, 25);
     gradesFrame.add(gradeContainer);
+    // Initial Formatting of the gradeContainer text
+    gradeContainer.setText("Insert Grade (%)");
+    gradeContainer.setHorizontalAlignment(JTextField.CENTER);
 
     // ActionListener used to allow user to add grades to their classes
     addGradesBtn.addActionListener(new ActionListener() {
