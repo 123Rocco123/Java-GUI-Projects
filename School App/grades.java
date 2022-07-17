@@ -68,6 +68,9 @@ class grades {
     // ActionListener used to allow user to add grades to their classes
     addGradesBtn.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
+        // Used to contain the grade that the user added
+        String gradeToAdd = gradeContainer.getText();
+        Object chosenClass = subjectContainer.getSelectedItem();
     gradeContainer.addFocusListener(new FocusListener() {
       @Override
       public void focusGained(FocusEvent e) {
@@ -91,9 +94,7 @@ class grades {
   public void JComboBoxSetup() {
     // HashMap Setup
     for (int i = 0; i < new File("./classes").list().length; i++) {
-      // The ArrayList used for containing the grades for each class.
-      ArrayList<Integer> grades = new ArrayList<Integer>();
-      classGradesMap.put((String)(new File("./classes").list()[i]), grades);
+      classGradesMap.put((String)(new File("./classes").list()[i]), 0);
     }
   }
 }
