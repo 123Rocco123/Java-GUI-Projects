@@ -37,6 +37,7 @@ class grades {
     // Function Call for JComboBox
     JComboBoxSetup();
 
+    String[] gradeContainerArray = new String[new File("./classes").list().length + 1];
     // Formatting of add grades button
     addGradesBtn.setBounds(200, 405, 100, 25);
     gradesFrame.add(addGradesBtn);
