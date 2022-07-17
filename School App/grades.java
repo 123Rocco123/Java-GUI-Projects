@@ -74,6 +74,8 @@ class grades {
         // Used to contain the grade that the user added
         String gradeToAdd = gradeContainer.getText();
         Object chosenClass = subjectContainer.getSelectedItem();
+
+        // For loop used to replace grades
         for (int i = 0; i < classGradesMap.size(); i++) {
           if (classGradesMap.containsKey((String)(chosenClass))) {
             // If statement below is used to check if the user has inserted a grade or not
