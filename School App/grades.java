@@ -108,6 +108,13 @@ class grades {
     });
   }
 
+  // Used to setup the HashMap
+  public void hashMapSetup() {
+    for (int i = 0; i < new File("./classes").list().length; i++) {
+      classGradesMap.put("1.txt", 0);
+    }
+  }
+
   // Used to setupt the JComboBox with the names of the classes that the user takes.
   public void JComboBoxSetup() {
     // HashMap Setup
