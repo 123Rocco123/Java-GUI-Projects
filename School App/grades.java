@@ -23,6 +23,9 @@ class grades {
   // Used to contiain the Class with its grades.
   HashMap<String, Integer> classGradesMap = new HashMap<String, Integer>();
 
+  // Used to store the amount of grades that the user has recieved for each class.
+  ArrayList<Integer> gradesForClass = new ArrayList<Integer>();
+
   public grades() {
     // JFrame Formatting
     gradesFrame.setTitle("Grades");
@@ -80,6 +83,7 @@ class grades {
           if (classGradesMap.containsKey((String)(chosenClass))) {
             // If statement below is used to check if the user has inserted a grade or not
             if (!gradeContainer.getText().equals("Insert Grade (%)")) {
+              // Used to add the grades to HashMap
               classGradesMap.put((String)(chosenClass), classGradesMap.get((String)(chosenClass)) + Integer.parseInt(gradeContainer.getText()));
             }
 
@@ -110,8 +114,14 @@ class grades {
 
   // Used to setup the HashMap
   public void hashMapSetup() {
+    // Setups the HashMap with all the classes
     for (int i = 0; i < new File("./classes").list().length; i++) {
-      classGradesMap.put("1.txt", 0);
+      classGradesMap.put((String)(new File("./classes").list()[i]), 0);
+    }
+
+    // Setups the ArrayList with all the classes
+    for (int x = 0; x < new File("./classes").list().length; x++) {
+      gradesForClass.add(0);
     }
   }
 
