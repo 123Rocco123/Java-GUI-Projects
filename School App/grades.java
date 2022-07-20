@@ -23,6 +23,9 @@ class grades {
   // Used to contiain the Class with its grades.
   HashMap<String, Integer> classGradesMap = new HashMap<String, Integer>();
 
+  // Used to store the amount of grades that the user has recieved for each class.
+  ArrayList<Integer> gradesForClass = new ArrayList<Integer>();
+
   public grades() {
     // JFrame Formatting
     gradesFrame.setTitle("Grades");
