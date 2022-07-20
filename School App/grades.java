@@ -110,8 +110,14 @@ class grades {
 
   // Used to setup the HashMap
   public void hashMapSetup() {
+    // Setups the HashMap with all the classes
     for (int i = 0; i < new File("./classes").list().length; i++) {
-      classGradesMap.put("1.txt", 0);
+      classGradesMap.put((String)(new File("./classes").list()[i]), 0);
+    }
+
+    // Setups the ArrayList with all the classes
+    for (int x = 0; x < new File("./classes").list().length; x++) {
+      gradesForClass.add(0);
     }
   }
 
