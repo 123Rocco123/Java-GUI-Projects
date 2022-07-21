@@ -12,8 +12,6 @@ class grades {
   // Used to store all of the classes that the user has
   JComboBox subjectContainer = new JComboBox();
 
-  // Used to store the classes
-  JTextField classContainer = new JTextField();
   // Used to store the new grade that the user wants to add to the class
   JTextField gradeContainer = new JTextField();
 
@@ -55,10 +53,6 @@ class grades {
     // JComboBox Formatting
     subjectContainer.setBounds(150, 300, 200, 25);
     gradesFrame.add(subjectContainer);
-
-    // Formatting of the class container
-    classContainer.setBounds(150, 335, 200, 25);
-    gradesFrame.add(classContainer);
 
     // Formatting of add grades button
     addGradesBtn.setBounds(200, 405, 100, 25);
