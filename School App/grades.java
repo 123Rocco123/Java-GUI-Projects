@@ -72,11 +72,11 @@ class grades {
         String gradeToAdd = gradeContainer.getText();
         Object chosenClass = subjectContainer.getSelectedItem();
 
-          if (classGradesMap.containsKey((String)(chosenClass))) {
-            // If statement below is used to check if the user has inserted a grade or not
-            if (!gradeContainer.getText().equals("Insert Grade (%)")) {
-              // Used to add the grades to HashMap
-              classGradesMap.put((String)(chosenClass), classGradesMap.get((String)(chosenClass)) + Integer.parseInt(gradeContainer.getText()));
+        // If statement below is used to check if the user has inserted a grade or not
+        if (!gradeContainer.getText().equals("Insert Grade (%)")) {
+          // Used to add the grades to HashMap
+          classGradesMap.put((String)(chosenClass), classGradesMap.get((String)(chosenClass)) + Integer.parseInt(gradeContainer.getText()));
+
             }
           }
         }
