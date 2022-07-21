@@ -77,6 +77,11 @@ class grades {
           // Used to add the grades to HashMap
           classGradesMap.put((String)(chosenClass), classGradesMap.get((String)(chosenClass)) + Integer.parseInt(gradeContainer.getText()));
 
+          // Adds another point to the ArrayList value
+             // Used for the cummalative grade average
+          for (int x = 0; x < new File("./classes").list().length; x++) {
+            if (chosenClass.equals(new File("./classes").list()[x])) {
+              gradesForClass.set(x, (gradesForClass.get(x) + 1));
             }
           }
         }
