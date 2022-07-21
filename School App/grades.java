@@ -121,8 +121,9 @@ class grades {
 
   // Used to setupt the JComboBox with the names of the classes that the user takes.
   public void JComboBoxSetup() {
-    // HashMap Setup
+    // HashMap & Array Setup
     for (int i = 0; i < new File("./classes").list().length; i++) {
+      // Used to add the Classes, and the grade average
       classGradesMap.put((String)(new File("./classes").list()[i]), 0);
     }
   }
