@@ -76,6 +76,10 @@ class grades {
 
         // If statement below is used to check if the user has inserted a grade or not
         if (!gradeContainer.getText().equals("Insert Grade (%)")) {
+          // Used to store the current index of the JComboBox
+             // This is what is used to change and store the grades for the ArrayLists and HashMaps
+          int currentIndex = subjectContainer.getSelectedIndex() - 1;
+
           // Used to add the grades to HashMap
              // The value variable is used to contain the aggreagte percentage of the grade of a class (REPLACE WITH ARRAYLIST)
              // We then pass the value of the variable inside of the HashMap so that the equation is stored correctly.
