@@ -23,8 +23,8 @@ class grades {
 
   // Used to store the amount of grades that the user has recieved for each class.
   ArrayList<Integer> gradesForClass = new ArrayList<Integer>();
-
-  int value = 0;
+  // Used to store the cumulative grades of the user
+  ArrayList<Integer> gradesCumulative = new ArrayList<Integer>();
 
   public grades() {
     // JFrame Formatting
