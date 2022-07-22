@@ -125,7 +125,7 @@ class grades {
       classGradesMap.put((String)(new File("./classes").list()[i]), 0);
     }
 
-    // Setups the ArrayList with all the classes
+    // Setups the ArrayLists with all the classes
     for (int x = 0; x < new File("./classes").list().length; x++) {
       gradesForClass.add(0);
     }
