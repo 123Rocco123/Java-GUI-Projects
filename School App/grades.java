@@ -24,6 +24,8 @@ class grades {
   // Used to store the amount of grades that the user has recieved for each class.
   ArrayList<Integer> gradesForClass = new ArrayList<Integer>();
 
+  int value = 0;
+
   public grades() {
     // JFrame Formatting
     gradesFrame.setTitle("Grades");
