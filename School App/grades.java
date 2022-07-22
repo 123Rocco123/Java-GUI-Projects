@@ -87,6 +87,12 @@ class grades {
           for (int x = 0; x < new File("./classes").list().length; x++) {
             if (chosenClass.equals(new File("./classes").list()[x])) {
               gradesForClass.set(x, (gradesForClass.get(x) + 1));
+
+              // Used to divide the value stored in the hashmap so that the user can see their grade average for each class. 
+              if (gradesForClass.get(x) >= 2) {
+                classGradesMap.put((String)(chosenClass), classGradesMap.get((String)(chosenClass)) / gradesForClass.get(x));
+              }
+
             }
           }
         }
