@@ -19,6 +19,8 @@ import java.text.*;
 class mainClass {
   JFrame mainFrame = new JFrame();
 
+  // JPANELS INITIALIZATION
+
   // Used to contain the different functions of the App.
   JPanel classesPanel = new JPanel();
   JPanel calendarPanel = new JPanel();
@@ -33,6 +35,8 @@ class mainClass {
   JPanel innerJournalPanel = new JPanel();
   JPanel innerHomeWorkPanel = new JPanel();
 
+  // JPANEL FORMATTING
+
   // Panes and ScrollPanes for Notifications on the Main Page
   JPanel scrollPane = new JPanel(new GridLayout(0, 1));
   JScrollPane scrollClassesPanel = new JScrollPane(scrollPane);
@@ -46,12 +50,16 @@ class mainClass {
   JPanel scrollPaneJournal = new JPanel(new GridLayout(0, 1));
   JScrollPane scrollJournalPanel = new JScrollPane(scrollPaneJournal);
 
+  // JLABEL INITIALIZATION
+
   // Names of the main JPanels
   JLabel classesLabel = new JLabel("Classes");
   JLabel calendarLabel = new JLabel("Calendar");
   JLabel reminderLabel = new JLabel("Reminders");
   JLabel journalLabel = new JLabel("Journal");
   JLabel homeworkLabel = new JLabel("Homework");
+
+  // JBUTTOn INITIALIZATION
 
   // JFrame Buttons
   JButton newClassButton = new JButton("Add New Class");
