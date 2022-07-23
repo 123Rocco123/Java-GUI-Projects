@@ -55,7 +55,7 @@ class grades {
     subjectContainer = new JComboBox(gradeContainerArray);
 
     // JComboBox Formatting
-    subjectContainer.setBounds(150, 300, 200, 25);
+    subjectContainer.setBounds(50, 10, 200, 25);
     gradesFrame.add(subjectContainer);
 
     // Formatting of add grades button
@@ -63,7 +63,7 @@ class grades {
     gradesFrame.add(addGradesBtn);
 
     // Formatting of the grades container
-    gradeContainer.setBounds(150, 370, 200, 25);
+    gradeContainer.setBounds(50, 45, 200, 25);
     gradesFrame.add(gradeContainer);
     // Initial Formatting of the gradeContainer text
     gradeContainer.setText("Insert Grade (%)");
