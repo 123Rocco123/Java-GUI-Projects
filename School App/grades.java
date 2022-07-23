@@ -30,7 +30,9 @@ class grades {
     // JFrame Formatting
     gradesFrame.setTitle("Grades");
 
-    gradesFrame.setSize(500, 500);
+    gradesFrame.getContentPane().setBackground(Color.LIGHT_GRAY);
+
+    gradesFrame.setSize(300, 150);
     gradesFrame.setLocationRelativeTo(null);
     gradesFrame.setResizable(false);
     gradesFrame.setLayout(null);
