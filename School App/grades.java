@@ -83,7 +83,6 @@ class grades {
           // Used to add the grades to HashMap
              // The value variable is used to contain the aggreagte percentage of the grade of a class (REPLACE WITH ARRAYLIST)
              // We then pass the value of the variable inside of the HashMap so that the equation is stored correctly.
-          classGradesMap.put((String)(chosenClass), value);
           gradesCumulative.set(currentIndex, gradesCumulative.get(currentIndex) + Integer.parseInt(gradeContainer.getText()));
           classGradesMap.put((String)(chosenClass), gradesCumulative.get(currentIndex));
 
