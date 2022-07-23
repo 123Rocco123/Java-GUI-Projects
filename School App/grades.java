@@ -85,14 +85,17 @@ class grades {
              // We then pass the value of the variable inside of the HashMap so that the equation is stored correctly.
           classGradesMap.put((String)(chosenClass), value);
           gradesCumulative.set(currentIndex, gradesCumulative.get(currentIndex) + Integer.parseInt(gradeContainer.getText()));
+          classGradesMap.put((String)(chosenClass), gradesCumulative.get(currentIndex));
 
           // Adds another point to the ArrayList value
-             // Used for the cummalative grade average
+             // Used for the cumulative grade average
           for (int x = 0; x < new File("./classes").list().length; x++) {
             if (chosenClass.equals(new File("./classes").list()[x])) {
+              // Re-sets the value of gradesForClass at index to to reflect the new exam added by the user.
               gradesForClass.set(x, (gradesForClass.get(x) + 1));
 
-              // Used to divide the value stored in the hashmap so that the user can see their grade average for each class. 
+              // Used to divide the value stored in the hashmap so that the user can see their grade average for each class.
+                 // Executed when the user has had more than one exam.
               if (gradesForClass.get(x) >= 2) {
                 classGradesMap.put((String)(chosenClass), classGradesMap.get((String)(chosenClass)) / gradesForClass.get(x));
               }
