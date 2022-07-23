@@ -103,6 +103,9 @@ class grades {
 
             }
           }
+        } else {
+          // Alert Message
+          JOptionPane.showMessageDialog(null, "Invalid Grade Value", "ERROR!", JOptionPane.ERROR_MESSAGE);
         }
       }
     });
