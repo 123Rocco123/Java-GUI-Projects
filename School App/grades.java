@@ -134,6 +134,8 @@ class grades {
     // Setups the ArrayLists with all the classes
     for (int x = 0; x < new File("./classes").list().length; x++) {
       gradesForClass.add(0);
+      // Used for the cumulative grades of the user
+      gradesCumulative.add(0);
     }
   }
 
