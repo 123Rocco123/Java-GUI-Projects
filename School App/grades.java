@@ -77,7 +77,7 @@ class grades {
         Object chosenClass = subjectContainer.getSelectedItem();
 
         // If statement below is used to check if the user has inserted a grade or not
-        if (!gradeContainer.getText().equals("Insert Grade (%)")) {
+        if (!gradeContainer.getText().equals("Insert Grade (%)") && Integer.parseInt(gradeContainer.getText()) <= 100) {
           // Used to store the current index of the JComboBox
              // This is what is used to change and store the grades for the ArrayLists and HashMaps
           int currentIndex = subjectContainer.getSelectedIndex() - 1;
