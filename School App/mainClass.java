@@ -235,6 +235,12 @@ class mainClass {
     gradesButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         grades modifyGrades = new grades();
+
+        // Window Listener for saving the HashMap
+        modifyGrades.gradesFrame.addWindowListener(new WindowAdapter() {
+          public void windowClosing(WindowEvent e) {
+          }
+        });
       }
     });
 
