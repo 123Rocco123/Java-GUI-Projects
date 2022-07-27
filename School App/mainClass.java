@@ -245,11 +245,12 @@ class mainClass {
               // Filewriter used to write and overwrite the "grades.txt" file in the grades directory.
               FileWriter saveGradeWriter = new FileWriter(saveGrades);
 
-              // Make sure to convert the HashMap to a string to be able to save it into the file.
-              saveGradeWriter.write((modifyGrades.classGradesMap).toString());
+                // Make sure to convert the HashMap to a string to be able to save it into the file.
+                saveGradeWriter.write((modifyGrades.classGradesMap).toString());
 
-              // Close the filewriter to make sure that we get no errors.
-              saveGradeWriter.close();
+                // Close the filewriter to make sure that we get no errors.
+                saveGradeWriter.close();
+              }
             } catch (IOException ex) {}
           }
         });
