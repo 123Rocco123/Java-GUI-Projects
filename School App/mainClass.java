@@ -242,8 +242,9 @@ class mainClass {
             File saveGrades = new File("./grades", "grades.txt");
 
             try {
-              // Filewriter used to write and overwrite the "grades.txt" file in the grades directory.
-              FileWriter saveGradeWriter = new FileWriter(saveGrades);
+              if (!modifyGrades.gradeContainer.equals("Insert Grade (%)")) {
+                // Filewriter used to write and overwrite the "grades.txt" file in the grades directory.
+                FileWriter saveGradeWriter = new FileWriter(saveGrades);
 
                 // Make sure to convert the HashMap to a string to be able to save it into the file.
                 saveGradeWriter.write((modifyGrades.classGradesMap).toString());
