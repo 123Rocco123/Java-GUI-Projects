@@ -10,6 +10,8 @@ This is a collection of projects that I'm working on that feature a Java GUI.
 
 ## Future Projects
 - Statistics Graphing Application
+- Probability App (Sequence of Trees)
+  - An application used to check which course of action is best in terms of minimizing the time spent doing an action.
 
 ## Completed
 - Java Based Text Editor
