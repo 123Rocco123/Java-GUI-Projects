@@ -156,5 +156,19 @@ class grades {
 
   // Used for the initial setup if there are already saved classes by the user.
   public void initialSetupFunc() {
+    // If condition used to check if there are any saved grades
+    if (new File("./grades").list().length > 0) {
+      try {
+        // Used to read the file inside of the "grades" directory
+        Scanner FileReader = new Scanner(new File("./grades", "grades.txt"));
+
+        // While loop used to iterate throughout the Scanner object
+        while (FileReader.hasNextLine()) {
+        }
+
+        // Make sure to not get any
+        FileReader.close();
+      } catch (FileNotFoundException ex) {}
+    }
   }
 }
