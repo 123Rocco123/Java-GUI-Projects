@@ -153,4 +153,8 @@ class grades {
       classGradesMap.put((String)(new File("./classes").list()[i]), 0);
     }
   }
+
+  // Used for the initial setup if there are already saved classes by the user.
+  public void initialSetupFunc() {
+  }
 }
