@@ -52,6 +52,7 @@ class grades {
       gradeContainerArray[i + 1] = (String)(new File("./classes").list()[i]);
     }
 
+    // Used to contain the subjects for all of the classes that user takes
     subjectContainer = new JComboBox(gradeContainerArray);
 
     // JComboBox Formatting
