@@ -164,6 +164,12 @@ class grades {
 
         // While loop used to iterate throughout the Scanner object
         while (FileReader.hasNextLine()) {
+          String[] line = FileReader.nextLine().split(",");
+
+          for (int i = 0; i < line.length; i++) {
+            System.out.println(line[i]);
+          }
+          System.out.println(line[0].split("=")[1]);
         }
 
         // Make sure to not get any
