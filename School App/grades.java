@@ -26,6 +26,9 @@ class grades {
   // Used to store the cumulative grades of the user
   ArrayList<Integer> gradesCumulative = new ArrayList<Integer>();
 
+  // String Array used for the list inside of the JComboBox
+  String[] gradeContainerArray;
+
   public grades() {
     // JFrame Formatting
     gradesFrame.setTitle("Grades");
@@ -45,7 +48,7 @@ class grades {
     // HashMap Setup function call
     hashMapSetup();
 
-    String[] gradeContainerArray = new String[new File("./classes").list().length + 1];
+    gradeContainerArray = new String[new File("./classes").list().length + 1];
 
     // For loop used to to add classes to the array for the JComboBox
     for (int i = 0; i < new File("./classes").list().length; i++) {
