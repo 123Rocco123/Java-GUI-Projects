@@ -177,6 +177,12 @@ class grades {
             // The if statement is used for checking the cumulative grades inside of the "grades.txt" file.
             if (Integer.parseInt(line[i].split("=")[1].replace("}", "").replace(" ", "")) != 0) {
               ArrayList<String> forIndexArr = new ArrayList<String>();
+
+              // Loop below is used to add all of the keySet names to the "forIndexArr" ArrayList.
+                 // The reason that this is being done is because we can then accurately index the classes that we have, with the values that we have stored in the "grades.txt" file.
+              for (int x = 0; x < gradeContainerArray.length; x++) {
+                forIndexArr.add(gradeContainerArray[x]);
+              }
             }
           }
         }
