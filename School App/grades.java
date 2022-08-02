@@ -183,6 +183,11 @@ class grades {
               for (int x = 0; x < gradeContainerArray.length; x++) {
                 forIndexArr.add(gradeContainerArray[x]);
               }
+
+              // The variable below is used for the setting of the grades.
+                 // What it does is that it gets the amount of items that are inside of the subjectContainer (JComboBox), and then uses that number for setting the index inside of the "gradesCumulative" and "gradesForClass" arrays.
+              int indexValue = forIndexArr.indexOf(line[i].split("=")[0].replace("{", "").replace(" ", "")) - 1;
+
             }
           }
         }
