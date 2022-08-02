@@ -172,7 +172,6 @@ class grades {
           for (int i = 0; i < line.length; i++) {
             System.out.println(line[i]);
           }
-          System.out.println(line[0].split("=")[1]);
         }
 
         // Make sure to not get any
