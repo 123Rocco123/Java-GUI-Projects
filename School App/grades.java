@@ -188,6 +188,10 @@ class grades {
                  // What it does is that it gets the amount of items that are inside of the subjectContainer (JComboBox), and then uses that number for setting the index inside of the "gradesCumulative" and "gradesForClass" arrays.
               int indexValue = forIndexArr.indexOf(line[i].split("=")[0].replace("{", "").replace(" ", "")) - 1;
 
+              // The two setter functions are used for setting the values of inside of the gradesCumulative and gradesForClass ArrayLists.
+                 // They are used for containg the grades of the classes for the user.
+              gradesCumulative.set(indexValue, Integer.parseInt(line[i].split("=")[1].replace("}", "").replace(" ", "")));
+              gradesForClass.set(indexValue, 1);
             }
           }
         }
