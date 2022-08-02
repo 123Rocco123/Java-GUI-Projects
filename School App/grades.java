@@ -172,8 +172,12 @@ class grades {
         while (FileReader.hasNextLine()) {
           String[] line = FileReader.nextLine().split(",");
 
+          // For loop used to iterate over each line inside of the line array.
           for (int i = 0; i < line.length; i++) {
-            System.out.println(line[i]);
+            // The if statement is used for checking the cumulative grades inside of the "grades.txt" file.
+            if (Integer.parseInt(line[i].split("=")[1].replace("}", "").replace(" ", "")) != 0) {
+              ArrayList<String> forIndexArr = new ArrayList<String>();
+            }
           }
         }
 
