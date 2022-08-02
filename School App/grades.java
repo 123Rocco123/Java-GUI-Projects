@@ -55,6 +55,9 @@ class grades {
       gradeContainerArray[i + 1] = (String)(new File("./classes").list()[i]);
     }
 
+    // The initialSetupFunc is used for adding the grades that are stored inside of the grade file.
+    initialSetupFunc();
+
     // Used to contain the subjects for all of the classes that user takes
     subjectContainer = new JComboBox(gradeContainerArray);
 
