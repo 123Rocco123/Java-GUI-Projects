@@ -29,6 +29,10 @@ class grades {
   // String Array used for the list inside of the JComboBox
   String[] gradeContainerArray;
 
+  // The variable below is used to check if the user has submitted a grade, and close the window with the button.
+     // If they have, then the value is changed to "true", and the grade saved. 
+  boolean pressed = false;
+
   public grades() {
     // JFrame Formatting
     gradesFrame.setTitle("Grades");
