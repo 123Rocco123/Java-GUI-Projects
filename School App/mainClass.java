@@ -242,7 +242,7 @@ class mainClass {
             File saveGrades = new File("./grades", "grades.txt");
 
             try {
-              if (!modifyGrades.gradeContainer.equals("Insert Grade (%)")) {
+              if (!modifyGrades.gradeContainer.equals("Insert Grade (%)") && modifyGrades.pressed == true) {
                 // Filewriter used to write and overwrite the "grades.txt" file in the grades directory.
                 FileWriter saveGradeWriter = new FileWriter(saveGrades);
 
