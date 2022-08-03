@@ -111,9 +111,11 @@ class grades {
               if (gradesForClass.get(x) >= 2) {
                 classGradesMap.put((String)(chosenClass), classGradesMap.get((String)(chosenClass)) / gradesForClass.get(x));
               }
-
             }
           }
+
+          pressed = true;
+          gradesFrame.dispose();
         } else {
           // Alert Message
           JOptionPane.showMessageDialog(null, "Invalid Grade Value", "ERROR!", JOptionPane.ERROR_MESSAGE);
