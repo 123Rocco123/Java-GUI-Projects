@@ -238,7 +238,7 @@ class mainClass {
 
         // Window Listener for saving the HashMap
         modifyGrades.gradesFrame.addWindowListener(new WindowAdapter() {
-          public void windowClosing(WindowEvent e) {
+          public void windowClosed(WindowEvent e) {
             File saveGrades = new File("./grades", "grades.txt");
 
             try {
